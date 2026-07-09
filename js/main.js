@@ -1,5 +1,6 @@
 // Placeholder submit: composes an email until a form backend is connected.
-document.getElementById('enquiryForm').addEventListener('submit', function(e){
+const enquiryForm = document.getElementById('enquiryForm');
+if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
   e.preventDefault();
   const f = new FormData(this);
   const body = encodeURIComponent(
@@ -58,7 +59,8 @@ document.getElementById('enquiryForm').addEventListener('submit', function(e){
   });
 
   // Final submit — composes an email until a form backend is connected
-  document.getElementById('quoteForm').addEventListener('submit', function(e){
+  const quoteForm = document.getElementById('quoteForm');
+  if (quoteForm) quoteForm.addEventListener('submit', function(e){
     e.preventDefault();
     const f = new FormData(this);
     const body = encodeURIComponent(

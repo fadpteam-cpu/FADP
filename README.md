@@ -5,12 +5,26 @@ Marketing site for FADP Architecture. Static HTML/CSS/JS, no build step, no fram
 ## Structure
 
 ```
-index.html          Page markup
+index.html          Home: 70% visuals, trust band, wizard (main conversion point)
+projects.html       Projects: visual grid + featured case study
+services.html       Services: 7 knowledge-hub sections + councils strip + FAQ
+about.html          About: narrative, credentials, team introductions
+blog.html           Guides index (the knowledge-hub content strategy)
+blog/…              One complete example guide (the template for all posts)
 css/styles.css      All styles (design tokens at the top in :root)
-js/main.js          Form handlers + fee-proposal wizard
+js/main.js          Fee-proposal wizard + form handlers (null-guarded, shared)
+build_pages.py      Generator that produced the pages; edit + re-run, or edit HTML directly
 assets/img/         Partner logos + brand logo SVGs
 favicon.svg / .png  Site icon
 ```
+
+## Content strategy (why the pages are shaped this way)
+
+Page ratios: Home 70/20/10 visuals/copy/CTA · Projects 80/15/5 · Services 50/40/10 ·
+About 40/50/10 · Guides 20/80. Trust signals (RIBA, ARB, fixed fees, fast turnaround,
+free consultation, reviews) sit in the blue band directly under the home hero so they
+land within seconds. Each service on services.html is a knowledge hub that links to a
+guide on blog.html; publish the "coming soon" guides to build search authority per service.
 
 ## Run locally
 
@@ -41,7 +55,11 @@ Search and replace in `index.html`:
 - [ ] Project names, areas, years in the work grid
 - [ ] All `images.unsplash.com` URLs — replace with real project photography (put files in `assets/img/`)
 - [ ] Testimonial quotes and names — real reviews, used with permission
-- [ ] `/blog` nav link — point somewhere real or remove
+- [ ] Five "coming soon" guides on blog.html — write them (the planning-permission
+      article shows the template)
+- [ ] Councils strip on services.html and about.html — list ONLY councils where you
+      hold real, checkable approvals
+- [ ] Team names, photos and bios on about.html
 - [ ] Social links in the footer (`href="#"`)
 
 ## Connect the forms
@@ -56,8 +74,11 @@ Both handlers are marked with comments.
 
 ## Compliance (read before publishing)
 
-- **"Architect" is a protected title in the UK.** Only use it if the relevant people
-  are on the ARB register; otherwise change the wording to "architectural designers".
+- **RIBA / ARB claims are live in the trust band, about page and footer.** These were
+  added per the brand brief. They MUST be true before launch: RIBA Chartered Practice
+  status is a paid registration you can verify at architecture.com; "architect" and
+  ARB registration are legally protected (arb.org.uk). If either is not currently held,
+  remove the claim and change "architects" to "architectural designers" site-wide.
 - Only display partner logos (RICS, Houzz, Planning Portal) the practice genuinely
   holds or uses, per each organisation's rules.
 - Review figures and testimonials must be real and verifiable.
