@@ -26,6 +26,10 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
   const answers = {};
   let current = 1;
 
+  // Deep-link via URL: ?project=Extension pre-fills the project step
+  const urlProject = new URLSearchParams(window.location.search).get('project');
+  if (urlProject) answers['Project'] = urlProject;
+
   // Deep-link: service panels set the project type and skip step 2
   document.querySelectorAll('[data-project]').forEach(el => {
     el.addEventListener('click', () => { answers['Project'] = el.dataset.project; });

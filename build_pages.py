@@ -33,9 +33,45 @@ def header(active, depth=0):
     <nav class="site-nav">
       {a('index.html','Home','home')}
       {a('projects.html','Projects','projects')}
-      {a('services.html','Services','services')}
+      <div class="has-mega">
+        {a('services.html','Services','services')}
+        <div class="mega" aria-label="Services menu">
+          <div class="mega-inner">
+            <div class="mega-col">
+              <h5>Design &amp; Planning</h5>
+              <a href="{p}services.html#planning">Planning Applications</a>
+              <a href="{p}services.html#feasibility">Feasibility Studies</a>
+              <a href="{p}services.html#site-analysis">Site Analysis</a>
+            </div>
+            <div class="mega-col">
+              <h5>Technical</h5>
+              <a href="{p}services.html#bim">Building Information Modelling</a>
+              <a href="{p}services.html#principal-designer">Principal Designer</a>
+              <a href="{p}blog.html">Building Regulations</a>
+            </div>
+            <div class="mega-col">
+              <h5>Heritage</h5>
+              <a href="{p}services.html#listed">Listed Buildings</a>
+              <a href="{p}services.html#conservation">Conservation Areas</a>
+            </div>
+            <div class="mega-col">
+              <h5>Your Project</h5>
+              <a href="{p}index.html?project=Extension#quote">Extensions</a>
+              <a href="{p}index.html?project=Loft%20conversion#quote">Loft Conversions</a>
+              <a href="{p}index.html?project=Basement%20conversion#quote">Basement Conversions</a>
+              <a href="{p}index.html?project=Refurbishment#quote">Refurbishment</a>
+              <a href="{p}index.html?project=New%20build#quote">New Homes</a>
+              <a href="{p}index.html?project=Commercial#quote">Commercial</a>
+            </div>
+            <div class="mega-foot">
+              <span>Not sure where to start?</span>
+              <a href="{p}index.html#quote">Get a fixed-fee quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
       {a('about.html','About','about')}
-      {a('blog.html','Guides','blog')}
+      {a('blog.html','Blog','blog')}
     </nav>
     <div class="header-right">
       <a class="header-tel" href="tel:+442000000000">020 0000 0000</a>
@@ -103,8 +139,8 @@ def footer(depth=0):
       <h5>Information</h5>
       <a class="f-link" href="{p}projects.html">Projects</a>
       <a class="f-link" href="{p}about.html">About &amp; Team</a>
-      <a class="f-link" href="{p}blog.html">Guides</a>
-      <a class="f-link" href="{p}index.html#quote">Fee Proposal</a>
+      <a class="f-link" href="{p}blog.html">Blog</a>
+      <a class="f-link" href="{p}index.html#quote">Get a Quote</a>
       <a class="f-link" href="#">Privacy Policy</a>
     </div>
   </div>
@@ -244,12 +280,24 @@ home_body = f"""
 
 <section id="reviews">
   <div class="wrap">
-    <div class="sec-label"><span>5.0 on Google &#183; 42 reviews</span><a class="link" href="#">Read them all</a></div>
-    <ul class="review-lines">
-      <li>"Approved first time. They handled every question from the council." <span>Priya N. &#183; Islington</span></li>
-      <li>"Exactly what we asked for, on the budget agreed at the start." <span>Sarah &amp; James W. &#183; Hampstead</span></li>
-      <li>"Same architect from first meeting to last site visit." <span>Daniel R. &#183; Shoreditch</span></li>
-    </ul>
+    <div class="sec-label"><span>What clients say &#183; 5.0 on Google, 42 reviews</span><a class="link" href="#">Read them all</a></div>
+    <div class="quotes">
+      <div class="quote">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>"They listened before they drew. The finished house is exactly what we asked for, and it came in on the budget we agreed at the start."</blockquote>
+        <cite><strong>Sarah &amp; James W.</strong>Private house, Hampstead &#183; 2025</cite>
+      </div>
+      <div class="quote">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>"Planning felt daunting until FADP took it over. Approved first time, and they handled every question from the council."</blockquote>
+        <cite><strong>Priya N.</strong>Rear extension, Islington &#183; 2024</cite>
+      </div>
+      <div class="quote">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>"Clear fees, clear timelines, and the same architect from the first meeting to the last site visit."</blockquote>
+        <cite><strong>Daniel R.</strong>Office fit-out, Shoreditch &#183; 2024</cite>
+      </div>
+    </div>
   </div>
 </section>
 """
@@ -485,61 +533,73 @@ about = head('About &#183; FADP Architecture',
       + header('about') + about_body + cta_band() + '\n' + footer()
 
 # ---------------------------------------------------------------- BLOG INDEX
-blog_body = """
+blog_body = f"""
 <div class="page-hero">
   <div class="wrap">
-    <div class="crumbs"><a href="index.html">Home</a> &#183; Guides</div>
-    <h1>Guides</h1>
-    <p class="lede">Plain-English answers to the questions clients ask us most, written by the people who deal with the regulations daily. Each service on our <a class="link" href="services.html">services page</a> links to its guide here.</p>
+    <div class="crumbs"><a href="index.html">Home</a> &#183; Blog</div>
+    <h1>Blog</h1>
+    <p class="lede">Plain-English answers to the questions clients ask us most, written by the people who deal with the regulations daily.</p>
   </div>
 </div>
 
 <section>
   <div class="wrap">
-    <div class="post-list">
-      <a class="post-row" href="blog/planning-permission-rear-extension.html">
-        <span class="p-kicker">Planning</span>
-        <h3>Do you need planning permission for a rear extension?</h3>
-        <span class="p-read">6 min read</span>
+    <div class="post-grid">
+      <a class="post-card" href="blog/planning-permission-rear-extension.html">
+        <img src="{IMG['p5']}" alt="" loading="lazy">
+        <div class="pc-body">
+          <span class="pc-kicker">Planning &#183; 6 min read</span>
+          <h3>Do you need planning permission for a rear extension?</h3>
+        </div>
       </a>
-      <a class="post-row" href="#">
-        <span class="p-kicker">Heritage</span>
-        <h3>Listed building consent, explained</h3>
-        <span class="p-read">Coming soon</span>
+      <a class="post-card" href="#">
+        <img src="{IMG['listed']}" alt="" loading="lazy">
+        <div class="pc-body">
+          <span class="pc-kicker">Heritage &#183; Coming soon</span>
+          <h3>Listed building consent, explained</h3>
+        </div>
       </a>
-      <a class="post-row" href="#">
-        <span class="p-kicker">Regulations</span>
-        <h3>What does a Principal Designer actually do?</h3>
-        <span class="p-read">Coming soon</span>
+      <a class="post-card" href="#">
+        <img src="{IMG['studio']}" alt="" loading="lazy">
+        <div class="pc-body">
+          <span class="pc-kicker">Regulations &#183; Coming soon</span>
+          <h3>What does a Principal Designer actually do?</h3>
+        </div>
       </a>
-      <a class="post-row" href="#">
-        <span class="p-kicker">Heritage</span>
-        <h3>Permitted development in conservation areas</h3>
-        <span class="p-read">Coming soon</span>
+      <a class="post-card" href="#">
+        <img src="{IMG['p8']}" alt="" loading="lazy">
+        <div class="pc-body">
+          <span class="pc-kicker">Heritage &#183; Coming soon</span>
+          <h3>Permitted development in conservation areas</h3>
+        </div>
       </a>
-      <a class="post-row" href="#">
-        <span class="p-kicker">Technical</span>
-        <h3>How BIM cuts construction costs</h3>
-        <span class="p-read">Coming soon</span>
+      <a class="post-card" href="#">
+        <img src="{IMG['model']}" alt="" loading="lazy">
+        <div class="pc-body">
+          <span class="pc-kicker">Technical &#183; Coming soon</span>
+          <h3>How BIM cuts construction costs</h3>
+        </div>
       </a>
-      <a class="post-row" href="#">
-        <span class="p-kicker">Before you buy</span>
-        <h3>Feasibility studies: what you learn before you spend</h3>
-        <span class="p-read">Coming soon</span>
+      <a class="post-card" href="#">
+        <img src="{IMG['p7']}" alt="" loading="lazy">
+        <div class="pc-body">
+          <span class="pc-kicker">Before you buy &#183; Coming soon</span>
+          <h3>Feasibility studies: what you learn before you spend</h3>
+        </div>
       </a>
     </div>
   </div>
 </section>
 """
-blog = head('Guides &#183; FADP Architecture',
+blog = head('Blog &#183; FADP Architecture',
             'Plain-English guides to planning permission, listed buildings, BIM and building regulations from FADP Architecture.') \
      + header('blog') + blog_body + cta_band() + '\n' + footer()
 
 # ---------------------------------------------------------------- EXAMPLE ARTICLE
-article_body = """
+article_body = f"""
 <div class="page-hero">
   <div class="wrap">
-    <div class="crumbs"><a href="../index.html">Home</a> &#183; <a href="../blog.html">Guides</a> &#183; Planning</div>
+    <div class="crumbs"><a href="../index.html">Home</a> &#183; <a href="../blog.html">Blog</a> &#183; Planning</div>
   </div>
 </div>
 
@@ -548,6 +608,7 @@ article_body = """
     <article class="article">
       <h1>Do you need planning permission for a rear extension?</h1>
       <div class="a-meta">Planning &#183; 6 min read &#183; Reviewed July 2026</div>
+      <figure class="a-lead"><img src="{IMG['p5']}" alt="Rear extension, Chelsea" loading="lazy"></figure>
 
       <p>Short answer: often not, thanks to permitted development. But the exceptions catch people out every week, and building without the right consent can mean an enforcement notice and, in the worst case, demolition. Here is how the rules actually work for a typical London house.</p>
 
