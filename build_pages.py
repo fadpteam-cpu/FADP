@@ -34,34 +34,62 @@ def header(active, depth=0):
       {a('index.html','Home','home')}
       {a('projects.html','Projects','projects')}
       <div class="has-mega">
-        {a('services.html','Services','services')}
+        <button type="button" class="mega-btn{' current' if active=='services' else ''}" aria-haspopup="true">Services</button>
         <div class="mega" aria-label="Services menu">
           <div class="mega-inner">
             <div class="mega-col">
-              <h5>Design &amp; Planning</h5>
-              <a href="{p}services.html#planning">Planning Applications</a>
+              <h5>Architectural Design &amp; Planning</h5>
+              <a href="{p}services.html#planning">Planning Permission</a>
               <a href="{p}services.html#feasibility">Feasibility Studies</a>
               <a href="{p}services.html#site-analysis">Site Analysis</a>
+              <a href="{p}services.html">Outbuild Design</a>
+              <a href="{p}services.html">Sunroom</a>
+              <a href="{p}services.html">Dropped Kerb</a>
             </div>
             <div class="mega-col">
-              <h5>Technical</h5>
-              <a href="{p}services.html#bim">Building Information Modelling</a>
-              <a href="{p}services.html#principal-designer">Principal Designer</a>
-              <a href="{p}blog.html">Building Regulations</a>
+              <h5>Renovation &amp; Remodelling</h5>
+              <a href="{p}index.html?project=Refurbishment#quote">Kitchen Renovation</a>
+              <a href="{p}index.html?project=Refurbishment#quote">Bathroom Renovation</a>
+              <a href="{p}index.html?project=Refurbishment#quote">Bedroom Renovation</a>
+              <a href="{p}services.html">Chimney Removal</a>
             </div>
             <div class="mega-col">
-              <h5>Heritage</h5>
+              <h5>Home Extension</h5>
+              <a href="{p}index.html?project=Extension#quote">Side Extension</a>
+              <a href="{p}index.html?project=Extension#quote">Rear Extension</a>
+              <a href="{p}index.html?project=Extension#quote">Wrap-around Extension</a>
+              <h5 class="stacked">Structural Engineering</h5>
+              <a href="{p}services.html">Wall Removal</a>
+              <a href="{p}services.html">Structural Calculations</a>
+            </div>
+            <div class="mega-col">
+              <h5>Survey &amp; Inspection</h5>
+              <a href="{p}services.html#site-analysis">Crack Inspection</a>
+              <a href="{p}services.html#site-analysis">Structural Inspection</a>
+              <a href="{p}services.html#site-analysis">Snagging Survey</a>
+              <a href="{p}services.html#site-analysis">Property Condition Survey</a>
+              <a href="{p}services.html#site-analysis">Structural Report</a>
+            </div>
+            <div class="mega-col">
+              <h5>Home Conversion</h5>
+              <a href="{p}index.html?project=Loft%20conversion#quote">Loft Conversion</a>
+              <a href="{p}index.html?project=Basement%20conversion#quote">Basement Conversion</a>
+              <a href="{p}services.html">Garage Conversion</a>
+              <a href="{p}services.html">HMO Conversion</a>
+              <a href="{p}services.html">Barn Conversion</a>
+              <a href="{p}services.html">Smart Flat Conversion</a>
+            </div>
+            <div class="mega-col">
+              <h5>Heritage &amp; Compliance</h5>
               <a href="{p}services.html#listed">Listed Buildings</a>
               <a href="{p}services.html#conservation">Conservation Areas</a>
-            </div>
-            <div class="mega-col">
-              <h5>Your Project</h5>
-              <a href="{p}index.html?project=Extension#quote">Extensions</a>
-              <a href="{p}index.html?project=Loft%20conversion#quote">Loft Conversions</a>
-              <a href="{p}index.html?project=Basement%20conversion#quote">Basement Conversions</a>
-              <a href="{p}index.html?project=Refurbishment#quote">Refurbishment</a>
+              <a href="{p}services.html#principal-designer">Principal Designer</a>
+              <a href="{p}services.html">Party Wall Award</a>
+              <a href="{p}services.html">Boundary Dispute Solutions</a>
+              <a href="{p}services.html">Build Over Agreements</a>
+              <h5 class="stacked">New Build Design</h5>
               <a href="{p}index.html?project=New%20build#quote">New Homes</a>
-              <a href="{p}index.html?project=Commercial#quote">Commercial</a>
+              <a href="{p}services.html">Conservatory</a>
             </div>
             <div class="mega-foot">
               <span>Not sure where to start?</span>

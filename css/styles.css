@@ -975,7 +975,6 @@ nav.site-nav a[aria-current="page"]{
    SERVICES MEGA MENU
    ================================================================ */
 .has-mega{position:static;}
-.has-mega > a{position:relative; padding-bottom:26px; margin-bottom:-26px;}
 .mega{
   position:absolute;
   left:0; right:0; top:100%;
@@ -995,10 +994,10 @@ nav.site-nav a[aria-current="page"]{
 .mega-inner{
   max-width:var(--max);
   margin:0 auto;
-  padding:48px var(--gutter) 40px;
+  padding:44px var(--gutter) 36px;
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:40px;
+  grid-template-columns:repeat(6, 1fr);
+  gap:36px 28px;
 }
 .mega-col h5{
   font-size:12px;
@@ -1012,11 +1011,12 @@ nav.site-nav a[aria-current="page"]{
 }
 .mega-col a{
   display:block;
-  font-size:14.5px;
+  font-size:14px;
   color:var(--ink);
-  padding:7px 0;
+  padding:6px 0;
   transition:color .15s;
 }
+.mega-col h5.stacked{margin-top:24px;}
 .mega-col a:hover{color:var(--brand);}
 .mega-foot{
   grid-column:1 / -1;
@@ -1087,4 +1087,60 @@ nav.site-nav a[aria-current="page"]{
 }
 @media (max-width:560px){
   .post-grid{grid-template-columns:1fr; gap:40px;}
+}
+
+/* ================================================================
+   MEGA TRIGGER (button, hover-open, no navigation)
+   ================================================================ */
+.mega-btn{
+  font:inherit;
+  font-size:14px;
+  color:var(--muted);
+  background:none;
+  border:none;
+  padding:8px 0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:color .2s;
+}
+.mega-btn::after{
+  content:"";
+  width:7px; height:7px;
+  border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);
+  transition:transform .2s;
+}
+.mega-btn:hover,
+.has-mega:hover .mega-btn,
+.has-mega:focus-within .mega-btn{color:var(--ink);}
+.has-mega:hover .mega-btn::after,
+.has-mega:focus-within .mega-btn::after{
+  transform:rotate(225deg) translateY(-2px);
+}
+.mega-btn.current{
+  color:var(--ink);
+  text-decoration:underline;
+  text-underline-offset:6px;
+  text-decoration-thickness:1px;
+  text-decoration-color:var(--brand);
+}
+/* Keep the panel anchored full-width to the sticky header, and
+   bridge the hover gap by extending the trigger's hit area downward */
+.has-mega{position:static;}
+.mega-btn{padding-bottom:26px; margin-bottom:-26px;}
+header{overflow:visible;}
+
+/* ================================================================
+   TEXT SELECTION IN BRAND BLUE
+   ================================================================ */
+::selection{
+  background:var(--brand);
+  color:#FFFFFF;
+}
+::-moz-selection{
+  background:var(--brand);
+  color:#FFFFFF;
 }
