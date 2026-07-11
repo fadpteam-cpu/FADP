@@ -310,7 +310,6 @@ projects_body = f"""
 {project(IMG['p7'],'Elder Yard','Hackney &#183; New build, 2023')}
 {project(IMG['p8'],'Rowan House','Highgate &#183; Extension, 2022')}
 {project(IMG['p9'],'Fenwick Studios','Peckham &#183; Commercial, 2022')}
-{project(IMG['hero'],'Gordon Place','Kensington &#183; Listed building, 2022')}
     </div>
   </div>
 </section>
