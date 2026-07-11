@@ -11,7 +11,7 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
     "Location: " + (f.get('location') || "not provided") + "\n\n" +
     (f.get('message') || "")
   );
-  window.location.href = "mailto:studio@fadp.com?subject=" +
+  window.location.href = "mailto:design@fadp.co.uk?subject=" +
     encodeURIComponent("Consultation request: " + f.get('type')) + "&body=" + body;
 });
 
@@ -85,8 +85,28 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
       "Email: " + f.get('email') + "\n" +
       "Postcode: " + (f.get('postcode') || "not provided")
     );
-    window.location.href = "mailto:studio@fadp.com?subject=" +
+    window.location.href = "mailto:design@fadp.co.uk?subject=" +
       encodeURIComponent("Fee proposal request: " + (answers['Project'] || 'project')) + "&body=" + body;
     show('done');
+  });
+})();
+
+
+// Mega menu: click toggles open/closed; clicking anywhere else, or
+// pressing Escape, closes it. Hover behaviour is handled in CSS.
+(function(){
+  const hm = document.querySelector('.has-mega');
+  if (!hm) return;
+  const btn = hm.querySelector('.mega-btn');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const nowOpen = hm.classList.toggle('open');
+    if (!nowOpen) btn.blur();
+  });
+  document.addEventListener('click', function(e){
+    if (!hm.contains(e.target)) hm.classList.remove('open');
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){ hm.classList.remove('open'); btn.blur(); }
   });
 })();

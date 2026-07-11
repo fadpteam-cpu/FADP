@@ -149,11 +149,12 @@ def footer(depth=0):
     <div class="footer-col">
       <h5>London</h5>
       <address>
-        Address line one<br>
-        Address line two<br>
-        London, Postcode
+        66 Paul Street<br>
+        London EC2A 4NA<br>
+        United Kingdom
       </address>
       <a class="f-tel" href="tel:+442000000000">Tel: 020 0000 0000</a>
+      <a class="f-tel" href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
     </div>
     <div class="footer-col">
       <h5>Services</h5>
@@ -243,21 +244,17 @@ def project(img, name, meta):
 
 # ---------------------------------------------------------------- HOME
 home_body = f"""
-<div class="hero">
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <h1>Architects for houses, extensions and commercial buildings across London.</h1>
-      <p class="sub">Planning, design and delivery, with fixed fees agreed in writing before each stage.</p>
-      <div class="hero-ctas">
-        <a class="btn" href="#quote">Get a fixed-fee quote</a>
-        <a class="link" href="projects.html">View recent work</a>
-      </div>
+<div class="hero-overlay">
+  <img class="hero-bg" src="{IMG['hero']}" alt="Willow Road, Hampstead: dining room">
+  <div class="hero-content wrap">
+    <h1>Architects for houses, extensions and commercial buildings across London.</h1>
+    <p class="sub">Planning, design and delivery, with fixed fees agreed in writing before each stage.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-light" href="#quote">Get a fixed-fee quote</a>
+      <a class="link link-light" href="projects.html">View recent work</a>
     </div>
   </div>
-  <figure class="hero-img">
-    <img src="{IMG['hero']}" alt="Willow Road, Hampstead: dining room">
-    <figcaption>Willow Road, Hampstead &#183; Planning to completion, 2025</figcaption>
-  </figure>
+  <span class="hero-caption">Willow Road, Hampstead &#183; Planning to completion, 2025</span>
 </div>
 
 {trust_band()}
@@ -505,7 +502,7 @@ about_body = f"""
       <div class="n-copy">
         <p>FADP was founded in London in 2014 with one conviction: that the difference between a good project and a painful one is rarely the design. It is certainty, about fees, about planning, about who is responsible for what.</p>
         <p class="stand">We are the experts. We know the regulations better than anyone, and we put that knowledge in writing before you spend a pound.</p>
-        <p>The practice is built around that promise. Every appointment is broken into clear stages with fixed written fees; every planning application is grounded in the local plan and the council's own recent decisions; and the architect you meet at the first consultation is the one who runs your project to completion.</p>
+        <p>The practice is built around that promise. Every appointment is broken into clear stages with fixed written fees, and every planning application is grounded in the local plan and the council's own recent decisions. FADP is led by its two directors, so the person you meet at the first consultation is a director of the practice, and stays your point of contact to completion.</p>
         <p>We work across residential, commercial and heritage projects in London and the South East, from feasibility studies for buyers to full services on listed buildings. Since 2014 the practice has completed over 140 projects and secured approvals with planning authorities across the capital.</p>
         <p>We stay deliberately small. Small enough that nothing is handed down a chain, and senior people do the work you're paying senior fees for.</p>
         <div class="creds-row">
@@ -527,30 +524,18 @@ about_body = f"""
 <section id="team">
   <div class="wrap">
     <div class="sec-label"><span>The team</span></div>
-    <div class="team-grid">
+    <div class="team-grid two">
       <div class="member">
-        <img src="{IMG['team1']}" alt="Founder and Director">
-        <h3>Name Surname</h3>
-        <div class="m-role">Founder &#183; Director</div>
-        <p class="m-bio">ARB-registered architect. Leads every project's planning strategy and client relationship from the first consultation to handover.</p>
+        <img src="{IMG['team1']}" alt="Aun Naeem, Director" loading="lazy">
+        <h3>Aun Naeem</h3>
+        <div class="m-role">Director</div>
+        <p class="m-bio">Co-founder of the practice. Leads design and client relationships, from the first consultation through planning to completion on site.</p>
       </div>
       <div class="member">
-        <img src="{IMG['team2']}" alt="Head of Planning">
-        <h3>Name Surname</h3>
-        <div class="m-role">Head of Planning</div>
-        <p class="m-bio">Former local authority planner. Writes the heritage statements and pre-application strategies behind our first-time approvals.</p>
-      </div>
-      <div class="member">
-        <img src="{IMG['team3']}" alt="Technical Director">
-        <h3>Name Surname</h3>
-        <div class="m-role">Technical Director</div>
-        <p class="m-bio">Runs BIM, technical design and Principal Designer duties. The reason our tender packages price within a few percent.</p>
-      </div>
-      <div class="member">
-        <img src="{IMG['team4']}" alt="Senior Architect">
-        <h3>Name Surname</h3>
-        <div class="m-role">Senior Architect</div>
-        <p class="m-bio">ARB-registered. Specialises in listed buildings and conservation-area work across north and west London.</p>
+        <img src="{IMG['team2']}" alt="Fatima Shakeel, Director" loading="lazy">
+        <h3>Fatima Shakeel</h3>
+        <div class="m-role">Director</div>
+        <p class="m-bio">Co-founder of the practice. Leads planning strategy and technical delivery, and is the point of contact through construction.</p>
       </div>
     </div>
   </div>

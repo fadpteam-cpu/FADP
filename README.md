@@ -48,7 +48,7 @@ Also works as-is on Netlify (drag the folder onto app.netlify.com/drop) or Verce
 Search and replace in `index.html`:
 
 - [ ] `020 0000 0000` / `+442000000000` — phone (header, contact, footer)
-- [ ] `studio@fadp.com` — email (also in `js/main.js` form handlers)
+- [ ] `design@fadp.co.uk` — email (also in `js/main.js` form handlers)
 - [ ] `Address line one / two / Postcode` — studio address (contact + footer)
 - [ ] `No. 00000000` — Companies House number (footer)
 - [ ] `5.0` / `42 reviews` — real Google review figures (hero + footer badge)
