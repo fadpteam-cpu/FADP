@@ -1244,3 +1244,89 @@ header{overflow:visible;}
 @media (max-width:560px){
   .team-grid.two{grid-template-columns:1fr;}
 }
+
+/* ================================================================
+   SERVICE DETAIL PAGES
+   ================================================================ */
+.svc-lead img{
+  width:100%;
+  aspect-ratio:21/9;
+  object-fit:cover;
+}
+.svc-layout{
+  display:grid;
+  grid-template-columns:1.6fr .8fr;
+  gap:clamp(48px, 6vw, 96px);
+  align-items:start;
+}
+.svc-main h2{
+  font-size:clamp(20px, 2.2vw, 26px);
+  font-weight:500;
+  letter-spacing:-0.015em;
+  margin:0 0 18px;
+}
+.svc-main h2:not(:first-child){margin-top:56px;}
+.svc-main p{
+  font-size:16px;
+  line-height:1.75;
+  margin-bottom:16px;
+  max-width:62ch;
+}
+.svc-includes{
+  list-style:none;
+  margin:0; padding:0;
+}
+.svc-includes li{
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+  font-size:15.5px;
+  line-height:1.5;
+}
+.svc-includes li:first-child{border-top:1px solid var(--line);}
+
+.svc-aside{position:sticky; top:100px;}
+.aside-card{
+  border:1px solid var(--line);
+  background:var(--bg-2);
+  padding:32px 28px;
+}
+.aside-card h3{
+  font-size:19px;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  margin-bottom:10px;
+}
+.aside-card > p{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.65;
+  margin-bottom:20px;
+}
+.aside-card ul{
+  list-style:none;
+  margin:0 0 24px; padding:0;
+  font-size:14px;
+  line-height:1.6;
+}
+.aside-card ul li{
+  padding:9px 0;
+  border-top:1px solid var(--line);
+}
+.aside-card .btn{width:100%; text-align:center; display:block;}
+.aside-contact{
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:14px;
+}
+.aside-contact a{color:var(--ink);}
+.aside-contact a:hover{text-decoration:underline; text-underline-offset:3px;}
+
+@media (max-width:900px){
+  .svc-layout{grid-template-columns:1fr; gap:48px;}
+  .svc-aside{position:relative; top:auto;}
+  .svc-lead img{aspect-ratio:3/2;}
+}

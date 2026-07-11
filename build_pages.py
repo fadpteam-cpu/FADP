@@ -39,9 +39,9 @@ def header(active, depth=0):
           <div class="mega-inner">
             <div class="mega-col">
               <h5>Architectural Design &amp; Planning</h5>
-              <a href="{p}services.html#planning">Planning Permission</a>
-              <a href="{p}services.html#feasibility">Feasibility Studies</a>
-              <a href="{p}services.html#site-analysis">Site Analysis</a>
+              <a href="{p}services/planning-applications.html">Planning Permission</a>
+              <a href="{p}services/feasibility-studies.html">Feasibility Studies</a>
+              <a href="{p}services/site-analysis.html">Site Analysis</a>
               <a href="{p}services.html">Outbuild Design</a>
               <a href="{p}services.html">Sunroom</a>
               <a href="{p}services.html">Dropped Kerb</a>
@@ -81,9 +81,9 @@ def header(active, depth=0):
             </div>
             <div class="mega-col">
               <h5>Heritage &amp; Compliance</h5>
-              <a href="{p}services.html#listed">Listed Buildings</a>
-              <a href="{p}services.html#conservation">Conservation Areas</a>
-              <a href="{p}services.html#principal-designer">Principal Designer</a>
+              <a href="{p}services/listed-buildings.html">Listed Buildings</a>
+              <a href="{p}services/conservation-areas.html">Conservation Areas</a>
+              <a href="{p}services/principal-designer.html">Principal Designer</a>
               <a href="{p}services.html">Party Wall Award</a>
               <a href="{p}services.html">Boundary Dispute Solutions</a>
               <a href="{p}services.html">Build Over Agreements</a>
@@ -158,11 +158,11 @@ def footer(depth=0):
     </div>
     <div class="footer-col">
       <h5>Services</h5>
-      <a class="f-link" href="{p}services.html#planning">Planning Applications</a>
-      <a class="f-link" href="{p}services.html#bim">BIM</a>
-      <a class="f-link" href="{p}services.html#feasibility">Feasibility Studies</a>
-      <a class="f-link" href="{p}services.html#listed">Listed Buildings</a>
-      <a class="f-link" href="{p}services.html#principal-designer">Principal Designer</a>
+      <a class="f-link" href="{p}services/planning-applications.html">Planning Applications</a>
+      <a class="f-link" href="{p}services/bim.html">BIM</a>
+      <a class="f-link" href="{p}services/feasibility-studies.html">Feasibility Studies</a>
+      <a class="f-link" href="{p}services/listed-buildings.html">Listed Buildings</a>
+      <a class="f-link" href="{p}services/principal-designer.html">Principal Designer</a>
     </div>
     <div class="footer-col">
       <h5>Information</h5>
@@ -283,7 +283,7 @@ home_body = f"""
         <img src="{IMG['p3']}" alt="" loading="lazy">
         <div class="panel-body"><h3>Commercial</h3><span class="panel-cta">Get a fixed-fee quote</span></div>
       </a>
-      <a class="panel" href="services.html#planning">
+      <a class="panel" href="services/planning-applications.html">
         <img src="{IMG['draw']}" alt="" loading="lazy">
         <div class="panel-body"><h3>Planning only</h3><span class="panel-cta">How we handle planning</span></div>
       </a>
@@ -386,6 +386,9 @@ projects = head('Projects &#183; FADP Architecture',
          + header('projects') + projects_body + cta_band() + '\n' + footer()
 
 # ---------------------------------------------------------------- SERVICES
+SLUG = {'planning':'planning-applications','bim':'bim','site-analysis':'site-analysis',
+        'feasibility':'feasibility-studies','listed':'listed-buildings',
+        'conservation':'conservation-areas','principal-designer':'principal-designer'}
 def svc(id_, kicker, title, paras, bullets, guide_href):
     ps = '\n'.join(f'      <p>{p}</p>' for p in paras)
     bs = '\n'.join(f'        <li>{b}</li>' for b in bullets)
@@ -402,8 +405,8 @@ def svc(id_, kicker, title, paras, bullets, guide_href):
 {bs}
         </ul>
         <div class="svc-links">
-          <a class="link" href="{guide_href}">Read the guide</a>
-          <a class="link" href="index.html#quote">Request a fee proposal</a>
+          <a class="link" href="services/{SLUG[id_]}.html">Learn more</a>
+          <a class="link" href="index.html#quote">Get a fixed-fee quote</a>
         </div>
       </div>
     </div>"""
