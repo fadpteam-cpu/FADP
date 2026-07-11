@@ -26,6 +26,11 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
   const answers = {};
   let current = 1;
 
+  // Deep-link: service panels set the project type and skip step 2
+  document.querySelectorAll('[data-project]').forEach(el => {
+    el.addEventListener('click', () => { answers['Project'] = el.dataset.project; });
+  });
+
   function show(step){
     current = step;
     steps.forEach(s => s.classList.toggle('active', s.dataset.step == String(step)));
@@ -44,7 +49,9 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
         stepEl.querySelectorAll('.q-option').forEach(c => c.classList.remove('selected'));
         card.classList.add('selected');
         answers[key] = card.dataset.value;
-        const next = parseInt(stepEl.dataset.step, 10) + 1;
+        let next = parseInt(stepEl.dataset.step, 10) + 1;
+        // If the project was chosen via a service panel, skip the project step
+        if (next === 2 && answers['Project'] && key !== 'Project') next = 3;
         setTimeout(() => show(next), 220);
       });
     });

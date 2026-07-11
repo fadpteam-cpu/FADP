@@ -39,7 +39,7 @@ def header(active, depth=0):
     </nav>
     <div class="header-right">
       <a class="header-tel" href="tel:+442000000000">020 0000 0000</a>
-      <a class="btn header-btn" href="{p}index.html#quote">Free consultation</a>
+      <a class="btn header-btn" href="{p}index.html#quote">Get a quote</a>
       <button class="menu-btn">Menu</button>
     </div>
   </div>
@@ -66,10 +66,10 @@ def cta_band(depth=0):
     return f"""<div class="cta-band">
   <div class="wrap">
     <div>
-      <h2>Start with a free consultation.</h2>
-      <p>30 minutes with an architect. Fixed fees confirmed in writing before any stage begins.</p>
+      <h2>Get a fixed-fee quote for your project.</h2>
+      <p>Five quick questions. A written quote within one working day.</p>
     </div>
-    <a class="btn" href="{p}index.html#quote">Request a fee proposal</a>
+    <a class="btn" href="{p}index.html#quote">Get a fixed-fee quote</a>
   </div>
 </div>
 """
@@ -127,6 +127,10 @@ def footer(depth=0):
     <span>&#169; 2026 FADP Architecture Ltd &#183; Registered in England &amp; Wales, No. 00000000</span>
   </div>
 </footer>
+<div class="mobile-bar">
+  <a href="tel:+442000000000">Call the studio</a>
+  <a class="mb-primary" href="{p}index.html#quote">Get a fixed-fee quote</a>
+</div>
 <script src="{'../' * depth}js/main.js"></script>
 </body>
 </html>
@@ -166,7 +170,7 @@ IMG = {
 
 def project(img, name, meta):
     return f"""      <a class="project" href="projects.html">
-        <img src="{img}" alt="">
+        <img src="{img}" alt="" loading="lazy">
         <div class="p-cap">
           <div class="p-name">{name}</div>
           <div class="p-loc">{meta}</div>
@@ -179,10 +183,10 @@ home_body = f"""
   <div class="hero-grid">
     <div class="hero-copy">
       <h1>Architects for houses, extensions and commercial buildings across London.</h1>
-      <p class="sub">Planning, design and delivery under one roof, with fixed fees agreed in writing before each stage.</p>
+      <p class="sub">Planning, design and delivery, with fixed fees agreed in writing before each stage.</p>
       <div class="hero-ctas">
-        <a class="btn" href="#quote">Free consultation</a>
-        <a class="btn ghost" href="projects.html">See our work</a>
+        <a class="btn" href="#quote">Get a fixed-fee quote</a>
+        <a class="link" href="projects.html">View recent work</a>
       </div>
     </div>
   </div>
@@ -194,68 +198,58 @@ home_body = f"""
 
 {trust_band()}
 
+<section id="services-panels">
+  <div class="wrap">
+    <div class="sec-label"><span>What do you want to build?</span><a class="link" href="services.html">All services</a></div>
+    <div class="svc-panels">
+      <a class="panel" href="#quote" data-project="Extension">
+        <img src="{IMG['p5']}" alt="" loading="lazy">
+        <div class="panel-body"><h3>Extensions</h3><span class="panel-cta">Get a fixed-fee quote</span></div>
+      </a>
+      <a class="panel" href="#quote" data-project="Loft conversion">
+        <img src="{IMG['p8']}" alt="" loading="lazy">
+        <div class="panel-body"><h3>Loft conversions</h3><span class="panel-cta">Get a fixed-fee quote</span></div>
+      </a>
+      <a class="panel" href="#quote" data-project="Refurbishment">
+        <img src="{IMG['p2']}" alt="" loading="lazy">
+        <div class="panel-body"><h3>Refurbishment</h3><span class="panel-cta">Get a fixed-fee quote</span></div>
+      </a>
+      <a class="panel" href="#quote" data-project="New build">
+        <img src="{IMG['p1']}" alt="" loading="lazy">
+        <div class="panel-body"><h3>New homes</h3><span class="panel-cta">Get a fixed-fee quote</span></div>
+      </a>
+      <a class="panel" href="#quote" data-project="Commercial">
+        <img src="{IMG['p3']}" alt="" loading="lazy">
+        <div class="panel-body"><h3>Commercial</h3><span class="panel-cta">Get a fixed-fee quote</span></div>
+      </a>
+      <a class="panel" href="services.html#planning">
+        <img src="{IMG['draw']}" alt="" loading="lazy">
+        <div class="panel-body"><h3>Planning only</h3><span class="panel-cta">How we handle planning</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
-    <div class="sec-label"><span>Selected projects</span><a class="link" href="projects.html">View all projects</a></div>
+    <div class="sec-label"><span>Recent work</span><a class="link" href="projects.html">All projects</a></div>
     <div class="work-grid">
-{project(IMG['p1'],'Willow Road','Hampstead &#183; Private house, 2025')}
-{project(IMG['p2'],'Milner Square','Islington &#183; Refurbishment, 2024')}
-{project(IMG['p3'],'Kestrel Works','Shoreditch &#183; Commercial, 2024')}
-{project(IMG['p4'],'Chepstow House','Notting Hill &#183; Interior, 2024')}
-{project(IMG['p5'],'Cadogan Mews','Chelsea &#183; Extension, 2023')}
-{project(IMG['p6'],'Barnsbury Terrace','Islington &#183; Private house, 2023')}
-    </div>
-  </div>
-</section>
-
-<section id="services-strip">
-  <div class="wrap">
-    <div class="sec-label"><span>What we do</span><a class="link" href="services.html">All services</a></div>
-    <div class="svc-strip">
-      <a class="svc-tile" href="services.html#planning"><h3>Planning Applications</h3><p>Householder, full and listed consents. We know the local plans.</p><span class="t-more">Read more</span></a>
-      <a class="svc-tile" href="services.html#feasibility"><h3>Feasibility Studies</h3><p>Options, planning risk and cost banding before you commit.</p><span class="t-more">Read more</span></a>
-      <a class="svc-tile" href="services.html#bim"><h3>BIM</h3><p>Coordinated 3D models that price accurately and build cleanly.</p><span class="t-more">Read more</span></a>
-      <a class="svc-tile" href="services.html#site-analysis"><h3>Site Analysis</h3><p>Constraints, light, trees, flood risk. Known before design starts.</p><span class="t-more">Read more</span></a>
-      <a class="svc-tile" href="services.html#listed"><h3>Listed Buildings</h3><p>Consent applications and heritage statements that succeed.</p><span class="t-more">Read more</span></a>
-      <a class="svc-tile" href="services.html#conservation"><h3>Conservation Areas</h3><p>Article 4 knowledge. Sympathetic design that gets approved.</p><span class="t-more">Read more</span></a>
-      <a class="svc-tile" href="services.html#principal-designer"><h3>Principal Designer</h3><p>CDM 2015 and Building Safety Act duty-holder services.</p><span class="t-more">Read more</span></a>
-      <a class="svc-tile" href="index.html#quote"><h3>Not sure what you need?</h3><p>Most projects start exactly there.</p><span class="t-more">Ask us</span></a>
-    </div>
-  </div>
-</section>
-
-<section id="team-teaser">
-  <div class="wrap">
-    <div class="sec-label"><span>The team</span><a class="link" href="about.html">Meet everyone</a></div>
-    <div class="team-teaser">
-      <img src="{IMG['team1']}" alt="Founder and Director">
-      <img src="{IMG['team2']}" alt="Head of Planning">
-      <img src="{IMG['team3']}" alt="Technical Director">
-      <img src="{IMG['team4']}" alt="Senior Architect">
+{project(IMG['p1'],'Private house','Hampstead &#183; 2025')}
+{project(IMG['p2'],'Refurbishment','Islington &#183; 2024')}
+{project(IMG['p5'],'Extension','Chelsea &#183; 2023')}
+{project(IMG['p3'],'Commercial','Shoreditch &#183; 2024')}
     </div>
   </div>
 </section>
 
 <section id="reviews">
   <div class="wrap">
-    <div class="sec-label"><span>What clients say</span><a class="link" href="#">Read all 42 reviews on Google</a></div>
-    <div class="quotes">
-      <div class="quote">
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <blockquote>"They listened before they drew. The finished house is exactly what we asked for, and it came in on the budget we agreed at the start."</blockquote>
-        <cite><strong>Sarah &amp; James W.</strong>Private house, Hampstead &#183; 2025</cite>
-      </div>
-      <div class="quote">
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <blockquote>"Planning felt daunting until FADP took it over. Approved first time, and they handled every question from the council without us lifting a finger."</blockquote>
-        <cite><strong>Priya N.</strong>Rear extension, Islington &#183; 2024</cite>
-      </div>
-      <div class="quote">
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <blockquote>"Clear fees, clear timelines, and the same architect from the first meeting to the last site visit. We've already recommended them twice."</blockquote>
-        <cite><strong>Daniel R.</strong>Office fit-out, Shoreditch &#183; 2024</cite>
-      </div>
-    </div>
+    <div class="sec-label"><span>5.0 on Google &#183; 42 reviews</span><a class="link" href="#">Read them all</a></div>
+    <ul class="review-lines">
+      <li>"Approved first time. They handled every question from the council." <span>Priya N. &#183; Islington</span></li>
+      <li>"Exactly what we asked for, on the budget agreed at the start." <span>Sarah &amp; James W. &#183; Hampstead</span></li>
+      <li>"Same architect from first meeting to last site visit." <span>Daniel R. &#183; Shoreditch</span></li>
+    </ul>
   </div>
 </section>
 """
