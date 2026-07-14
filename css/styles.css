@@ -1330,3 +1330,27 @@ header{overflow:visible;}
   .svc-aside{position:relative; top:auto;}
   .svc-lead img{aspect-ratio:3/2;}
 }
+
+/* ================================================================
+   ARTICLE REFERENCES (Harvard)
+   ================================================================ */
+.refs{
+  margin-top:56px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+}
+.refs h2{font-size:19px; font-weight:500; margin:0 0 18px;}
+.refs ul{
+  list-style:none;
+  margin:0; padding:0;
+}
+.refs li{
+  font-size:13.5px;
+  line-height:1.7;
+  color:var(--muted);
+  padding:8px 0 8px 22px;
+  text-indent:-22px;
+  border-bottom:1px solid var(--line);
+}
+.refs li:last-child{border-bottom:none;}
+.refs li em{font-style:italic;}

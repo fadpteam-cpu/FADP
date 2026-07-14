@@ -135,7 +135,7 @@ SERVICES = [
    ("Can I use the study to buy a property?","Yes. Pre-purchase studies are common, and we can usually turn one around inside the conveyancing window. Tell us your deadline at the first call."),
    ("Am I committed to using FADP afterwards?","No. The study is a standalone piece of work with its own fixed fee. Most clients continue with us; some use it to brief another architect or to decide not to proceed. All are fine."),
    ("What does a feasibility study cost?","It depends on the size and complexity of the site, but it is a fixed fee agreed in writing before we start, and it is quoted in your free consultation.")],
-  guide='../blog.html'),
+  guide='../blog/feasibility-studies-before-you-buy.html'),
 
  dict(slug='site-analysis', title='Site Analysis',
   strap='Orientation, daylight, trees, flood risk, boundaries and ground conditions. Established before design begins, not discovered on site.',
@@ -159,7 +159,7 @@ SERVICES = [
    ("Is this included in a full appointment?","Yes. Site analysis is the first stage of every full project. It is also available standalone, for clients who want the ground truth before deciding how to proceed."),
    ("Do you arrange the measured survey?","Yes. We commission the survey, check it on receipt, and take responsibility for the accuracy of what the design is drawn on."),
    ("My site is in a conservation area. Does that change the analysis?","It adds a layer: we screen the designation, any Article 4 directions and the character appraisal, so the constraints report covers heritage from day one.")],
-  guide='../blog.html'),
+  guide='../blog/feasibility-studies-before-you-buy.html'),
 
  dict(slug='bim', title='Building Information Modelling',
   strap='Every project modelled in 3D, coordinated before tender. Clashes found on screen, where they cost nothing.',
@@ -183,7 +183,7 @@ SERVICES = [
    ("Will I be able to see my project in 3D?","Yes. Walkthrough views are part of the design stages, and most clients find decisions much easier in 3D than on plan."),
    ("Does BIM cost more?","The modelling effort sits inside our fixed design fee. On balance it usually saves money, through tighter tender prices and fewer variations on site."),
    ("Do contractors need special software?","No. Contractors receive conventional drawings and schedules; the coordination benefit is baked into what they price.")],
-  guide='../blog.html'),
+  guide='../blog/how-bim-cuts-construction-costs.html'),
 
  dict(slug='listed-buildings', title='Listed Buildings',
   strap='Listed building consent, heritage statements and schedules of works, argued in the language conservation officers use.',
@@ -207,7 +207,7 @@ SERVICES = [
    ("Does everything need consent, even inside?","Almost everything that affects the building's character, inside and out, and sometimes structures in its curtilage. We establish exactly what applies to your building before any design work."),
    ("How long does listed building consent take?","The statutory period is eight weeks, but pre-application discussion with the conservation officer often front-loads the time and shortens the whole process. We plan the route case by case."),
    ("Can I modernise a listed building at all?","Usually yes, and often substantially. The skill is in locating change where significance is lowest and making the case properly. Kitchens, services and extensions are achieved in listed buildings every week.")],
-  guide='../blog.html'),
+  guide='../blog/listed-building-consent.html'),
 
  dict(slug='conservation-areas', title='Conservation Areas',
   strap='Article 4 directions, permitted development checks and applications evidenced by what your council has already approved.',
@@ -231,7 +231,7 @@ SERVICES = [
    ("How do I know if I am in a conservation area?","Your council's policy maps show designations and Article 4 directions. We run this check, with the planning history of your address, as part of the free consultation."),
    ("Can I still extend in a conservation area?","Usually yes. Extensions are approved in conservation areas constantly; the bar is design quality and evidence, which is exactly what an architect is for."),
    ("What is an Article 4 direction?","A direction removing specific permitted development rights in a defined area, meaning works that are normally automatic need a planning application. Many London conservation areas have one.")],
-  guide='../blog.html'),
+  guide='../blog/conservation-area-permitted-development.html'),
 
  dict(slug='principal-designer', title='Principal Designer',
   strap='The legal duty holder role under CDM 2015 and the Building Safety Act 2022, taken formally and recorded properly.',
@@ -255,7 +255,7 @@ SERVICES = [
    ("Does my house extension really need this?","If more than one contractor will be involved, which is almost every project, CDM 2015 requires a Principal Designer to be appointed in writing. It applies to domestic projects."),
    ("Is this included in your full service?","Yes. On full appointments we take the role as standard. We also accept standalone Principal Designer appointments on projects designed by others."),
    ("What is a higher-risk building?","Broadly, residential buildings of at least 18 metres or seven storeys, which fall under the Building Safety Act gateway regime. Duties there are stricter, and we advise case by case.")],
-  guide='../blog.html'),
+  guide='../blog/principal-designer-explained.html'),
 ]
 
 os.makedirs('services', exist_ok=True)

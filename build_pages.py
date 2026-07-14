@@ -42,54 +42,54 @@ def header(active, depth=0):
               <a href="{p}services/planning-applications.html">Planning Permission</a>
               <a href="{p}services/feasibility-studies.html">Feasibility Studies</a>
               <a href="{p}services/site-analysis.html">Site Analysis</a>
-              <a href="{p}services.html">Outbuild Design</a>
-              <a href="{p}services.html">Sunroom</a>
-              <a href="{p}services.html">Dropped Kerb</a>
+              <a href="{p}services/outbuild-design.html">Outbuild Design</a>
+              <a href="{p}services/sunroom.html">Sunroom</a>
+              <a href="{p}services/dropped-kerb.html">Dropped Kerb</a>
             </div>
             <div class="mega-col">
               <h5>Renovation &amp; Remodelling</h5>
-              <a href="{p}index.html?project=Refurbishment#quote">Kitchen Renovation</a>
-              <a href="{p}index.html?project=Refurbishment#quote">Bathroom Renovation</a>
-              <a href="{p}index.html?project=Refurbishment#quote">Bedroom Renovation</a>
-              <a href="{p}services.html">Chimney Removal</a>
+              <a href="{p}services/kitchen-renovation.html">Kitchen Renovation</a>
+              <a href="{p}services/bathroom-renovation.html">Bathroom Renovation</a>
+              <a href="{p}services/bedroom-renovation.html">Bedroom Renovation</a>
+              <a href="{p}services/chimney-removal.html">Chimney Removal</a>
             </div>
             <div class="mega-col">
               <h5>Home Extension</h5>
-              <a href="{p}index.html?project=Extension#quote">Side Extension</a>
-              <a href="{p}index.html?project=Extension#quote">Rear Extension</a>
-              <a href="{p}index.html?project=Extension#quote">Wrap-around Extension</a>
+              <a href="{p}services/side-extension.html">Side Extension</a>
+              <a href="{p}services/rear-extension.html">Rear Extension</a>
+              <a href="{p}services/wrap-around-extension.html">Wrap-around Extension</a>
               <h5 class="stacked">Structural Engineering</h5>
-              <a href="{p}services.html">Wall Removal</a>
-              <a href="{p}services.html">Structural Calculations</a>
+              <a href="{p}services/wall-removal.html">Wall Removal</a>
+              <a href="{p}services/structural-calculations.html">Structural Calculations</a>
             </div>
             <div class="mega-col">
               <h5>Survey &amp; Inspection</h5>
-              <a href="{p}services.html#site-analysis">Crack Inspection</a>
-              <a href="{p}services.html#site-analysis">Structural Inspection</a>
-              <a href="{p}services.html#site-analysis">Snagging Survey</a>
-              <a href="{p}services.html#site-analysis">Property Condition Survey</a>
-              <a href="{p}services.html#site-analysis">Structural Report</a>
+              <a href="{p}services/crack-inspection.html">Crack Inspection</a>
+              <a href="{p}services/structural-inspection.html">Structural Inspection</a>
+              <a href="{p}services/snagging-survey.html">Snagging Survey</a>
+              <a href="{p}services/property-condition-survey.html">Property Condition Survey</a>
+              <a href="{p}services/structural-report.html">Structural Report</a>
             </div>
             <div class="mega-col">
               <h5>Home Conversion</h5>
-              <a href="{p}index.html?project=Loft%20conversion#quote">Loft Conversion</a>
-              <a href="{p}index.html?project=Basement%20conversion#quote">Basement Conversion</a>
-              <a href="{p}services.html">Garage Conversion</a>
-              <a href="{p}services.html">HMO Conversion</a>
-              <a href="{p}services.html">Barn Conversion</a>
-              <a href="{p}services.html">Smart Flat Conversion</a>
+              <a href="{p}services/loft-conversion.html">Loft Conversion</a>
+              <a href="{p}services/basement-conversion.html">Basement Conversion</a>
+              <a href="{p}services/garage-conversion.html">Garage Conversion</a>
+              <a href="{p}services/hmo-conversion.html">HMO Conversion</a>
+              <a href="{p}services/barn-conversion.html">Barn Conversion</a>
+              <a href="{p}services/smart-flat-conversion.html">Smart Flat Conversion</a>
             </div>
             <div class="mega-col">
               <h5>Heritage &amp; Compliance</h5>
               <a href="{p}services/listed-buildings.html">Listed Buildings</a>
               <a href="{p}services/conservation-areas.html">Conservation Areas</a>
               <a href="{p}services/principal-designer.html">Principal Designer</a>
-              <a href="{p}services.html">Party Wall Award</a>
-              <a href="{p}services.html">Boundary Dispute Solutions</a>
-              <a href="{p}services.html">Build Over Agreements</a>
+              <a href="{p}services/party-wall-award.html">Party Wall Award</a>
+              <a href="{p}services/boundary-dispute-solutions.html">Boundary Dispute Solutions</a>
+              <a href="{p}services/build-over-agreements.html">Build Over Agreements</a>
               <h5 class="stacked">New Build Design</h5>
-              <a href="{p}index.html?project=New%20build#quote">New Homes</a>
-              <a href="{p}services.html">Conservatory</a>
+              <a href="{p}services/new-homes.html">New Homes</a>
+              <a href="{p}services/conservatory.html">Conservatory</a>
             </div>
             <div class="mega-foot">
               <span>Not sure where to start?</span>
@@ -564,42 +564,42 @@ blog_body = f"""
       <a class="post-card" href="blog/planning-permission-rear-extension.html">
         <img src="{IMG['p5']}" alt="" loading="lazy">
         <div class="pc-body">
-          <span class="pc-kicker">Planning &#183; 6 min read</span>
+          <span class="pc-kicker">Planning &#183; 7 min read</span>
           <h3>Do you need planning permission for a rear extension?</h3>
         </div>
       </a>
-      <a class="post-card" href="#">
+      <a class="post-card" href="blog/listed-building-consent.html">
         <img src="{IMG['listed']}" alt="" loading="lazy">
         <div class="pc-body">
-          <span class="pc-kicker">Heritage &#183; Coming soon</span>
+          <span class="pc-kicker">Heritage &#183; 8 min read</span>
           <h3>Listed building consent, explained</h3>
         </div>
       </a>
-      <a class="post-card" href="#">
+      <a class="post-card" href="blog/principal-designer-explained.html">
         <img src="{IMG['studio']}" alt="" loading="lazy">
         <div class="pc-body">
-          <span class="pc-kicker">Regulations &#183; Coming soon</span>
+          <span class="pc-kicker">Regulations &#183; 8 min read</span>
           <h3>What does a Principal Designer actually do?</h3>
         </div>
       </a>
-      <a class="post-card" href="#">
+      <a class="post-card" href="blog/conservation-area-permitted-development.html">
         <img src="{IMG['p8']}" alt="" loading="lazy">
         <div class="pc-body">
-          <span class="pc-kicker">Heritage &#183; Coming soon</span>
+          <span class="pc-kicker">Heritage &#183; 7 min read</span>
           <h3>Permitted development in conservation areas</h3>
         </div>
       </a>
-      <a class="post-card" href="#">
+      <a class="post-card" href="blog/how-bim-cuts-construction-costs.html">
         <img src="{IMG['model']}" alt="" loading="lazy">
         <div class="pc-body">
-          <span class="pc-kicker">Technical &#183; Coming soon</span>
-          <h3>How BIM cuts construction costs</h3>
+          <span class="pc-kicker">Technical &#183; 7 min read</span>
+          <h3>How BIM cuts construction costs: the evidence</h3>
         </div>
       </a>
-      <a class="post-card" href="#">
+      <a class="post-card" href="blog/feasibility-studies-before-you-buy.html">
         <img src="{IMG['p7']}" alt="" loading="lazy">
         <div class="pc-body">
-          <span class="pc-kicker">Before you buy &#183; Coming soon</span>
+          <span class="pc-kicker">Before you buy &#183; 6 min read</span>
           <h3>Feasibility studies: what you learn before you spend</h3>
         </div>
       </a>
