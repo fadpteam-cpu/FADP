@@ -71,7 +71,7 @@ header{
   display:flex; align-items:center; justify-content:space-between;
   gap:24px;
 }
-.logo{font-size:16px; font-weight:700; letter-spacing:-0.01em; color:var(--brand);}
+.logo{font-size:24px; font-weight:700; letter-spacing:-0.02em; color:var(--brand);}
 nav.site-nav{display:flex; gap:34px; align-items:center;}
 nav.site-nav a{font-size:14px; color:var(--muted); transition:color .2s;}
 nav.site-nav a:hover{color:var(--ink);}
@@ -457,12 +457,12 @@ section{padding:clamp(104px, 15vh, 184px) 0 0;}
   flex-wrap:wrap;
 }
 .partners-row img{
-  height:44px; width:auto;
+  height:48px; width:auto;
   filter:grayscale(1);
   opacity:.6;
   transition:filter .25s, opacity .25s;
 }
-.partners-row img.tall{height:56px;}
+.partners-row img.tall{height:58px;}
 .partners-row a:hover img{filter:grayscale(0); opacity:1;}
 
 /* ------------------------------------------------ footer */
