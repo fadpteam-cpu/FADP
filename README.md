@@ -23,7 +23,7 @@ favicon.svg / .png  Site icon
 ## Content strategy (why the pages are shaped this way)
 
 Page ratios: Home 70/20/10 visuals/copy/CTA · Projects 80/15/5 · Services 50/40/10 ·
-About 40/50/10 · Guides 20/80. Trust signals (RIBA, ARB, fixed fees, fast turnaround,
+About 40/50/10 · Guides 20/80. Trust signals (fixed fees, fast turnaround, director-led,
 free consultation, reviews) sit in the blue band directly under the home hero so they
 land within seconds. Each service on services.html is a knowledge hub that links to a
 guide on blog.html; publish the "coming soon" guides to build search authority per service.
@@ -76,11 +76,11 @@ Both handlers are marked with comments.
 
 ## Compliance (read before publishing)
 
-- **RIBA / ARB claims are live in the trust band, about page and footer.** These were
-  added per the brand brief. They MUST be true before launch: RIBA Chartered Practice
-  status is a paid registration you can verify at architecture.com; "architect" and
-  ARB registration are legally protected (arb.org.uk). If either is not currently held,
-  remove the claim and change "architects" to "architectural designers" site-wide.
+- **"Architect" is a protected title in the UK.** Only use "architect" where the
+  relevant individuals are on the ARB register (arb.org.uk). If not currently held,
+  change wording to "architectural designers" site-wide before launch. The trust band
+  and credentials row no longer make RIBA/ARB claims by default; add them back only
+  when verifiable.
 - Only display partner logos (RICS, Houzz, Planning Portal) the practice genuinely
   holds or uses, per each organisation's rules.
 - Review figures and testimonials must be real and verifiable.
