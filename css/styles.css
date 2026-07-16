@@ -71,7 +71,7 @@ header{
   display:flex; align-items:center; justify-content:space-between;
   gap:24px;
 }
-.logo{font-size:24px; font-weight:700; letter-spacing:-0.02em; color:var(--brand);}
+.logo{font-size:16px; font-weight:700; letter-spacing:-0.01em; color:var(--brand);}
 nav.site-nav{display:flex; gap:34px; align-items:center;}
 nav.site-nav a{font-size:14px; color:var(--muted); transition:color .2s;}
 nav.site-nav a:hover{color:var(--ink);}
@@ -1354,3 +1354,86 @@ header{overflow:visible;}
 }
 .refs li:last-child{border-bottom:none;}
 .refs li em{font-style:italic;}
+
+/* ================================================================
+   HERO MICRO-TESTIMONIAL
+   ================================================================ */
+.hero-quote{
+  margin-top:36px;
+  padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.25);
+  font-size:15px;
+  line-height:1.6;
+  color:rgba(255,255,255,.85);
+  font-style:italic;
+  max-width:44ch;
+}
+.hero-quote span{
+  display:block;
+  margin-top:6px;
+  font-size:12.5px;
+  font-style:normal;
+  color:rgba(255,255,255,.65);
+  letter-spacing:.02em;
+}
+
+/* ================================================================
+   DIRECTORS STRIP (home page)
+   ================================================================ */
+.directors-strip{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+}
+.director{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:24px;
+  align-items:start;
+}
+.director img{
+  width:140px;
+  height:180px;
+  object-fit:cover;
+}
+.director h3{
+  font-size:19px;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  margin-bottom:4px;
+}
+.director .d-role{
+  font-size:13px;
+  color:var(--brand);
+  font-weight:500;
+  margin-bottom:14px;
+}
+.director .d-body p{
+  font-size:14.5px;
+  line-height:1.65;
+  color:var(--muted);
+  max-width:38ch;
+}
+
+/* ================================================================
+   WIZARD RESPONSE-TIME PROMISE
+   ================================================================ */
+.wiz-promise{
+  margin-top:16px;
+  padding:14px 20px;
+  border-left:2px solid var(--brand);
+  background:var(--bg-2);
+  font-size:14px;
+  font-weight:500;
+  color:var(--ink);
+  max-width:52ch;
+}
+
+@media (max-width:900px){
+  .directors-strip{grid-template-columns:1fr; gap:32px;}
+}
+@media (max-width:560px){
+  .director{grid-template-columns:100px 1fr; gap:18px;}
+  .director img{width:100px; height:130px;}
+  .hero-quote{font-size:14px;}
+}

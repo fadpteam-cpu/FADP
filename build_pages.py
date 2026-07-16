@@ -118,7 +118,6 @@ def trust_band():
       <li>Fast turnaround</li>
       <li>Free consultation</li>
       <li>Director-led projects</li>
-      <li>Est. 2014, London</li>
     </ul>
     <span class="tb-reviews"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 on Google &#183; 42 reviews</span>
   </div>
@@ -251,8 +250,9 @@ home_body = f"""
     <p class="sub">Planning, design and delivery, with fixed fees agreed in writing before each stage.</p>
     <div class="hero-ctas">
       <a class="btn btn-light" href="#quote">Get a fixed-fee quote</a>
-      <a class="link link-light" href="projects.html">View recent work</a>
+      <a class="link link-light" href="projects.html">See our Hampstead project</a>
     </div>
+    <p class="hero-quote">"Approved first time. They handled every question from the council." <span>Priya N., Islington</span></p>
   </div>
   <span class="hero-caption">Willow Road, Hampstead &#183; Planning to completion, 2025</span>
 </div>
@@ -305,7 +305,7 @@ home_body = f"""
 
 <section id="reviews">
   <div class="wrap">
-    <div class="sec-label"><span>What clients say &#183; 5.0 on Google, 42 reviews</span><a class="link" href="#">Read them all</a></div>
+    <div class="sec-label"><span>Verified Google reviews &#183; 5.0 average from 42 clients</span><a class="link" href="#">Read them all</a></div>
     <div class="quotes">
       <div class="quote">
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -321,6 +321,30 @@ home_body = f"""
         <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <blockquote>"Clear fees, clear timelines, and the same architect from the first meeting to the last site visit."</blockquote>
         <cite><strong>Daniel R.</strong>Office fit-out, Shoreditch &#183; 2024</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="directors">
+  <div class="wrap">
+    <div class="sec-label"><span>Who you\'ll work with</span><a class="link" href="about.html">More about the practice</a></div>
+    <div class="directors-strip">
+      <div class="director">
+        <img src="{IMG['team1']}" alt="Aun Naeem, Director" loading="lazy">
+        <div class="d-body">
+          <h3>Aun Naeem</h3>
+          <div class="d-role">Director &#183; Leads design</div>
+          <p>Your first consultation is with a director. So is your last site visit.</p>
+        </div>
+      </div>
+      <div class="director">
+        <img src="{IMG['team2']}" alt="Fatima Shakeel, Director" loading="lazy">
+        <div class="d-body">
+          <h3>Fatima Shakeel</h3>
+          <div class="d-role">Director &#183; Leads planning strategy</div>
+          <p>Reads the local plan before drawing a line. Approvals first time, not argued twice.</p>
+        </div>
       </div>
     </div>
   </div>
