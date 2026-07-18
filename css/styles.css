@@ -1633,3 +1633,96 @@ html{scroll-behavior:smooth;}
   .assurance-line .wrap{gap:10px 28px;}
   body.overlay-hero .hero-overlay{min-height:88svh;}
 }
+
+/* ================================================================
+   UNIFIED IMAGE TREATMENT
+   Magnetic Blue tint over every project image on the site, so
+   photography reads as a single visual system regardless of source.
+   Applied only where images sit as project imagery; leaves logos,
+   partner strip, favicon and article inline images untouched.
+   ================================================================ */
+
+/* Wrapper technique: pseudo-element gradient over the image.
+   We already have positioned parents on most image containers. */
+
+.project,
+.svc-lead,
+.a-lead,
+.pl-img,
+.case,
+.member,
+.director img,
+.svc-img,
+.n-img{
+  position:relative;
+}
+
+.project::after,
+.pl-img::after,
+.a-lead::after,
+.svc-img::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,
+    rgba(5,48,140,0.10) 0%,
+    rgba(5,48,140,0.14) 60%,
+    rgba(10,16,32,0.22) 100%);
+  pointer-events:none;
+  transition:opacity .3s;
+  z-index:1;
+}
+
+/* Slightly warmer tint for the featured case study (larger image) */
+.case::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,
+    rgba(5,48,140,0.08) 0%,
+    rgba(5,48,140,0.14) 100%);
+  pointer-events:none;
+  z-index:1;
+}
+.case > img{position:relative;}
+
+/* On hover, ease the tint out to reveal the underlying photograph */
+.project:hover::after,
+.pl-img:hover::after{
+  opacity:0.4;
+}
+
+/* The home service panels already have their own gradient; leave them alone.
+   Panel-specific rule already handled elsewhere. */
+
+/* Ensure captions and text overlays sit above the tint */
+.project .p-cap,
+.post-lg .pl-body,
+.case .case-body{
+  position:relative;
+  z-index:2;
+}
+
+/* Hero image: slightly darker so white text always reads.
+   The overlay hero already has ::before doing gradient duty — just deepen it. */
+.hero-overlay::before{
+  background:linear-gradient(15deg,
+    rgba(8,12,22,.72) 0%,
+    rgba(8,12,22,.42) 45%,
+    rgba(5,48,140,.18) 100%);
+}
+
+/* Article lead image inside a figure - suppress if already tinted */
+.a-lead{overflow:hidden;}
+
+/* Sub-service and service hub lead images */
+.svc-lead::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,
+    rgba(5,48,140,0.10) 0%,
+    rgba(5,48,140,0.14) 100%);
+  pointer-events:none;
+  z-index:1;
+}
