@@ -110,3 +110,51 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
     if (e.key === 'Escape'){ hm.classList.remove('open'); btn.blur(); }
   });
 })();
+
+
+// ================================================================
+// Motion: scroll reveal + header solidify. Progressive: without JS
+// nothing is ever hidden; classes are only added when JS runs.
+// ================================================================
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Elements that rise in as they enter the viewport
+  var targets = document.querySelectorAll(
+    'section .wrap > *, .assurance-line .wrap, .case, .post-lg, .svc-block, .cta-band .wrap'
+  );
+  targets.forEach(function(el, i){ el.classList.add('will-reveal'); });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+  targets.forEach(function(el){ io.observe(el); });
+
+  // Stagger children of grids slightly
+  document.querySelectorAll('.work-grid, .svc-panels, .quotes, .post-grid, .directors-strip').forEach(function(grid){
+    Array.prototype.forEach.call(grid.children, function(child, i){
+      child.classList.add('will-reveal');
+      child.style.transitionDelay = (i * 90) + 'ms';
+      io.observe(child);
+    });
+  });
+})();
+
+// Header: transparent over the hero, solid after scrolling past it
+(function(){
+  if (!document.body.classList.contains('overlay-hero')) return;
+  var header = document.querySelector('header');
+  if (!header) return;
+  function onScroll(){
+    if (window.scrollY > 60) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();

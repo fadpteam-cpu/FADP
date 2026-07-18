@@ -3,8 +3,9 @@
 import re
 
 # ---------------------------------------------------------------- shared
-def head(title, desc, depth=0):
+def head(title, desc, depth=0, body_class=''):
     p = '../' * depth
+    bc = f' class="{body_class}"' if body_class else ''
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@ def head(title, desc, depth=0):
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{p}css/styles.css">
 </head>
-<body>
+<body{bc}>
 """
 
 def header(active, depth=0):
@@ -246,18 +247,31 @@ home_body = f"""
 <div class="hero-overlay">
   <img class="hero-bg" src="{IMG['hero']}" alt="Willow Road, Hampstead: dining room">
   <div class="hero-content wrap">
-    <h1>Architects for houses, extensions and commercial buildings across London.</h1>
-    <p class="sub">Planning, design and delivery, with fixed fees agreed in writing before each stage.</p>
+    <div class="hero-kicker">Willow Road, Hampstead</div>
+    <h1>Architecture for houses, extensions and commercial buildings across London.</h1>
     <div class="hero-ctas">
       <a class="btn btn-light" href="#quote">Get a fixed-fee quote</a>
-      <a class="link link-light" href="projects.html">See our Hampstead project</a>
     </div>
-    <p class="hero-quote">"Approved first time. They handled every question from the council." <span>Priya N., Islington</span></p>
   </div>
-  <span class="hero-caption">Willow Road, Hampstead &#183; Planning to completion, 2025</span>
 </div>
 
-{trust_band()}
+<div class="assurance-line">
+  <div class="wrap">
+    <span>Fixed written fees</span><span>Free consultation</span><span>Director-led, first meeting to completion</span>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-label"><span>Recent work</span><a class="link" href="projects.html">All projects</a></div>
+    <div class="work-grid">
+{project(IMG['p1'],'Private house','Hampstead &#183; 2025')}
+{project(IMG['p2'],'Refurbishment','Islington &#183; 2024')}
+{project(IMG['p5'],'Extension','Chelsea &#183; 2023')}
+{project(IMG['p3'],'Commercial','Shoreditch &#183; 2024')}
+    </div>
+  </div>
+</section>
 
 <section id="services-panels">
   <div class="wrap">
@@ -287,18 +301,6 @@ home_body = f"""
         <img src="{IMG['draw']}" alt="" loading="lazy">
         <div class="panel-body"><h3>Planning only</h3><span class="panel-cta">How we handle planning</span></div>
       </a>
-    </div>
-  </div>
-</section>
-
-<section id="work">
-  <div class="wrap">
-    <div class="sec-label"><span>Recent work</span><a class="link" href="projects.html">All projects</a></div>
-    <div class="work-grid">
-{project(IMG['p1'],'Private house','Hampstead &#183; 2025')}
-{project(IMG['p2'],'Refurbishment','Islington &#183; 2024')}
-{project(IMG['p5'],'Extension','Chelsea &#183; 2023')}
-{project(IMG['p3'],'Commercial','Shoreditch &#183; 2024')}
     </div>
   </div>
 </section>
@@ -357,7 +359,7 @@ wiz = re.search(r'(<!-- QUOTE WIZARD -->.*?</section>)', cur, re.S).group(1)
 partners = re.search(r'(<!-- PARTNERS -->.*?</section>)', cur, re.S).group(1)
 
 home = head('FADP Architecture &#183; Architects, London',
-            'FADP is an independent architecture practice in London. Planning, design and delivery with fixed written fees. Free consultation.') \
+            'FADP is an independent architecture practice in London. Planning, design and delivery with fixed written fees. Free consultation.', body_class='overlay-hero') \
      + header('home') + home_body + '\n' + wiz + '\n' + partners + '\n' + footer()
 
 # ---------------------------------------------------------------- PROJECTS
@@ -527,17 +529,12 @@ about_body = f"""
   <div class="wrap">
     <div class="narrative">
       <div class="n-copy">
-        <p>FADP was founded in London in 2014 with one conviction: that the difference between a good project and a painful one is rarely the design. It is certainty, about fees, about planning, about who is responsible for what.</p>
+        <p>FADP was founded in London with one conviction: that the difference between a good project and a painful one is rarely the design. It is certainty, about fees, about planning, about who is responsible for what.</p>
         <p class="stand">We are the experts. We know the regulations better than anyone, and we put that knowledge in writing before you spend a pound.</p>
         <p>The practice is built around that promise. Every appointment is broken into clear stages with fixed written fees, and every planning application is grounded in the local plan and the council's own recent decisions. FADP is led by its two directors, so the person you meet at the first consultation is a director of the practice, and stays your point of contact to completion.</p>
-        <p>We work across residential, commercial and heritage projects in London and the South East, from feasibility studies for buyers to full services on listed buildings. Since 2014 the practice has completed over 140 projects and secured approvals with planning authorities across the capital.</p>
+        <p>We work across residential, commercial and heritage projects in London and the South East, from feasibility studies for buyers to full services on listed buildings, with approvals secured with planning authorities across the capital.</p>
         <p>We stay deliberately small. Small enough that nothing is handed down a chain, and senior people do the work you're paying senior fees for.</p>
-        <div class="creds-row">
-          <div class="cred-item"><h4>Est. 2014</h4><p>Independent London practice</p></div>
-          <div class="cred-item"><h4>Director-led</h4><p>Both directors on every project</p></div>
-          <div class="cred-item"><h4>PII</h4><p>Full professional indemnity insurance</p></div>
-          <div class="cred-item"><h4>Fixed fees</h4><p>Written before every stage</p></div>
-        </div>
+        <p class="creds-line">Independent and director-led, with full professional indemnity insurance and fixed fees put in writing before every stage.</p>
       </div>
       <div class="n-img">
         <img src="{IMG['studio']}" alt="The FADP studio">
@@ -576,55 +573,68 @@ about = head('About &#183; FADP Architecture',
 blog_body = f"""
 <div class="page-hero">
   <div class="wrap">
-    <div class="crumbs"><a href="index.html">Home</a> &#183; Blog</div>
-    <h1>Blog</h1>
-    <p class="lede">Plain-English answers to the questions clients ask us most, written by the people who deal with the regulations daily.</p>
+    <div class="ph-row">
+      <h1>Blog</h1>
+      <span class="ph-count">6 articles</span>
+    </div>
   </div>
 </div>
 
-<section>
+<section class="posts-lg-wrap">
   <div class="wrap">
-    <div class="post-grid">
-      <a class="post-card" href="blog/planning-permission-rear-extension.html">
-        <img src="{IMG['p5']}" alt="" loading="lazy">
-        <div class="pc-body">
-          <span class="pc-kicker">Planning &#183; 7 min read</span>
+    <div class="posts-lg">
+      <a class="post-lg" href="blog/planning-permission-rear-extension.html">
+        <div class="pl-img"><img src="{IMG['p5']}" alt="" loading="lazy"></div>
+        <div class="pl-body">
+          <span class="pl-kicker">Planning &#183; 7 min read</span>
           <h3>Do you need planning permission for a rear extension?</h3>
+          <p>Often not, thanks to permitted development. But the exceptions catch people out every week. The rules, referenced to the legislation.</p>
+          <span class="pl-more">Read article</span>
         </div>
       </a>
-      <a class="post-card" href="blog/listed-building-consent.html">
-        <img src="{IMG['listed']}" alt="" loading="lazy">
-        <div class="pc-body">
-          <span class="pc-kicker">Heritage &#183; 8 min read</span>
+      <a class="post-lg" href="blog/listed-building-consent.html">
+        <div class="pl-img"><img src="{IMG['listed']}" alt="" loading="lazy"></div>
+        <div class="pl-body">
+          <span class="pl-kicker">Heritage &#183; 8 min read</span>
           <h3>Listed building consent, explained</h3>
+          <p>A separate regime with its own tests and, unusually, criminal liability. How the system actually works, and how consent is won.</p>
+          <span class="pl-more">Read article</span>
         </div>
       </a>
-      <a class="post-card" href="blog/principal-designer-explained.html">
-        <img src="{IMG['studio']}" alt="" loading="lazy">
-        <div class="pc-body">
-          <span class="pc-kicker">Regulations &#183; 8 min read</span>
+      <a class="post-lg" href="blog/principal-designer-explained.html">
+        <div class="pl-img"><img src="{IMG['studio']}" alt="" loading="lazy"></div>
+        <div class="pl-body">
+          <span class="pl-kicker">Regulations &#183; 8 min read</span>
           <h3>What does a Principal Designer actually do?</h3>
+          <p>The law requires one on almost every project, and if nobody is appointed the duties land on you. Two roles, two Acts, untangled.</p>
+          <span class="pl-more">Read article</span>
         </div>
       </a>
-      <a class="post-card" href="blog/conservation-area-permitted-development.html">
-        <img src="{IMG['p8']}" alt="" loading="lazy">
-        <div class="pc-body">
-          <span class="pc-kicker">Heritage &#183; 7 min read</span>
+      <a class="post-lg" href="blog/conservation-area-permitted-development.html">
+        <div class="pl-img"><img src="{IMG['p8']}" alt="" loading="lazy"></div>
+        <div class="pl-body">
+          <span class="pl-kicker">Heritage &#183; 7 min read</span>
           <h3>Permitted development in conservation areas</h3>
+          <p>Which rights survive designation, which are removed automatically, and what an Article 4 direction takes away street by street.</p>
+          <span class="pl-more">Read article</span>
         </div>
       </a>
-      <a class="post-card" href="blog/how-bim-cuts-construction-costs.html">
-        <img src="{IMG['model']}" alt="" loading="lazy">
-        <div class="pc-body">
-          <span class="pc-kicker">Technical &#183; 7 min read</span>
+      <a class="post-lg" href="blog/how-bim-cuts-construction-costs.html">
+        <div class="pl-img"><img src="{IMG['model']}" alt="" loading="lazy"></div>
+        <div class="pl-body">
+          <span class="pl-kicker">Technical &#183; 7 min read</span>
           <h3>How BIM cuts construction costs: the evidence</h3>
+          <p>Government measured it: benefits of 1.5 to 3 percent of whole-life cost. Where the money is saved, with the studies cited.</p>
+          <span class="pl-more">Read article</span>
         </div>
       </a>
-      <a class="post-card" href="blog/feasibility-studies-before-you-buy.html">
-        <img src="{IMG['p7']}" alt="" loading="lazy">
-        <div class="pc-body">
-          <span class="pc-kicker">Before you buy &#183; 6 min read</span>
+      <a class="post-lg" href="blog/feasibility-studies-before-you-buy.html">
+        <div class="pl-img"><img src="{IMG['p7']}" alt="" loading="lazy"></div>
+        <div class="pl-body">
+          <span class="pl-kicker">Before you buy &#183; 6 min read</span>
           <h3>Feasibility studies: what you learn before you spend</h3>
+          <p>What can be built, will it get planning, and what will it cost. The cheapest decision on the whole project, made first.</p>
+          <span class="pl-more">Read article</span>
         </div>
       </a>
     </div>
