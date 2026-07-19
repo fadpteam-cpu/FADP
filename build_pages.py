@@ -212,25 +212,25 @@ def councils(depth=0):
 
 U = 'https://images.unsplash.com/'
 IMG = {
-    'hero':  U+'photo-1600607687939-ce8a6c25118c?w=2200&q=90',
-    'p1':    U+'photo-1600585154340-be6161a56a0c?w=1200&q=90',
-    'p2':    U+'photo-1600566753086-00f18fb6b3ea?w=1200&q=90',
-    'p3':    U+'photo-1512917774080-9991f1c4c750?w=1200&q=90',
-    'p4':    U+'photo-1600607687920-4e2a09cf159d?w=1200&q=90',
-    'p5':    U+'photo-1600210492486-724fe5c67fb0?w=1200&q=90',
-    'p6':    U+'photo-1600566752355-35792bedcfea?w=1200&q=90',
-    'p7':    U+'photo-1600585152220-90363fe7e115?w=1200&q=90',
-    'p8':    U+'photo-1600573472591-ee6981cf35b6?w=1200&q=90',
-    'p9':    U+'photo-1600047509807-ba8f99d2cdde?w=1200&q=90',
-    'studio':U+'photo-1503387762-592deb58ef4e?w=1400&q=90',
-    'draw':  U+'photo-1581092160562-40aa08e78837?w=1200&q=90',
-    'model': U+'photo-1503389152951-9f343605f61e?w=1200&q=90',
-    'site':  U+'photo-1541888946425-d81bb19240f5?w=1200&q=90',
-    'listed':U+'photo-1518780664697-55e3ad937233?w=1200&q=90',
-    'team1': U+'photo-1560250097-0b93528c311a?w=800&q=85',
-    'team2': U+'photo-1573496359142-b8d87734a5a2?w=800&q=85',
-    'team3': U+'photo-1519085360753-af0119f7cbe7?w=800&q=85',
-    'team4': U+'photo-1580489944761-15a19d654956?w=800&q=85',
+    'hero':    U+'photo-1754063257992-bb9eabdbdd86?w=1200&q=90',  # modern home extension with large windows (Brett Jordan, UK)
+    'p1':      U+'photo-1601303981881-f630d27a7df5?w=1200&q=90',  # brown and white concrete building (Brett Jordan, UK series)
+    'p2':      U+'photo-1502005097973-6a7082348e28?w=1200&q=90',  # white wooden kitchen island and cupboards (Jason Briscoe)
+    'p3':      U+'photo-1656161653385-43423cc7d009?w=1200&q=90',  # London brick building with black door (Samuel Regan-Asante)
+    'p4':      U+'photo-1593012671976-1422185230fb?w=1200&q=90',  # brown wooden ladder beside brown wooden wall (Brett Jordan, UK)
+    'p5':      U+'photo-1593786267440-550458cc882a?w=1200&q=90',  # brown brick building daytime (Brett Jordan, UK)
+    'p6':      U+'photo-1510265119258-db115b0e8172?w=1200&q=90',  # brown pavement road between trees and house (Bruno Martins)
+    'p7':      U+'photo-1606383446056-eb3fc3cde97b?w=1200&q=90',  # white and brown concrete building (Brett Jordan, UK)
+    'p8':      U+'photo-1593623671658-6b842c7f9697?w=1200&q=90',  # brown and white concrete building daytime (Brett Jordan, UK)
+    'p9':      U+'photo-1588021624472-f8345116c8f2?w=1200&q=90',  # beige concrete building near green trees (london.nanzhi)
+    'studio':  U+'photo-1503387762-592deb58ef4e?w=1200&q=90',  # architectural desk / studio interior
+    'draw':    U+'photo-1581092160562-40aa08e78837?w=1200&q=90',  # architectural drawings
+    'model':   U+'photo-1503389152951-9f343605f61e?w=1200&q=90',  # 3D model / drawings
+    'site':    U+'photo-1632143697739-5559b57ac985?w=1200&q=90',  # UK house under construction with ladder (Brett Jordan)
+    'listed':  U+'photo-1685352497061-90c7733ec95c?w=1200&q=90',  # tall brick building with blue shutters (Ries Bosch)
+    'team1':   U+'photo-1560250097-0b93528c311a?w=1200&q=90',  # professional headshot
+    'team2':   U+'photo-1573496359142-b8d87734a5a2?w=1200&q=90',  # professional headshot
+    'team3':   U+'photo-1519085360753-af0119f7cbe7?w=1200&q=90',  # professional headshot
+    'team4':   U+'photo-1580489944761-15a19d654956?w=1200&q=90',  # professional headshot
 }
 
 def project(img, name, meta):
