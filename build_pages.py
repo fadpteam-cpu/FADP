@@ -212,25 +212,35 @@ def councils(depth=0):
 
 U = 'https://images.unsplash.com/'
 IMG = {
-    'hero':    U+'photo-1754063257992-bb9eabdbdd86?w=1200&q=90',  # modern home extension with large windows (Brett Jordan, UK)
-    'p1':      U+'photo-1601303981881-f630d27a7df5?w=1200&q=90',  # brown and white concrete building (Brett Jordan, UK series)
-    'p2':      U+'photo-1502005097973-6a7082348e28?w=1200&q=90',  # white wooden kitchen island and cupboards (Jason Briscoe)
-    'p3':      U+'photo-1656161653385-43423cc7d009?w=1200&q=90',  # London brick building with black door (Samuel Regan-Asante)
-    'p4':      U+'photo-1593012671976-1422185230fb?w=1200&q=90',  # brown wooden ladder beside brown wooden wall (Brett Jordan, UK)
-    'p5':      U+'photo-1593786267440-550458cc882a?w=1200&q=90',  # brown brick building daytime (Brett Jordan, UK)
-    'p6':      U+'photo-1510265119258-db115b0e8172?w=1200&q=90',  # brown pavement road between trees and house (Bruno Martins)
-    'p7':      U+'photo-1606383446056-eb3fc3cde97b?w=1200&q=90',  # white and brown concrete building (Brett Jordan, UK)
-    'p8':      U+'photo-1593623671658-6b842c7f9697?w=1200&q=90',  # brown and white concrete building daytime (Brett Jordan, UK)
-    'p9':      U+'photo-1588021624472-f8345116c8f2?w=1200&q=90',  # beige concrete building near green trees (london.nanzhi)
+    # -------- Hero: original kitchen interior --------
+    'hero':    U+'photo-1600607687939-ce8a6c25118c?w=2200&q=90',  # modern kitchen interior with breakfast bar and pendant lights
+
+    # -------- Projects: verified finished interiors + UK exteriors --------
+    # Interiors (kitchens, refurbishments, extensions, new-build interiors)
+    'p1':      U+'photo-1600607687939-ce8a6c25118c?w=1200&q=90',  # finished kitchen interior (repeats hero — Willow Road hero case study)
+    'p2':      U+'photo-1502005097973-6a7082348e28?w=1200&q=90',  # white kitchen island (Jason Briscoe, verified finished)
+    'p4':      U+'photo-1600607687939-ce8a6c25118c?w=1200&q=90',  # same finished kitchen (Chepstow, Notting Hill refurb)
+    'p5':      U+'photo-1502005097973-6a7082348e28?w=1200&q=90',  # finished kitchen (Cadogan Mews extension)
+    'p7':      U+'photo-1600607687939-ce8a6c25118c?w=1200&q=90',  # finished kitchen (Elder Yard new build)
+
+    # UK exteriors (verified from earlier Unsplash fetches)
+    'p3':      U+'photo-1683619589011-a0a8c7260029?w=1200&q=90',  # Clapham brick building (Regan-Asante) — Shoreditch commercial
+    'p6':      U+'photo-1509732499382-20be2145852e?w=1200&q=90',  # Kensington doorway (Bruno Martins) — Barnsbury private house
+    'p8':      U+'photo-1512359953714-f0c9a632ab85?w=1200&q=90',  # Portobello Road (Bethany Opler) — Rowan House Highgate
+    'p9':      U+'photo-1683619589011-a0a8c7260029?w=1200&q=90',  # Clapham brick (repeats p3) — Fenwick Studios Peckham
+
+    # -------- Contextual images (studio/technical/heritage) --------
     'studio':  U+'photo-1503387762-592deb58ef4e?w=1200&q=90',  # architectural desk / studio interior
     'draw':    U+'photo-1581092160562-40aa08e78837?w=1200&q=90',  # architectural drawings
     'model':   U+'photo-1503389152951-9f343605f61e?w=1200&q=90',  # 3D model / drawings
-    'site':    U+'photo-1632143697739-5559b57ac985?w=1200&q=90',  # UK house under construction with ladder (Brett Jordan)
-    'listed':  U+'photo-1685352497061-90c7733ec95c?w=1200&q=90',  # tall brick building with blue shutters (Ries Bosch)
-    'team1':   U+'photo-1560250097-0b93528c311a?w=1200&q=90',  # professional headshot
-    'team2':   U+'photo-1573496359142-b8d87734a5a2?w=1200&q=90',  # professional headshot
-    'team3':   U+'photo-1519085360753-af0119f7cbe7?w=1200&q=90',  # professional headshot
-    'team4':   U+'photo-1580489944761-15a19d654956?w=1200&q=90',  # professional headshot
+    'site':    U+'photo-1502005097973-6a7082348e28?w=1200&q=90',  # finished kitchen (was construction — now shows finished work)
+    'listed':  U+'photo-1509732499382-20be2145852e?w=1200&q=90',  # Kensington heritage doorway (Bruno Martins)
+
+    # -------- Team headshots (neutral professional) --------
+    'team1':   U+'photo-1560250097-0b93528c311a?w=800&q=85',
+    'team2':   U+'photo-1573496359142-b8d87734a5a2?w=800&q=85',
+    'team3':   U+'photo-1519085360753-af0119f7cbe7?w=800&q=85',
+    'team4':   U+'photo-1580489944761-15a19d654956?w=800&q=85',
 }
 
 def project(img, name, meta):
