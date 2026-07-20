@@ -103,7 +103,6 @@ def header(active, depth=0):
       {a('blog.html','Blog','blog')}
     </nav>
     <div class="header-right">
-      <a class="header-tel" href="tel:+442000000000">020 0000 0000</a>
       <a class="btn header-btn" href="{p}index.html#quote">Get a quote</a>
       <button class="menu-btn">Menu</button>
     </div>
@@ -153,7 +152,6 @@ def footer(depth=0):
         London EC2A 4NA<br>
         United Kingdom
       </address>
-      <a class="f-tel" href="tel:+442000000000">Tel: 020 0000 0000</a>
       <a class="f-tel" href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
     </div>
     <div class="footer-col">
@@ -189,11 +187,11 @@ def footer(depth=0):
     </div>
   </div>
   <div class="footer-legal">
-    <span>&#169; 2026 FADP Architecture Ltd &#183; Registered in England &amp; Wales, No. 00000000</span>
+    <span>&#169; 2026 Fa Design Partners Limited, trading as FADP Architecture &#183; Registered in England &amp; Wales, company no. 17331773 &#183; Registered office: 66 Paul Street, London EC2A 4NA</span>
   </div>
 </footer>
 <div class="mobile-bar">
-  <a href="tel:+442000000000">Call the studio</a>
+  <a href="mailto:design@fadp.co.uk">Email the studio</a>
   <a class="mb-primary" href="{p}index.html#quote">Get a fixed-fee quote</a>
 </div>
 <script src="{'../' * depth}js/main.js"></script>
@@ -262,12 +260,6 @@ home_body = f"""
     <div class="hero-ctas">
       <a class="btn btn-light" href="#quote">Get a fixed-fee quote</a>
     </div>
-  </div>
-</div>
-
-<div class="assurance-line">
-  <div class="wrap">
-    <span>Fixed written fees</span><span>Free consultation</span><span>Director-led, first meeting to completion</span>
   </div>
 </div>
 

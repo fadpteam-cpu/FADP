@@ -58,7 +58,6 @@ def service_page(slug, title, strap, img, intro, includes, steps, why, faqs, gui
           </ul>
           <a class="btn" href="../index.html#quote">Get a fixed-fee quote</a>
           <div class="aside-contact">
-            <a href="tel:+442000000000">020 0000 0000</a>
             <a href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
           </div>
         </div>

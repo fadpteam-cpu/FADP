@@ -76,7 +76,6 @@ nav.site-nav{display:flex; gap:34px; align-items:center;}
 nav.site-nav a{font-size:14px; color:var(--muted); transition:color .2s;}
 nav.site-nav a:hover{color:var(--ink);}
 .header-right{display:flex; align-items:center; gap:20px;}
-.header-tel{font-size:14px; font-weight:500; color:var(--ink);}
 .header-btn{font-size:13.5px; padding:10px 16px;}
 .menu-btn{display:none; font-size:14px; background:none; border:1px solid var(--line); padding:8px 14px; color:var(--ink);}
 
@@ -91,13 +90,7 @@ nav.site-nav a:hover{color:var(--ink);}
   margin-bottom:clamp(40px, 6vh, 64px);
 }
 .hero-copy{grid-column:1 / span 7;}
-.hero-copy h1{
-  font-size:clamp(34px, 4.6vw, 68px);
-  font-weight:300;
-  line-height:1.12;
-  letter-spacing:-0.025em;
-  max-width:18ch;
-}
+.hero-copy h1{font-size:clamp(44px, 6.5vw, 88px); font-weight:300; letter-spacing:-0.035em; line-height:1.02;}
 .hero-copy .sub{
   margin-top:26px;
   font-size:17px;
@@ -261,12 +254,7 @@ section{padding:clamp(104px, 15vh, 184px) 0 0;}
   gap:48px 24px;
 }
 .contact-lead{grid-column:1 / span 5;}
-.contact-lead h2{
-  font-size:clamp(22px, 2.4vw, 30px);
-  font-weight:500;
-  line-height:1.3;
-  max-width:20ch;
-}
+.contact-lead h2{font-size:clamp(32px, 3.8vw, 52px); font-weight:300; letter-spacing:-0.03em; line-height:1.08;}
 .contact-lead > p{
   margin-top:16px;
   font-size:15px;
@@ -567,8 +555,7 @@ footer{
 /* ------------------------------------------------ responsive */
 @media (max-width:980px){
   nav.site-nav{display:none;}
-  .header-tel{display:none;}
-  .menu-btn{display:block;}
+    .menu-btn{display:block;}
   .hero-copy{grid-column:1 / -1;}
   .hero-proof{grid-column:1 / -1; border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:20px;}
   .hero-proof .row{margin-bottom:0;}
@@ -1496,12 +1483,15 @@ header{overflow:visible;}
 
 /* --- Hero: kicker + single statement, F+P grammar --- */
 .hero-kicker{
-  font-size:13px;
-  letter-spacing:.14em;
+  font-size:12px;
+  letter-spacing:.24em;
   text-transform:uppercase;
   font-weight:500;
-  color:rgba(255,255,255,.75);
-  margin-bottom:22px;
+  color:rgba(255,255,255,.85);
+  margin-bottom:36px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,.35);
+  display:inline-block;
 }
 .hero-overlay .hero-content{
   align-self:flex-end;
@@ -1514,23 +1504,7 @@ header{overflow:visible;}
 .hero-content h1{max-width:16ch;}
 .hero-content .hero-ctas{margin-top:40px;}
 
-/* --- Assurance line: the trust band, unboxed --- */
-.assurance-line{
-  border-bottom:1px solid var(--line);
-}
-.assurance-line .wrap{
-  display:flex;
-  justify-content:center;
-  gap:14px 56px;
-  flex-wrap:wrap;
-  padding-top:26px;
-  padding-bottom:26px;
-}
-.assurance-line span{
-  font-size:13.5px;
-  color:var(--muted);
-  letter-spacing:.01em;
-}
+
 
 /* --- Transparent header over the hero (home), solidifies on scroll --- */
 body.overlay-hero header{
@@ -1543,8 +1517,7 @@ body.overlay-hero header{
 body.overlay-hero header .logo,
 body.overlay-hero header nav a,
 body.overlay-hero header .mega-btn,
-body.overlay-hero header .header-tel{color:#FFFFFF;}
-body.overlay-hero header nav a[aria-current="page"]{color:#FFFFFF; text-decoration-color:#FFFFFF;}
+body.overlay-hero header body.overlay-hero header nav a[aria-current="page"]{color:#FFFFFF; text-decoration-color:#FFFFFF;}
 body.overlay-hero header .btn.header-btn{
   background:#FFFFFF; color:var(--brand); border-color:#FFFFFF;
 }
@@ -1561,8 +1534,7 @@ body.overlay-hero header:has(.has-mega.open) .mega-btn,
 body.overlay-hero header:has(.has-mega.open) .header-tel,
 body.overlay-hero header:has(.has-mega:hover) nav a,
 body.overlay-hero header:has(.has-mega:hover) .mega-btn,
-body.overlay-hero header:has(.has-mega:hover) .header-tel{color:var(--muted);}
-body.overlay-hero header:has(.has-mega.open) nav a:hover,
+body.overlay-hero header:has(.has-mega:hover) body.overlay-hero header:has(.has-mega.open) nav a:hover,
 body.overlay-hero header:has(.has-mega.open) .mega-btn:hover,
 body.overlay-hero header:has(.has-mega:hover) nav a:hover,
 body.overlay-hero header:has(.has-mega:hover) .mega-btn:hover{color:var(--ink);}
@@ -1573,8 +1545,7 @@ body.overlay-hero header:has(.has-mega:hover) .btn.header-btn{
 body.overlay-hero header.scrolled .logo{color:var(--brand);}
 body.overlay-hero header.scrolled nav a,
 body.overlay-hero header.scrolled .mega-btn,
-body.overlay-hero header.scrolled .header-tel{color:var(--muted);}
-body.overlay-hero header.scrolled nav a:hover,
+body.overlay-hero header.scrolled body.overlay-hero header.scrolled nav a:hover,
 body.overlay-hero header.scrolled .mega-btn:hover{color:var(--ink);}
 body.overlay-hero header.scrolled nav a[aria-current="page"]{color:var(--ink); text-decoration-color:var(--brand);}
 body.overlay-hero header.scrolled .btn.header-btn{
@@ -1675,8 +1646,7 @@ html{scroll-behavior:smooth;}
 
 @media (max-width:800px){
   .post-lg{grid-template-columns:1fr; gap:24px;}
-  .assurance-line .wrap{gap:10px 28px;}
-  body.overlay-hero .hero-overlay{min-height:88svh;}
+    body.overlay-hero .hero-overlay{min-height:88svh;}
 }
 
 /* ================================================================
@@ -1770,4 +1740,191 @@ html{scroll-behavior:smooth;}
     rgba(5,48,140,0.14) 100%);
   pointer-events:none;
   z-index:1;
+}
+
+
+/* ================================================================
+   TYPOGRAPHY AS DESIGN — v2 refinement
+   ================================================================ */
+
+.hero-content h1{
+  font-size:clamp(48px, 7.2vw, 108px);
+  font-weight:300;
+  letter-spacing:-0.045em;
+  line-height:.98;
+  max-width:14ch;
+  margin-bottom:0;
+}
+
+/* Section labels: bigger, ink, no border, tight tracking */
+.sec-label{
+  font-size:clamp(28px, 3.4vw, 44px);
+  font-weight:300;
+  letter-spacing:-0.03em;
+  line-height:1.05;
+  border-bottom:none;
+  padding-bottom:0;
+  margin-bottom:64px;
+}
+.sec-label > span{color:var(--ink);}
+.sec-label .link{
+  font-size:13px;
+  font-weight:500;
+  color:var(--muted);
+  letter-spacing:.02em;
+  align-self:end;
+}
+
+/* Project cards: caption typography as element */
+.project .p-name{
+  font-size:24px;
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.1;
+}
+.project .p-meta{
+  font-size:13px;
+  letter-spacing:.02em;
+  color:var(--muted);
+}
+
+/* Panel labels bigger, tighter */
+.panel-body h3{
+  font-size:clamp(30px, 3.4vw, 44px);
+  font-weight:300;
+  letter-spacing:-0.03em;
+  line-height:1.05;
+}
+
+/* Case study headline: display */
+.case h3{
+  font-size:clamp(36px, 4vw, 56px);
+  font-weight:300;
+  letter-spacing:-0.035em;
+  line-height:1.05;
+}
+
+/* Blog post row headline: bigger, lighter */
+.post-lg h3{
+  font-size:clamp(28px, 3.6vw, 48px);
+  font-weight:300;
+  letter-spacing:-0.03em;
+  line-height:1.05;
+}
+.post-lg .pl-kicker{
+  font-size:11.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--brand);
+  margin-bottom:22px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--line);
+  display:inline-block;
+}
+.post-lg .pl-more{
+  font-size:12.5px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:500;
+  border-bottom:none;
+  padding-bottom:0;
+}
+.post-lg .pl-more::after{
+  content:" →";
+  transition:transform .3s;
+  display:inline-block;
+}
+.post-lg:hover .pl-more::after{transform:translateX(4px);}
+
+/* Article body: reading rhythm */
+.article h1{
+  font-size:clamp(38px, 5.2vw, 68px);
+  font-weight:300;
+  letter-spacing:-0.035em;
+  line-height:1.02;
+  margin-bottom:24px;
+}
+.article .a-meta{
+  font-size:11.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--brand);
+  margin-bottom:56px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--line);
+}
+
+/* Page-hero titles on subpages: full display */
+.page-hero h1{
+  font-size:clamp(42px, 6vw, 92px);
+  font-weight:300;
+  letter-spacing:-0.04em;
+  line-height:1;
+}
+.page-hero .crumbs{
+  font-size:11.5px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+.page-hero .lede{
+  font-size:clamp(22px, 2.4vw, 28px);
+  font-weight:300;
+  letter-spacing:-0.015em;
+  line-height:1.35;
+  color:var(--ink);
+  margin-top:32px;
+  max-width:38ch;
+}
+
+/* About stand paragraph even larger */
+.narrative .n-copy p.stand{
+  font-size:clamp(32px, 3.6vw, 44px);
+  font-weight:300;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+  max-width:20ch;
+  color:var(--brand);
+  margin:48px 0;
+}
+
+/* Footer: firm registration details typography */
+.f-legal{
+  font-size:11.5px;
+  letter-spacing:.02em;
+  line-height:1.7;
+  color:rgba(255,255,255,.55);
+  max-width:76ch;
+}
+
+/* Header type refined */
+header .logo{
+  font-size:17px;
+  font-weight:500;
+  letter-spacing:-0.01em;
+}
+header nav a{
+  font-size:14px;
+  letter-spacing:-0.005em;
+}
+
+/* Buttons: label typography */
+.btn{
+  font-size:13px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-weight:500;
+  padding:16px 28px;
+}
+
+/* Quote wizard: heading as display */
+.wiz-title{
+  font-size:clamp(36px, 4.6vw, 64px);
+  font-weight:300;
+  letter-spacing:-0.035em;
+  line-height:1;
 }
