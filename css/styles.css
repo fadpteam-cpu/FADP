@@ -90,7 +90,7 @@ nav.site-nav a:hover{color:var(--ink);}
   margin-bottom:clamp(40px, 6vh, 64px);
 }
 .hero-copy{grid-column:1 / span 7;}
-.hero-copy h1{font-size:clamp(44px, 6.5vw, 88px); font-weight:300; letter-spacing:-0.035em; line-height:1.02;}
+.hero-copy h1{font-size:clamp(34px, 3.8vw, 54px); font-weight:400; letter-spacing:-0.025em; line-height:1.1;}
 .hero-copy .sub{
   margin-top:26px;
   font-size:17px;
@@ -148,8 +148,8 @@ section{padding:clamp(104px, 15vh, 184px) 0 0;}
   grid-template-columns:repeat(2, 1fr);
   gap:72px 40px;
 }
-.project img{width:100%; aspect-ratio:3/2; object-fit:cover;}
-.project .p-cap{padding-top:18px; font-size:14.5px; line-height:1.6; display:flex; justify-content:space-between; gap:24px;}
+.project{background:transparent;} .project img{width:100%; aspect-ratio:3/2; object-fit:cover; display:block;}
+.project .p-cap{padding-top:20px; padding-bottom:4px; background:transparent; font-size:14.5px; line-height:1.6; display:flex; justify-content:space-between; gap:24px;}
 .project .p-name{color:var(--ink); font-weight:500;}
 .project .p-loc{color:var(--muted);}
 .project:hover .p-name{text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px;}
@@ -254,7 +254,7 @@ section{padding:clamp(104px, 15vh, 184px) 0 0;}
   gap:48px 24px;
 }
 .contact-lead{grid-column:1 / span 5;}
-.contact-lead h2{font-size:clamp(32px, 3.8vw, 52px); font-weight:300; letter-spacing:-0.03em; line-height:1.08;}
+.contact-lead h2{font-size:clamp(26px, 3vw, 40px); font-weight:400; letter-spacing:-0.02em; line-height:1.15;}
 .contact-lead > p{
   margin-top:16px;
   font-size:15px;
@@ -1679,10 +1679,7 @@ html{scroll-behavior:smooth;}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,
-    rgba(5,48,140,0.10) 0%,
-    rgba(5,48,140,0.14) 60%,
-    rgba(10,16,32,0.22) 100%);
+  background:rgba(5,48,140,0.06);
   pointer-events:none;
   transition:opacity .3s;
   z-index:1;
@@ -1693,9 +1690,7 @@ html{scroll-behavior:smooth;}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,
-    rgba(5,48,140,0.08) 0%,
-    rgba(5,48,140,0.14) 100%);
+  background:rgba(5,48,140,0.05);
   pointer-events:none;
   z-index:1;
 }
@@ -1735,9 +1730,7 @@ html{scroll-behavior:smooth;}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,
-    rgba(5,48,140,0.10) 0%,
-    rgba(5,48,140,0.14) 100%);
+  background:rgba(5,48,140,0.06);
   pointer-events:none;
   z-index:1;
 }
@@ -1748,23 +1741,23 @@ html{scroll-behavior:smooth;}
    ================================================================ */
 
 .hero-content h1{
-  font-size:clamp(48px, 7.2vw, 108px);
+  font-size:clamp(36px, 4.4vw, 62px);
   font-weight:300;
-  letter-spacing:-0.045em;
-  line-height:.98;
-  max-width:14ch;
+  letter-spacing:-0.03em;
+  line-height:1.05;
+  max-width:18ch;
   margin-bottom:0;
 }
 
 /* Section labels: bigger, ink, no border, tight tracking */
 .sec-label{
-  font-size:clamp(28px, 3.4vw, 44px);
-  font-weight:300;
-  letter-spacing:-0.03em;
-  line-height:1.05;
+  font-size:clamp(22px, 2.4vw, 32px);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.15;
   border-bottom:none;
   padding-bottom:0;
-  margin-bottom:64px;
+  margin-bottom:56px;
 }
 .sec-label > span{color:var(--ink);}
 .sec-label .link{
@@ -1790,26 +1783,26 @@ html{scroll-behavior:smooth;}
 
 /* Panel labels bigger, tighter */
 .panel-body h3{
-  font-size:clamp(30px, 3.4vw, 44px);
-  font-weight:300;
-  letter-spacing:-0.03em;
-  line-height:1.05;
+  font-size:clamp(22px, 2.4vw, 30px);
+  font-weight:500;
+  letter-spacing:-0.015em;
+  line-height:1.2;
 }
 
 /* Case study headline: display */
 .case h3{
-  font-size:clamp(36px, 4vw, 56px);
-  font-weight:300;
-  letter-spacing:-0.035em;
-  line-height:1.05;
+  font-size:clamp(28px, 3vw, 40px);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.15;
 }
 
 /* Blog post row headline: bigger, lighter */
 .post-lg h3{
-  font-size:clamp(28px, 3.6vw, 48px);
-  font-weight:300;
-  letter-spacing:-0.03em;
-  line-height:1.05;
+  font-size:clamp(22px, 2.6vw, 34px);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.15;
 }
 .post-lg .pl-kicker{
   font-size:11.5px;
@@ -1839,11 +1832,11 @@ html{scroll-behavior:smooth;}
 
 /* Article body: reading rhythm */
 .article h1{
-  font-size:clamp(38px, 5.2vw, 68px);
-  font-weight:300;
-  letter-spacing:-0.035em;
-  line-height:1.02;
-  margin-bottom:24px;
+  font-size:clamp(30px, 3.6vw, 46px);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.15;
+  margin-bottom:20px;
 }
 .article .a-meta{
   font-size:11.5px;
@@ -1858,10 +1851,10 @@ html{scroll-behavior:smooth;}
 
 /* Page-hero titles on subpages: full display */
 .page-hero h1{
-  font-size:clamp(42px, 6vw, 92px);
-  font-weight:300;
-  letter-spacing:-0.04em;
-  line-height:1;
+  font-size:clamp(32px, 3.8vw, 52px);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.1;
 }
 .page-hero .crumbs{
   font-size:11.5px;
@@ -1872,24 +1865,24 @@ html{scroll-behavior:smooth;}
   margin-bottom:32px;
 }
 .page-hero .lede{
-  font-size:clamp(22px, 2.4vw, 28px);
-  font-weight:300;
-  letter-spacing:-0.015em;
-  line-height:1.35;
+  font-size:clamp(17px, 1.6vw, 20px);
+  font-weight:400;
+  letter-spacing:-0.005em;
+  line-height:1.55;
   color:var(--ink);
-  margin-top:32px;
-  max-width:38ch;
+  margin-top:24px;
+  max-width:52ch;
 }
 
 /* About stand paragraph even larger */
 .narrative .n-copy p.stand{
-  font-size:clamp(32px, 3.6vw, 44px);
-  font-weight:300;
-  letter-spacing:-0.03em;
-  line-height:1.1;
-  max-width:20ch;
+  font-size:clamp(22px, 2.4vw, 30px);
+  font-weight:400;
+  letter-spacing:-0.015em;
+  line-height:1.35;
+  max-width:24ch;
   color:var(--brand);
-  margin:48px 0;
+  margin:40px 0;
 }
 
 /* Footer: firm registration details typography */
@@ -1923,8 +1916,8 @@ header nav a{
 
 /* Quote wizard: heading as display */
 .wiz-title{
-  font-size:clamp(36px, 4.6vw, 64px);
-  font-weight:300;
-  letter-spacing:-0.035em;
-  line-height:1;
+  font-size:clamp(28px, 3vw, 40px);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.15;
 }
