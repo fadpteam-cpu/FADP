@@ -254,7 +254,7 @@ def project(img, name, meta):
 # ---------------------------------------------------------------- HOME
 home_body = f"""
 <div class="hero-overlay">
-  <img class="hero-bg" src="{IMG['hero']}" alt="Willow Road, Hampstead: dining room">
+  <img class="hero-bg" src="{IMG['hero']}" alt="A contemporary open-plan living space">
   <div class="hero-content wrap">
     <h1>Architecture for houses, extensions and commercial buildings across London.</h1>
     <div class="hero-ctas">
