@@ -255,7 +255,6 @@ home_body = f"""
 <div class="hero-overlay">
   <img class="hero-bg" src="{IMG['hero']}" alt="Willow Road, Hampstead: dining room">
   <div class="hero-content wrap">
-    <div class="hero-kicker">Willow Road, Hampstead</div>
     <h1>Architecture for houses, extensions and commercial buildings across London.</h1>
     <div class="hero-ctas">
       <a class="btn btn-light" href="#quote">Get a fixed-fee quote</a>
