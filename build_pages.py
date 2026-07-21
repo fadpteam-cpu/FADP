@@ -352,6 +352,39 @@ home_body = f"""
     <p class="founding-note">FADP is a new London practice. Between them, its directors have delivered projects of every scale and stage inside established firms &#8212; houses, extensions, commercial and mixed-use. That experience now goes straight into your project, director-led, with terms most practices will not put in writing. Be one of our first clients.</p>
   </div>
 </section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-label"><span>How it works</span></div>
+    <div class="steps-flow">
+      <div class="flow-step">
+        <div class="fs-num">01</div>
+        <h4>Free consultation</h4>
+        <p>A conversation about your project, your site and your budget. You leave with a written note of where your property stands on planning, and a clear fixed fee for the next stage.</p>
+        <div class="fs-when">Week 1 &#183; no charge</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-num">02</div>
+        <h4>Feasibility &amp; design</h4>
+        <p>We test what can be built, design options to your brief, and confirm the planning route. You approve the direction before we take it further.</p>
+        <div class="fs-when">Weeks 2&#8211;6</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-num">03</div>
+        <h4>Planning &amp; approvals</h4>
+        <p>We prepare and submit the application, handle the council, and manage every question through to a decision. Most householder applications are determined within eight weeks.</p>
+        <div class="fs-when">Weeks 6&#8211;16</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-num">04</div>
+        <h4>Technical &amp; delivery</h4>
+        <p>Building regulations, structure and the tender package, then the build itself with a director inspecting on site. You reach completion with the certificates you keep for resale.</p>
+        <div class="fs-when">To completion</div>
+      </div>
+    </div>
+    <p class="process-note">Fees are fixed and agreed in writing before each stage. You can review and stop at the end of any stage without penalty &#8212; the commitment is earned, one stage at a time.</p>
+  </div>
+</section>
 """
 
 # ---------------------------------------------------------------- read the wizard + partners from current index
