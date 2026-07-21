@@ -103,6 +103,7 @@ def header(active, depth=0):
       {a('blog.html','Blog','blog')}
     </nav>
     <div class="header-right">
+      <a class="header-tel" href="tel:+442080000000">020 8000 0000</a>
       <a class="btn header-btn" href="{p}index.html#quote">Get a quote</a>
       <button class="menu-btn">Menu</button>
     </div>
@@ -191,7 +192,7 @@ def footer(depth=0):
   </div>
 </footer>
 <div class="mobile-bar">
-  <a href="mailto:design@fadp.co.uk">Email the studio</a>
+  <a href="tel:+442080000000">Call the studio</a>
   <a class="mb-primary" href="{p}index.html#quote">Get a fixed-fee quote</a>
 </div>
 <script src="{'../' * depth}js/main.js"></script>
@@ -202,8 +203,8 @@ def footer(depth=0):
 def councils(depth=0):
     return """<div class="councils">
   <div class="wrap">
-    <span class="c-label">Planning approvals secured with:</span>
-    <span class="c-list">Camden &#183; Islington &#183; Hackney &#183; Westminster &#183; Haringey &#183; Barnet &#183; Lambeth &#183; Wandsworth <!-- placeholder: list only councils where you hold real approvals --></span>
+    <span class="c-label">London boroughs we work across</span>
+    <span class="c-list">Camden &#183; Islington &#183; Hackney &#183; Westminster &#183; Haringey &#183; Barnet &#183; Lambeth &#183; Wandsworth</span>
   </div>
 </div>
 """
@@ -308,24 +309,22 @@ home_body = f"""
 
 <section id="reviews">
   <div class="wrap">
-    <div class="sec-label"><span>Verified Google reviews &#183; 5.0 average from 42 clients</span><a class="link" href="#">Read them all</a></div>
-    <div class="quotes">
-      <div class="quote">
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <blockquote>"They listened before they drew. The finished house is exactly what we asked for, and it came in on the budget we agreed at the start."</blockquote>
-        <cite><strong>Sarah &amp; James W.</strong>Private house, Hampstead &#183; 2025</cite>
+    <div class="sec-label"><span>What working with us looks like</span></div>
+    <div class="promises">
+      <div class="promise">
+        <h4>You deal with a director</h4>
+        <p>From the first consultation to the last site visit, the person you meet is the person doing the work. Nothing is handed down a chain.</p>
       </div>
-      <div class="quote">
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <blockquote>"Planning felt daunting until FADP took it over. Approved first time, and they handled every question from the council."</blockquote>
-        <cite><strong>Priya N.</strong>Rear extension, Islington &#183; 2024</cite>
+      <div class="promise">
+        <h4>Fees are fixed, in writing</h4>
+        <p>Every stage is quoted and agreed before it begins. No hourly billing, no scope creep, no invoice you did not see coming.</p>
       </div>
-      <div class="quote">
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <blockquote>"Clear fees, clear timelines, and the same architect from the first meeting to the last site visit."</blockquote>
-        <cite><strong>Daniel R.</strong>Office fit-out, Shoreditch &#183; 2024</cite>
+      <div class="promise">
+        <h4>You can stop at any stage</h4>
+        <p>Work is staged so you can review, decide, and leave at the end of any stage without penalty. The commitment is earned, not locked in.</p>
       </div>
     </div>
+    <p class="reviews-note">As a new practice we are building our public review record. Early clients receive our fullest attention &#8212; and our request for an honest review at the end.</p>
   </div>
 </section>
 
@@ -350,6 +349,7 @@ home_body = f"""
         </div>
       </div>
     </div>
+    <p class="founding-note">FADP is a new London practice. Between them, its directors have delivered projects of every scale and stage inside established firms &#8212; houses, extensions, commercial and mixed-use. That experience now goes straight into your project, director-led, with terms most practices will not put in writing. Be one of our first clients.</p>
   </div>
 </section>
 """
@@ -376,16 +376,16 @@ projects_body = f"""
 <section>
   <div class="wrap">
     <div class="case">
-      <img src="{IMG['p1']}" alt="Willow Road, Hampstead">
+      <img src="{IMG['p1']}" alt="A rear and side extension to a period house">
       <div class="case-body">
-        <div class="case-tag">Featured case study</div>
-        <h3>Willow Road, Hampstead</h3>
-        <p>A four-bedroom Edwardian house in the Hampstead conservation area, rebuilt around a rear and side extension. The site sat within an Article 4 direction, removing permitted development rights.</p>
-        <p>We ran a pre-application with Camden, prepared the heritage and daylight assessments, and secured approval first time. The tender package priced within 3% across three contractors; the build completed on programme.</p>
+        <div class="case-tag">How we work</div>
+        <h3>A conservation-area extension, start to finish</h3>
+        <p>Take a four-bedroom period house in a conservation area, inside an Article 4 direction that has removed its permitted development rights. This is the kind of project our directors have delivered, and the way we run it at FADP.</p>
+        <p>We start with feasibility and a pre-application to the borough, prepare the heritage and daylight assessments the officer will need, and design to secure approval first time. At tender we price the work across several contractors, then run the build to completion &#8212; with a director on it throughout.</p>
         <div class="case-facts">
-          Planning: Camden, approved first time<br>
-          Programme: 14 months, design to completion<br>
-          Role: full service, feasibility to completion
+          Approach: pre-application, then full application<br>
+          Typical programme: 12 to 16 months, design to completion<br>
+          Our role: full service, feasibility to completion
         </div>
       </div>
     </div>
@@ -394,7 +394,7 @@ projects_body = f"""
 
 <section>
   <div class="wrap">
-    <div class="sec-label"><span>All projects</span></div>
+    <div class="sec-label"><span>The work we do</span></div>
     <div class="work-grid">
 {project(IMG['p2'],'Milner Square','Islington &#183; Refurbishment, 2024')}
 {project(IMG['p3'],'Kestrel Works','Shoreditch &#183; Commercial, 2024')}
@@ -530,10 +530,10 @@ about_body = f"""
   <div class="wrap">
     <div class="narrative">
       <div class="n-copy">
-        <p>FADP was founded in London with one conviction: that the difference between a good project and a painful one is rarely the design. It is certainty, about fees, about planning, about who is responsible for what.</p>
-        <p class="stand">We are the experts. We know the regulations better than anyone, and we put that knowledge in writing before you spend a pound.</p>
+        <p>FADP is a new London practice, founded by two directors who have between them delivered projects of every scale and stage &#8212; from private houses and extensions to commercial and mixed-use schemes &#8212; inside larger firms. We started FADP around one conviction: that the difference between a good project and a painful one is rarely the design. It is certainty, about fees, about planning, about who is responsible for what.</p>
+        <p class="stand">The experience is senior. The practice is new. You get both.</p>
         <p>The practice is built around that promise. Every appointment is broken into clear stages with fixed written fees, and every planning application is grounded in the local plan and the council's own recent decisions. FADP is led by its two directors, so the person you meet at the first consultation is a director of the practice, and stays your point of contact to completion.</p>
-        <p>We work across residential, commercial and heritage projects in London and the South East, from feasibility studies for buyers to full services on listed buildings, with approvals secured with planning authorities across the capital.</p>
+        <p>We work across residential, commercial and heritage projects in London and the South East, from feasibility studies for buyers to full services on listed buildings. Because we are small and director-led, the experience we built on larger schemes goes directly into your project, without being handed down a chain.</p>
         <p>We stay deliberately small. Small enough that nothing is handed down a chain, and senior people do the work you're paying senior fees for.</p>
         <p class="creds-line">Independent and director-led, with full professional indemnity insurance and fixed fees put in writing before every stage.</p>
       </div>

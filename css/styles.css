@@ -1923,3 +1923,73 @@ header nav a{
   letter-spacing:-0.015em;
   line-height:1.25;
 }
+
+/* ================================================================
+   HONEST REFRAME: promises grid, notes, restored phone
+   ================================================================ */
+
+/* "What working with us looks like" — three promises replacing fake reviews */
+.promises{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:48px;
+  margin-bottom:40px;
+}
+.promise h4{
+  font-size:17px;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+  margin-bottom:12px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--brand);
+}
+.promise p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--muted);
+  max-width:38ch;
+}
+.reviews-note{
+  font-size:14px;
+  line-height:1.7;
+  color:var(--muted);
+  max-width:64ch;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+
+/* Founding-practice positioning note */
+.founding-note{
+  font-size:17px;
+  font-weight:400;
+  line-height:1.6;
+  color:var(--ink);
+  max-width:60ch;
+  margin-top:48px;
+  padding-top:32px;
+  border-top:1px solid var(--brand);
+}
+
+/* Restore header phone (placeholder) */
+.header-tel{
+  font-size:14px;
+  font-weight:500;
+  color:var(--muted);
+  letter-spacing:-0.005em;
+  margin-right:8px;
+  align-self:center;
+  transition:color .2s;
+}
+.header-tel:hover{color:var(--brand);}
+
+/* Footer phone */
+.footer-contacts .f-tel,
+footer a[href^="tel:"]{
+  color:rgba(255,255,255,.75);
+}
+
+@media (max-width:800px){
+  .promises{grid-template-columns:1fr; gap:32px;}
+  .header-tel{display:none;}
+}
