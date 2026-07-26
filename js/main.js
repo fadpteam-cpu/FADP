@@ -158,3 +158,27 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+
+// ================================================================
+// SIGNATURE: draw the Magnetic Blue rule under section labels
+// as they scroll into view (left-to-right). Reduced-motion users
+// get them pre-drawn via CSS.
+// ================================================================
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var labels = document.querySelectorAll('.sec-label');
+  if (!labels.length || !('IntersectionObserver' in window)) {
+    labels.forEach(function(l){ l.classList.add('drawn'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('drawn');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.2 });
+  labels.forEach(function(l){ io.observe(l); });
+})();

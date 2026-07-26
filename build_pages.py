@@ -18,6 +18,7 @@ def head(title, desc, depth=0, body_class=''):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="{p}assets/fonts/spectral-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{p}css/styles.css">
 </head>
 <body{bc}>
