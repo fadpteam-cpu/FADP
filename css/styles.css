@@ -148,6 +148,13 @@ section{padding:clamp(104px, 15vh, 184px) 0 0;}
   grid-template-columns:repeat(2, 1fr);
   gap:72px 40px;
 }
+/* On the home page, the lead project runs full width at a cinematic ratio;
+   the rest sit 2-up beneath. One deliberate size difference to guide the eye.
+   The Projects page already leads with the featured case study, so its grid
+   stays even. */
+body.overlay-hero .work-grid .project:first-child{grid-column:1 / -1;}
+body.overlay-hero .work-grid .project:first-child img{aspect-ratio:16/7;}
+body.overlay-hero .work-grid .project:first-child .p-name{font-size:20px;}
 .project{background:transparent;} .project img{width:100%; aspect-ratio:3/2; object-fit:cover; display:block;}
 .project .p-cap{padding-top:16px; background:transparent; font-size:14px; line-height:1.5; display:flex; justify-content:space-between; gap:24px;}
 .project .p-name{color:var(--ink); font-weight:500; font-size:16px;}
@@ -306,9 +313,11 @@ section{padding:clamp(104px, 15vh, 184px) 0 0;}
 
 /* ------------------------------------------------ quote wizard */
 .quote-wrap{
+  margin-top:clamp(80px, 12vh, 140px);
+  padding:clamp(72px, 11vh, 128px) 0;
+  background:var(--bg-2);
   border-top:1px solid var(--line);
-  margin-top:clamp(72px, 11vh, 120px);
-  padding:clamp(64px, 9vh, 104px) 0;
+  border-bottom:1px solid var(--line);
 }
 .quote-grid{
   display:grid;
@@ -317,10 +326,11 @@ section{padding:clamp(104px, 15vh, 184px) 0 0;}
 }
 .quote-intro{grid-column:1 / span 4;}
 .quote-intro h2{
-  font-size:clamp(22px, 2.4vw, 30px);
-  font-weight:500;
-  line-height:1.3;
-  max-width:18ch;
+  font-size:clamp(28px, 3.2vw, 44px);
+  font-weight:400;
+  letter-spacing:-0.025em;
+  line-height:1.1;
+  max-width:16ch;
 }
 .quote-intro > p{
   margin-top:14px;
@@ -709,13 +719,13 @@ nav.site-nav a[aria-current="page"]{
 }
 .narrative .n-copy p{font-size:17.5px; line-height:1.7; margin-bottom:22px; max-width:58ch; color:var(--ink);}
 .narrative .n-copy p.stand{
-  font-size:26px;
-  font-weight:400;
+  font-size:clamp(28px, 3.4vw, 42px);
+  font-weight:300;
   color:var(--brand);
-  line-height:1.35;
-  letter-spacing:-0.02em;
-  margin:32px 0;
-  max-width:22ch;
+  line-height:1.15;
+  letter-spacing:-0.03em;
+  margin:44px 0;
+  max-width:18ch;
   border:none;
   padding-left:0;
 }
@@ -1274,8 +1284,26 @@ header{overflow:visible;}
 /* two-director team grid */
 .team-grid.two{
   grid-template-columns:repeat(2, 1fr);
-  max-width:880px;
-  gap:40px;
+  gap:clamp(40px, 5vw, 72px);
+}
+.team-grid.two .member img{aspect-ratio:4/5;}
+.team-grid.two .member h3{
+  font-size:clamp(22px, 2.4vw, 30px);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  margin-top:22px;
+}
+.team-grid.two .member .m-role{
+  font-size:13px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin-top:6px;
+}
+.team-grid.two .member .m-bio{
+  font-size:15.5px;
+  line-height:1.65;
+  margin-top:16px;
+  max-width:42ch;
 }
 
 @media (max-width:700px){
@@ -1751,21 +1779,41 @@ html{scroll-behavior:smooth;}
 
 /* Section labels: bigger, ink, no border, tight tracking */
 .sec-label{
-  font-size:clamp(18px, 1.6vw, 22px);
-  font-weight:500;
-  letter-spacing:-0.005em;
-  line-height:1.3;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:baseline;
+  column-gap:24px;
+  row-gap:10px;
   border-bottom:1px solid var(--line);
-  padding-bottom:16px;
-  margin-bottom:48px;
+  padding-bottom:20px;
+  margin-bottom:52px;
 }
-.sec-label > span{color:var(--ink);}
+.sec-label > span{
+  grid-column:1;
+  font-size:clamp(20px, 2vw, 27px);
+  font-weight:500;
+  letter-spacing:-0.015em;
+  line-height:1.2;
+  color:var(--ink);
+}
+.sec-label .sec-sub{
+  grid-column:1;
+  grid-row:2;
+  font-style:normal;
+  font-size:15px;
+  font-weight:400;
+  line-height:1.5;
+  color:var(--muted);
+  max-width:44ch;
+}
 .sec-label .link{
+  grid-column:2;
+  grid-row:1;
   font-size:13px;
   font-weight:500;
   color:var(--muted);
   letter-spacing:.02em;
-  align-self:end;
+  align-self:baseline;
 }
 
 /* Project cards: caption typography as element */

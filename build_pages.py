@@ -265,7 +265,7 @@ home_body = f"""
 
 <section id="work">
   <div class="wrap">
-    <div class="sec-label"><span>Recent work</span><a class="link" href="projects.html">All projects</a></div>
+    <div class="sec-label"><span>Recent work</span><em class="sec-sub">The kind of projects we are built to deliver, start to finish.</em><a class="link" href="projects.html">All projects</a></div>
     <div class="work-grid">
 {project(IMG['p1'],'Private house','Hampstead &#183; 2025')}
 {project(IMG['p2'],'Refurbishment','Islington &#183; 2024')}
@@ -277,7 +277,7 @@ home_body = f"""
 
 <section id="services-panels">
   <div class="wrap">
-    <div class="sec-label"><span>What do you want to build?</span><a class="link" href="services.html">All services</a></div>
+    <div class="sec-label"><span>What do you want to build?</span><em class="sec-sub">Pick a starting point. The wizard does the rest.</em><a class="link" href="services.html">All services</a></div>
     <div class="svc-panels">
       <a class="panel" href="#quote" data-project="Extension">
         <img src="{IMG['p5']}" alt="" loading="lazy">
@@ -309,7 +309,7 @@ home_body = f"""
 
 <section id="reviews">
   <div class="wrap">
-    <div class="sec-label"><span>What working with us looks like</span></div>
+    <div class="sec-label"><span>What working with us looks like</span><em class="sec-sub">The promises most practices will not put in writing.</em></div>
     <div class="promises">
       <div class="promise">
         <h4>You deal with a director</h4>
@@ -330,7 +330,7 @@ home_body = f"""
 
 <section id="directors">
   <div class="wrap">
-    <div class="sec-label"><span>Who you\'ll work with</span><a class="link" href="about.html">More about the practice</a></div>
+    <div class="sec-label"><span>Who you\'ll work with</span><em class="sec-sub">Two directors. Every project. No handovers.</em><a class="link" href="about.html">More about the practice</a></div>
     <div class="directors-strip">
       <div class="director">
         <img src="{IMG['team1']}" alt="Aun Naeem, Director" loading="lazy">
@@ -355,7 +355,7 @@ home_body = f"""
 
 <section id="process">
   <div class="wrap">
-    <div class="sec-label"><span>How it works</span></div>
+    <div class="sec-label"><span>How it works</span><em class="sec-sub">Four stages. Fixed fees. Stop whenever you want.</em></div>
     <div class="steps-flow">
       <div class="flow-step">
         <div class="fs-num">01</div>
@@ -581,7 +581,7 @@ about_body = f"""
 
 <section id="team">
   <div class="wrap">
-    <div class="sec-label"><span>The team</span></div>
+    <div class="sec-label"><span>The two people who do the work</span><em class="sec-sub">Not a team you never meet. The directors you hire are the directors on site.</em></div>
     <div class="team-grid two">
       <div class="member">
         <img src="{IMG['team1']}" alt="Aun Naeem, Director" loading="lazy">
