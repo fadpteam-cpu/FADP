@@ -317,7 +317,7 @@ body.overlay-hero .work-grid .project:first-child .p-name{font-size:20px;}
 .quote-wrap{
   margin-top:clamp(80px, 12vh, 140px);
   padding:clamp(72px, 11vh, 128px) 0;
-  background:var(--bg-2);
+  background:var(--bg);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
 }
@@ -2060,41 +2060,6 @@ footer a[href^="tel:"]{
    ================================================================ */
 
 /* "How it works" — four-stage flow */
-.steps-flow{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:0;
-  border-top:1px solid var(--line);
-  border-left:1px solid var(--line);
-}
-.flow-step{
-  padding:32px 28px 36px;
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  position:relative;
-  transition:background .3s;
-}
-.flow-step:hover{background:var(--bg-2);}
-.fs-num{
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:.1em;
-  color:var(--brand);
-  margin-bottom:24px;
-}
-.flow-step h4{
-  font-size:18px;
-  font-weight:500;
-  letter-spacing:-0.01em;
-  color:var(--ink);
-  margin-bottom:14px;
-}
-.flow-step p{
-  font-size:14.5px;
-  line-height:1.65;
-  color:var(--muted);
-  margin-bottom:20px;
-}
 .fs-when{
   font-size:12px;
   letter-spacing:.06em;
@@ -2103,13 +2068,6 @@ footer a[href^="tel:"]{
   color:var(--ink);
   padding-top:14px;
   border-top:1px solid var(--line);
-}
-.process-note{
-  margin-top:32px;
-  font-size:15px;
-  line-height:1.65;
-  color:var(--ink);
-  max-width:64ch;
 }
 
 /* Honest availability / scarcity line in the wizard */
@@ -2126,10 +2084,8 @@ footer a[href^="tel:"]{
 }
 
 @media (max-width:900px){
-  .steps-flow{grid-template-columns:1fr 1fr;}
 }
 @media (max-width:560px){
-  .steps-flow{grid-template-columns:1fr;}
 }
 
 /* ================================================================
@@ -2188,7 +2144,8 @@ footer a[href^="tel:"]{
   opacity:.9;
 }
 /* the whole quote band a touch softer */
-.quote-wrap{background:var(--bg-2);}
+.quote-wrap{background:var(--bg);}
+.quote-panel{border:1px solid var(--line);}
 .quote-intro h2{color:var(--ink);}
 
 /* smooth the step transition */
