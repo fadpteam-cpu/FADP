@@ -1,54 +1,53 @@
 FADP — HERO VIDEO
 =================
 
-CURRENT STATE
-  The home page hero is wired to:
+CURRENT
+  assets/video/hero.mp4        0.90 MB   H.264, 1920x1080, 30fps, 8.3s, no audio
+  assets/img/hero-poster.jpg   0.16 MB   opening frame, shown before playback
 
-    "Stunning Aerial View of London Cityscape" by Gül Işık
-    https://www.pexels.com/video/stunning-aerial-view-of-london-cityscape-28988731/
-    Free to use, no attribution required, commercial use permitted.
+  Source: "Stunning Aerial View of London Cityscape" by Gül Işık
+  https://www.pexels.com/video/stunning-aerial-view-of-london-cityscape-28988731/
+  Pexels licence: free to use, no attribution required, commercial use fine.
 
-  It is loaded from Pexels' CDN as a fallback source. The page tries
-  a LOCAL file first:
+  The original download was 9.04 MB at 9.2 Mbps — far more than a
+  background video under a dark scrim needs. Re-encoded at CRF 30 with
+  faststart, it is 90% smaller with no visible difference at this scale.
 
-      assets/video/hero.mp4        <- checked first
-      Pexels CDN URL               <- used only if the local file is absent
+REPLACING IT WITH YOUR OWN FOOTAGE
+  1. Encode and drop in as assets/video/hero.mp4:
 
-RECOMMENDED: SELF-HOST IT
-  Hotlinking someone else's CDN is fragile — the URL can change, and
-  some CDNs block off-site requests. Downloading takes one click and
-  makes the hero reliable and faster:
+       ffmpeg -i yourfile.mov -vf scale=1920:-2 -c:v libx264 -crf 30 \
+              -preset slow -pix_fmt yuv420p -an -movflags +faststart \
+              assets/video/hero.mp4
 
-    1. Open the Pexels link above
-    2. Click "Free download", choose the 1920x1080 version
-    3. Rename the file to           hero.mp4
-    4. Put it in this folder        assets/video/hero.mp4
-    5. Commit and push
+     (or handbrake.fr, "Fast 1080p30" preset, quality RF 28-30, audio removed)
 
-  The local file automatically takes priority. Nothing else to change.
+  2. Regenerate the poster from the new file so the first frame matches:
 
-  Check the file size first. If it is over ~12 MB, compress it:
+       ffmpeg -ss 0.2 -i assets/video/hero.mp4 -frames:v 1 \
+              -vf scale=1600:-2 -q:v 6 assets/img/hero-poster.jpg
 
-    ffmpeg -i download.mp4 -vf scale=1920:-2 -c:v libx264 -crf 30 \
-           -preset slow -an -movflags +faststart hero.mp4
+  3. Commit and push. No code changes needed.
 
-  Or use handbrake.fr with the "Fast 1080p30" preset, quality RF 28-30,
-  and remove the audio track.
+WHY THESE SETTINGS
+  -crf 30        aggressive but invisible under the hero's gradient scrim
+  -an            strips audio; the video plays muted by design
+  +faststart     moves the index to the front so playback can begin
+                 before the file has fully downloaded
+  -pix_fmt yuv420p  required for Safari and older devices
 
-THE POSTER STILL
-  Set in build_pages.py under IMG['hero']. It currently points at the
-  matching frame from the same Pexels clip, so the hero looks correct
-  before the video loads and for reduced-motion visitors. If you swap
-  the video, swap the poster to match its opening frame.
+TARGETS
+  Under 1 MB is ideal, 2 MB is the sensible ceiling. The hero video
+  loads before anything else a visitor sees, so weight costs more than
+  resolution gains.
 
-REPLACING IT LATER WITH YOUR OWN FOOTAGE
-  Same process: name it hero.mp4, drop it here, update IMG['hero'] to
-  a still from it.
+WHAT WORKS ON SCREEN
+  Slow, steady movement — an aerial drift, a gentle pan across an
+  interior, light moving through a space. Avoid fast cuts, handheld
+  shake, and people looking at camera.
 
-  What works: a slow, steady shot. A gentle pan across an interior,
-  light moving through a space, a slow push toward a window.
-  What does not: fast cuts, handheld shake, people looking at camera.
-
-  Spec: H.264 MP4, 1080p, 10-20s looping, no audio, under ~8 MB.
-  The video loads before anything else a visitor sees, so size matters
-  more than resolution.
+FALLBACK BEHAVIOUR
+  - Before the video loads: the poster shows
+  - prefers-reduced-motion: video is paused in JS, poster stays visible
+  - Missing or unplayable file: poster stays visible
+  The hero is never blank.
