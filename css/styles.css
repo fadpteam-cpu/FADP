@@ -11,7 +11,7 @@
 
   --sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  --gutter: clamp(24px, 4vw, 80px);
+  --gutter: clamp(22px, 3.6vw, 72px);
   --max: 1320px;
 }
 
@@ -2026,7 +2026,7 @@ footer a[href^="tel:"]{
 }
 /* the whole quote band a touch softer */
 .quote-wrap{background:var(--bg);}
-.quote-panel{border:1px solid var(--line);}
+
 .quote-intro h2{color:var(--ink);}
 
 /* smooth the step transition */
@@ -2166,3 +2166,53 @@ footer a[href^="tel:"]{
 .project .p-meta{color:rgba(255,255,255,.82); font-size:13px; font-weight:400;}
 .project:hover .p-name{text-decoration:none;}
 .project img{border-radius:4px;}
+
+
+/* Founding statement in brand blue */
+.founding-note.brand-copy{
+  color:var(--brand);
+  border-top-color:var(--brand);
+}
+
+
+/* ================================================================
+   FLOW — spacing between text and imagery
+   ================================================================ */
+/* Section heads sit closer to the content they introduce */
+.sec-label{margin-bottom:clamp(28px, 3.4vh, 40px);}
+
+/* Project grid: tighter rows, a touch more column air */
+.work-grid{gap:clamp(40px, 5vh, 56px) clamp(28px, 3vw, 44px);}
+
+/* Service panels breathe evenly */
+.svc-panels{gap:clamp(16px, 2vw, 28px);}
+
+/* News rows: image and text sit closer, rows a little tighter */
+.news-row{
+  padding:clamp(28px, 4vh, 42px) 0;
+  gap:clamp(24px, 3.2vw, 44px);
+}
+.nr-body p{margin-bottom:20px;}
+
+/* Image + quote block sits closer to what precedes it */
+#statement{padding-top:clamp(48px, 7vh, 88px);}
+
+/* Directors: image to text spacing */
+.directors-strip{gap:clamp(28px, 3.4vw, 48px);}
+.director{gap:clamp(18px, 2vw, 26px);}
+
+/* Narrative (about): copy column to image */
+.narrative{gap:clamp(32px, 4vw, 64px);}
+
+/* Case study: image to body */
+.case{gap:clamp(28px, 3.4vw, 56px);}
+
+/* Team grid on about */
+.team-grid.two{gap:clamp(32px, 4vw, 56px);}
+
+
+/* Footer bottom now carries only the socials — keep them right-aligned */
+.footer-bottom{justify-content:flex-end;}
+@media (max-width:700px){
+  .footer-bottom{justify-content:flex-start;}
+}
