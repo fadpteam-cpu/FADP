@@ -257,3 +257,29 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
     if (window.innerWidth > 900 && btn.getAttribute('aria-expanded') === 'true') close();
   });
 })();
+
+
+// ================================================================
+// Hero video: pause for reduced-motion users (the poster still
+// remains visible), and fall back to the poster if the file is
+// missing or cannot play.
+// ================================================================
+(function(){
+  var v = document.querySelector('video.hero-bg');
+  if (!v) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    v.removeAttribute('autoplay');
+    v.pause();
+    return;
+  }
+
+  // If the source is missing or unplayable the poster stays put.
+  v.addEventListener('error', function(){ v.pause(); }, true);
+
+  // Some browsers block autoplay until interaction; retry quietly.
+  var attempt = v.play();
+  if (attempt && typeof attempt.catch === 'function'){
+    attempt.catch(function(){ /* poster remains visible */ });
+  }
+})();

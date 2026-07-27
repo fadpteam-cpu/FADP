@@ -2328,3 +2328,21 @@ body.nav-open{overflow:hidden;}
 @media (max-width:560px){
   .header-btn{display:none;}
 }
+
+/* ================================================================
+   HERO VIDEO
+   The <video> occupies the same slot the hero image did. Its poster
+   is the hero still, so the frame is correct before the video loads
+   and remains correct if no video file is present.
+   ================================================================ */
+video.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  z-index:0;
+}
+
+/* Reduced motion: the video is paused in JS so its poster still shows */

@@ -276,7 +276,10 @@ def project(img, name, meta):
 # ---------------------------------------------------------------- HOME
 home_body = f"""
 <div class="hero-overlay">
-  <img class="hero-bg" src="{IMG['hero']}" alt="A contemporary open-plan living space">
+  <video class="hero-bg" autoplay muted loop playsinline preload="metadata"
+         poster="{IMG['hero']}" aria-hidden="true">
+    <source src="assets/video/hero.mp4" type="video/mp4">
+  </video>
   <div class="hero-content wrap">
     <h1>Architecture for houses, extensions and commercial buildings across London.</h1>
     <div class="hero-ctas">
