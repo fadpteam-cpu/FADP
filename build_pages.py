@@ -105,10 +105,39 @@ def header(active, depth=0):
     <div class="header-right">
       <a class="header-tel" href="tel:+442080000000">020 8000 0000</a>
       <a class="btn header-btn" href="{p}index.html#quote">Get a quote</a>
-      <button class="menu-btn">Menu</button>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span class="mb-bars"><i></i><i></i></span>
+      </button>
     </div>
   </div>
 </header>
+
+<div class="mobile-nav" id="mobileNav" hidden>
+  <div class="mn-inner">
+    <nav class="mn-primary">
+      <a href="{p}index.html">Home</a>
+      <a href="{p}projects.html">Projects</a>
+      <a href="{p}about.html">About</a>
+      <a href="{p}blog.html">Blog</a>
+    </nav>
+    <div class="mn-services">
+      <h5>Services</h5>
+      <a href="{p}services/planning-applications.html">Planning Permission</a>
+      <a href="{p}services/feasibility-studies.html">Feasibility Studies</a>
+      <a href="{p}services/rear-extension.html">Extensions</a>
+      <a href="{p}services/loft-conversion.html">Loft Conversions</a>
+      <a href="{p}services/basement-conversion.html">Basement Conversions</a>
+      <a href="{p}services/listed-buildings.html">Listed Buildings</a>
+      <a href="{p}services/principal-designer.html">Principal Designer</a>
+      <a class="mn-all" href="{p}services.html">All services</a>
+    </div>
+    <div class="mn-foot">
+      <a class="btn" href="{p}index.html#quote">Get a fixed-fee quote</a>
+      <a class="mn-contact" href="tel:+442080000000">020 8000 0000</a>
+      <a class="mn-contact" href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
+    </div>
+  </div>
+</div>
 """
 
 def trust_band():
