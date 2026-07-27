@@ -234,7 +234,7 @@ def councils(depth=0):
 U = 'https://images.unsplash.com/'
 IMG = {
     # -------- Hero: original kitchen interior --------
-    'hero':    U+'photo-1600607687939-ce8a6c25118c?w=2200&q=90',  # modern kitchen interior with breakfast bar and pendant lights
+    'hero':    'https://images.pexels.com/videos/28988731/pexels-photo-28988731.jpeg?auto=compress&cs=tinysrgb&w=2200',  # modern kitchen interior with breakfast bar and pendant lights
 
     # -------- Projects: verified finished interiors + UK exteriors --------
     # Interiors (kitchens, refurbishments, extensions, new-build interiors)
@@ -276,9 +276,10 @@ def project(img, name, meta):
 # ---------------------------------------------------------------- HOME
 home_body = f"""
 <div class="hero-overlay">
-  <video class="hero-bg" autoplay muted loop playsinline preload="metadata"
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto"
          poster="{IMG['hero']}" aria-hidden="true">
     <source src="assets/video/hero.mp4" type="video/mp4">
+    <source src="https://videos.pexels.com/video-files/28988731/12538491_1920_1080_30fps.mp4" type="video/mp4">
   </video>
   <div class="hero-content wrap">
     <h1>Architecture for houses, extensions and commercial buildings across London.</h1>

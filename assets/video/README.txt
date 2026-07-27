@@ -1,43 +1,54 @@
 FADP — HERO VIDEO
 =================
 
-Drop your hero film in this folder named exactly:
+CURRENT STATE
+  The home page hero is wired to:
 
-    hero.mp4
+    "Stunning Aerial View of London Cityscape" by Gül Işık
+    https://www.pexels.com/video/stunning-aerial-view-of-london-cityscape-28988731/
+    Free to use, no attribution required, commercial use permitted.
 
-The home page will pick it up automatically. Until a file is here,
-the hero shows the poster still instead, so the page always looks
-correct.
+  It is loaded from Pexels' CDN as a fallback source. The page tries
+  a LOCAL file first:
 
-SPECIFICATION
-  Format      MP4 (H.264) — the most widely supported
-  Resolution  1920x1080 is plenty; 4K is unnecessary and slow
-  Length      10-20 seconds, seamlessly looping if possible
-  Frame rate  24 or 25 fps
-  Audio       none needed (the video plays muted by design)
-  File size   aim under 8 MB, 12 MB absolute maximum
+      assets/video/hero.mp4        <- checked first
+      Pexels CDN URL               <- used only if the local file is absent
 
-WHY THE SIZE LIMIT
-  The video loads before anything else a visitor sees. A 40 MB file
-  means several seconds of blank hero on a normal connection, which
-  costs more than the video gains. Compress hard.
+RECOMMENDED: SELF-HOST IT
+  Hotlinking someone else's CDN is fragile — the URL can change, and
+  some CDNs block off-site requests. Downloading takes one click and
+  makes the hero reliable and faster:
 
-COMPRESSING
-  Free and simple: handbrake.fr
-    - Preset: "Web > Gmail Medium 5 Minutes 480p30" then raise the
-      resolution to 1080p, or use "Fast 1080p30"
-    - Set constant quality around RF 28-30
-    - Remove the audio track entirely
-  Or with ffmpeg:
-    ffmpeg -i input.mov -vf scale=1920:-2 -c:v libx264 -crf 30 \
+    1. Open the Pexels link above
+    2. Click "Free download", choose the 1920x1080 version
+    3. Rename the file to           hero.mp4
+    4. Put it in this folder        assets/video/hero.mp4
+    5. Commit and push
+
+  The local file automatically takes priority. Nothing else to change.
+
+  Check the file size first. If it is over ~12 MB, compress it:
+
+    ffmpeg -i download.mp4 -vf scale=1920:-2 -c:v libx264 -crf 30 \
            -preset slow -an -movflags +faststart hero.mp4
 
-WHAT WORKS WELL
-  A slow, steady shot. A gentle pan across an interior, light moving
-  through a space, a slow push toward a window. Avoid fast cuts,
-  handheld shake, and anything with people looking at camera.
+  Or use handbrake.fr with the "Fast 1080p30" preset, quality RF 28-30,
+  and remove the audio track.
 
 THE POSTER STILL
-  Set in build_pages.py in the IMG dictionary under 'hero'. It shows
-  before the video loads and on reduced-motion devices, so it should
-  be a frame that resembles the video's opening.
+  Set in build_pages.py under IMG['hero']. It currently points at the
+  matching frame from the same Pexels clip, so the hero looks correct
+  before the video loads and for reduced-motion visitors. If you swap
+  the video, swap the poster to match its opening frame.
+
+REPLACING IT LATER WITH YOUR OWN FOOTAGE
+  Same process: name it hero.mp4, drop it here, update IMG['hero'] to
+  a still from it.
+
+  What works: a slow, steady shot. A gentle pan across an interior,
+  light moving through a space, a slow push toward a window.
+  What does not: fast cuts, handheld shake, people looking at camera.
+
+  Spec: H.264 MP4, 1080p, 10-20s looping, no audio, under ~8 MB.
+  The video loads before anything else a visitor sees, so size matters
+  more than resolution.
