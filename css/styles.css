@@ -1612,66 +1612,6 @@ html{scroll-behavior:smooth;}
 }
 
 /* --- Editorial blog rows (F+P grammar) --- */
-.ph-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:24px;
-}
-.ph-count{
-  font-size:15px;
-  color:var(--muted);
-}
-.posts-lg-wrap{padding-top:56px;}
-.posts-lg{border-top:1px solid var(--line);}
-.post-lg{
-  display:grid;
-  grid-template-columns:minmax(280px, 460px) 1fr;
-  gap:clamp(32px, 5vw, 72px);
-  padding:clamp(40px, 6vh, 64px) 0;
-  border-bottom:1px solid var(--line);
-  align-items:center;
-}
-.post-lg .pl-img{overflow:hidden;}
-.post-lg .pl-img img{
-  width:100%;
-  aspect-ratio:3/2;
-  object-fit:cover;
-  transition:transform 1s cubic-bezier(.2,.7,.2,1);
-}
-.post-lg:hover .pl-img img{transform:scale(1.03);}
-.pl-kicker{
-  display:block;
-  font-size:13px;
-  color:var(--muted);
-  margin-bottom:14px;
-}
-.post-lg h3{ 
-  font-size:clamp(22px, 2.6vw, 32px);
-  font-weight:400;
-  letter-spacing:-0.02em;
-  line-height:1.2;
-  max-width:22ch;
-  margin-bottom:14px;
-}
-.post-lg:hover h3{color:var(--brand);}
-.post-lg p{
-  font-size:17px;
-  line-height:1.65;
-  color:var(--ink);
-  max-width:52ch;
-  margin-bottom:22px;
-  font-weight:400;
-}
-.pl-more{
-  font-size:14px;
-  font-weight:500;
-  color:var(--ink);
-  border-bottom:1px solid var(--ink);
-  padding-bottom:2px;
-  transition:color .2s, border-color .2s;
-}
-.post-lg:hover .pl-more{color:var(--brand); border-color:var(--brand);}
 
 /* creds as prose */
 .creds-line{
@@ -1686,7 +1626,6 @@ html{scroll-behavior:smooth;}
 }
 
 @media (max-width:800px){
-  .post-lg{grid-template-columns:1fr; gap:24px;}
     body.overlay-hero .hero-overlay{min-height:88svh;}
 }
 
@@ -1704,27 +1643,8 @@ html{scroll-behavior:smooth;}
 .project,
 .svc-lead,
 .a-lead,
-.pl-img,
-.case,
-.member,
-.director img,
-.svc-img,
-.n-img{
-  position:relative;
-}
 
 .project::after,
-.pl-img::after,
-.a-lead::after,
-.svc-img::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(5,48,140,0.06);
-  pointer-events:none;
-  transition:opacity .3s;
-  z-index:1;
-}
 
 /* Slightly warmer tint for the featured case study (larger image) */
 .case::after{
@@ -1739,20 +1659,12 @@ html{scroll-behavior:smooth;}
 
 /* On hover, ease the tint out to reveal the underlying photograph */
 .project:hover::after,
-.pl-img:hover::after{
-  opacity:0.4;
-}
 
 /* The home service panels already have their own gradient; leave them alone.
    Panel-specific rule already handled elsewhere. */
 
 /* Ensure captions and text overlays sit above the tint */
 .project .p-cap,
-.post-lg .pl-body,
-.case .case-body{
-  position:relative;
-  z-index:2;
-}
 
 /* Hero image: slightly darker so white text always reads.
    The overlay hero already has ::before doing gradient duty — just deepen it. */
@@ -1860,37 +1772,6 @@ html{scroll-behavior:smooth;}
 }
 
 /* Blog post row headline: bigger, lighter */
-.post-lg h3{
-  font-size:clamp(19px, 2vw, 26px);
-  font-weight:500;
-  letter-spacing:-0.015em;
-  line-height:1.25;
-}
-.post-lg .pl-kicker{
-  font-size:11.5px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  font-weight:500;
-  color:var(--brand);
-  margin-bottom:22px;
-  padding-bottom:14px;
-  border-bottom:1px solid var(--line);
-  display:inline-block;
-}
-.post-lg .pl-more{
-  font-size:12.5px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-weight:500;
-  border-bottom:none;
-  padding-bottom:0;
-}
-.post-lg .pl-more::after{
-  content:" →";
-  transition:transform .3s;
-  display:inline-block;
-}
-.post-lg:hover .pl-more::after{transform:translateX(4px);}
 
 /* Article body: reading rhythm */
 .article h1{
@@ -2157,3 +2038,131 @@ footer a[href^="tel:"]{
 
 /* single-select rows (steps 3-4) use the same soft rounded card */
 .q-cards:not(.icon-grid) .q-option{border-radius:14px;}
+
+/* ================================================================
+   NEWS / BLOG — Foster+Partners pattern
+   Head with article count, pill filter bar, article rows with
+   image left, title/meta/excerpt right, and a Read article pill.
+   ================================================================ */
+.news-head{padding-top:clamp(56px, 9vh, 100px);}
+.news-head .nh-row{
+  display:flex; justify-content:space-between; align-items:baseline;
+  gap:24px; padding-bottom:28px; border-bottom:1px solid var(--line);
+}
+.news-head h1{
+  font-size:clamp(30px, 3.4vw, 46px);
+  font-weight:400; letter-spacing:-0.025em; line-height:1.1;
+  color:var(--ink); margin:0;
+}
+.nh-count{font-size:16px; color:var(--muted); white-space:nowrap;}
+
+/* Filter pills */
+.news-filters{padding-top:28px;}
+.nf-row{display:flex; flex-wrap:wrap; gap:10px;}
+.filter-pill{
+  font:inherit; font-size:14px; font-weight:500;
+  padding:10px 20px; border-radius:100px;
+  background:var(--bg-2); color:var(--muted);
+  border:1.5px solid transparent; cursor:pointer;
+  transition:background .18s, color .18s, border-color .18s;
+}
+.filter-pill:hover{background:#ECECE8; color:var(--ink);}
+.filter-pill.active{background:var(--brand); color:#FFFFFF; border-color:var(--brand);}
+
+/* Article rows */
+.news-list-wrap{padding-top:clamp(32px, 5vh, 52px);}
+.news-list{border-top:1px solid var(--line);}
+.news-row{
+  display:grid;
+  grid-template-columns:minmax(0,38%) minmax(0,62%);
+  gap:clamp(28px, 4vw, 56px);
+  padding:clamp(32px, 5vh, 52px) 0;
+  border-bottom:1px solid var(--line);
+  align-items:start;
+}
+.nr-img{display:block; overflow:hidden; border-radius:4px;}
+.nr-img img{
+  width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
+  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.news-row:hover .nr-img img{transform:scale(1.035);}
+.nr-title{display:block; text-decoration:none;}
+.nr-title h3{
+  font-size:clamp(21px, 2.3vw, 30px);
+  font-weight:400; letter-spacing:-0.02em; line-height:1.2;
+  color:var(--ink); margin:0 0 12px; max-width:26ch;
+  transition:color .2s;
+}
+.news-row:hover .nr-title h3{color:var(--brand);}
+.nr-meta{
+  font-size:14px; color:var(--muted); margin-bottom:16px;
+}
+.nr-body p{
+  font-size:16px; line-height:1.65; color:var(--muted);
+  max-width:56ch; margin-bottom:24px;
+}
+.pill-btn{
+  display:inline-block;
+  font-size:14px; font-weight:500;
+  padding:11px 24px; border-radius:100px;
+  background:var(--bg-2); color:var(--ink);
+  border:1.5px solid transparent;
+  transition:background .18s, color .18s, border-color .18s;
+}
+.pill-btn:hover{background:var(--brand); color:#FFFFFF; border-color:var(--brand);}
+.news-empty{padding:48px 0; color:var(--muted); font-size:16px;}
+
+@media (max-width:760px){
+  .news-row{grid-template-columns:1fr; gap:20px;}
+  .nr-img img{aspect-ratio:16/9;}
+}
+
+/* ================================================================
+   IMAGE + QUOTE PANEL — the F+P paired block
+   Big image left, brand-blue panel right carrying a pull quote.
+   ================================================================ */
+.img-quote{
+  display:grid;
+  grid-template-columns:minmax(0,62%) minmax(0,38%);
+  gap:0;
+  align-items:stretch;
+}
+.iq-img{overflow:hidden;}
+.iq-img img{width:100%; height:100%; min-height:340px; object-fit:cover; display:block;}
+.iq-panel{
+  background:var(--brand);
+  color:#FFFFFF;
+  padding:clamp(32px, 4vw, 56px);
+  display:flex; flex-direction:column; justify-content:center;
+}
+.iq-panel blockquote{
+  font-size:clamp(19px, 1.9vw, 25px);
+  font-weight:300; line-height:1.4; letter-spacing:-0.015em;
+  margin:0 0 22px; border:none; padding:0; color:#FFFFFF;
+}
+.iq-panel cite{
+  font-style:normal; font-size:14px; font-weight:500;
+  color:rgba(255,255,255,.8); letter-spacing:.02em;
+}
+@media (max-width:860px){
+  .img-quote{grid-template-columns:1fr;}
+  .iq-img img{min-height:0; aspect-ratio:16/10;}
+}
+
+/* ================================================================
+   PROJECT CARDS — label overlaid on image (F+P pattern)
+   ================================================================ */
+.project{position:relative; display:block;}
+.project .p-cap{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:20px 22px;
+  background:linear-gradient(to top, rgba(10,14,26,.72) 0%, rgba(10,14,26,.32) 55%, rgba(10,14,26,0) 100%);
+  display:flex; justify-content:space-between; align-items:flex-end;
+  gap:16px; z-index:2;
+  border-radius:0 0 4px 4px;
+}
+.project .p-name{color:#FFFFFF; font-weight:500; font-size:17px; letter-spacing:-0.005em;}
+.project .p-loc,
+.project .p-meta{color:rgba(255,255,255,.82); font-size:13px; font-weight:400;}
+.project:hover .p-name{text-decoration:none;}
+.project img{border-radius:4px;}

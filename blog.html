@@ -95,73 +95,87 @@
   </div>
 </header>
 
-<div class="page-hero">
+<div class="news-head">
   <div class="wrap">
-    <div class="ph-row">
+    <div class="nh-row">
       <h1>Blog</h1>
-      <span class="ph-count">6 articles</span>
+      <span class="nh-count"><span id="artCount">6</span> articles</span>
     </div>
   </div>
 </div>
 
-<section class="posts-lg-wrap">
+<div class="news-filters">
   <div class="wrap">
-    <div class="posts-lg">
-      <a class="post-lg" href="blog/planning-permission-rear-extension.html">
-        <div class="pl-img"><img src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1200&q=90" alt="" loading="lazy"></div>
-        <div class="pl-body">
-          <span class="pl-kicker">Planning &#183; 7 min read</span>
-          <h3>Do you need planning permission for a rear extension?</h3>
-          <p>Often not, thanks to permitted development. But the exceptions catch people out every week. The rules, referenced to the legislation.</p>
-          <span class="pl-more">Read article</span>
-        </div>
-      </a>
-      <a class="post-lg" href="blog/listed-building-consent.html">
-        <div class="pl-img"><img src="https://images.unsplash.com/photo-1509732499382-20be2145852e?w=1200&q=90" alt="" loading="lazy"></div>
-        <div class="pl-body">
-          <span class="pl-kicker">Heritage &#183; 8 min read</span>
-          <h3>Listed building consent, explained</h3>
-          <p>A separate regime with its own tests and, unusually, criminal liability. How the system actually works, and how consent is won.</p>
-          <span class="pl-more">Read article</span>
-        </div>
-      </a>
-      <a class="post-lg" href="blog/principal-designer-explained.html">
-        <div class="pl-img"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=90" alt="" loading="lazy"></div>
-        <div class="pl-body">
-          <span class="pl-kicker">Regulations &#183; 8 min read</span>
-          <h3>What does a Principal Designer actually do?</h3>
-          <p>The law requires one on almost every project, and if nobody is appointed the duties land on you. Two roles, two Acts, untangled.</p>
-          <span class="pl-more">Read article</span>
-        </div>
-      </a>
-      <a class="post-lg" href="blog/conservation-area-permitted-development.html">
-        <div class="pl-img"><img src="https://images.unsplash.com/photo-1512359953714-f0c9a632ab85?w=1200&q=90" alt="" loading="lazy"></div>
-        <div class="pl-body">
-          <span class="pl-kicker">Heritage &#183; 7 min read</span>
-          <h3>Permitted development in conservation areas</h3>
-          <p>Which rights survive designation, which are removed automatically, and what an Article 4 direction takes away street by street.</p>
-          <span class="pl-more">Read article</span>
-        </div>
-      </a>
-      <a class="post-lg" href="blog/how-bim-cuts-construction-costs.html">
-        <div class="pl-img"><img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?w=1200&q=90" alt="" loading="lazy"></div>
-        <div class="pl-body">
-          <span class="pl-kicker">Technical &#183; 7 min read</span>
-          <h3>How BIM cuts construction costs: the evidence</h3>
-          <p>Government measured it: benefits of 1.5 to 3 percent of whole-life cost. Where the money is saved, with the studies cited.</p>
-          <span class="pl-more">Read article</span>
-        </div>
-      </a>
-      <a class="post-lg" href="blog/feasibility-studies-before-you-buy.html">
-        <div class="pl-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=90" alt="" loading="lazy"></div>
-        <div class="pl-body">
-          <span class="pl-kicker">Before you buy &#183; 6 min read</span>
-          <h3>Feasibility studies: what you learn before you spend</h3>
-          <p>What can be built, will it get planning, and what will it cost. The cheapest decision on the whole project, made first.</p>
-          <span class="pl-more">Read article</span>
-        </div>
-      </a>
+    <div class="nf-row">
+        <button class="filter-pill active" data-filter="All">All</button>
+        <button class="filter-pill" data-filter="Planning">Planning</button>
+        <button class="filter-pill" data-filter="Heritage">Heritage</button>
+        <button class="filter-pill" data-filter="Regulations">Regulations</button>
+        <button class="filter-pill" data-filter="Technical">Technical</button>
+        <button class="filter-pill" data-filter="Before you buy">Before you buy</button>
     </div>
+  </div>
+</div>
+
+<section class="news-list-wrap">
+  <div class="wrap">
+    <div class="news-list">
+      <article class="news-row" data-cat="Planning">
+        <a class="nr-img" href="blog/planning-permission-rear-extension.html"><img src="https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1200&q=90" alt="" loading="lazy"></a>
+        <div class="nr-body">
+          <a class="nr-title" href="blog/planning-permission-rear-extension.html"><h3>Do you need planning permission for a rear extension?</h3></a>
+          <div class="nr-meta">Planning &#183; 7 min read</div>
+          <p>Often not, thanks to permitted development. But the exceptions catch people out every week. The rules, referenced to the legislation.</p>
+          <a class="pill-btn" href="blog/planning-permission-rear-extension.html">Read article</a>
+        </div>
+      </article>
+      <article class="news-row" data-cat="Heritage">
+        <a class="nr-img" href="blog/listed-building-consent.html"><img src="https://images.unsplash.com/photo-1509732499382-20be2145852e?w=1200&q=90" alt="" loading="lazy"></a>
+        <div class="nr-body">
+          <a class="nr-title" href="blog/listed-building-consent.html"><h3>Listed building consent, explained</h3></a>
+          <div class="nr-meta">Heritage &#183; 8 min read</div>
+          <p>A separate regime with its own tests and, unusually in planning law, criminal liability. How the system actually works, and how consent is won.</p>
+          <a class="pill-btn" href="blog/listed-building-consent.html">Read article</a>
+        </div>
+      </article>
+      <article class="news-row" data-cat="Regulations">
+        <a class="nr-img" href="blog/principal-designer-explained.html"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=90" alt="" loading="lazy"></a>
+        <div class="nr-body">
+          <a class="nr-title" href="blog/principal-designer-explained.html"><h3>What does a Principal Designer actually do?</h3></a>
+          <div class="nr-meta">Regulations &#183; 8 min read</div>
+          <p>The law requires one on almost every project, and if nobody is appointed the duties land on you. Two roles, two Acts, untangled.</p>
+          <a class="pill-btn" href="blog/principal-designer-explained.html">Read article</a>
+        </div>
+      </article>
+      <article class="news-row" data-cat="Heritage">
+        <a class="nr-img" href="blog/conservation-area-permitted-development.html"><img src="https://images.unsplash.com/photo-1512359953714-f0c9a632ab85?w=1200&q=90" alt="" loading="lazy"></a>
+        <div class="nr-body">
+          <a class="nr-title" href="blog/conservation-area-permitted-development.html"><h3>Permitted development in conservation areas</h3></a>
+          <div class="nr-meta">Heritage &#183; 7 min read</div>
+          <p>Which rights survive designation, which are removed automatically, and what an Article 4 direction takes away street by street.</p>
+          <a class="pill-btn" href="blog/conservation-area-permitted-development.html">Read article</a>
+        </div>
+      </article>
+      <article class="news-row" data-cat="Technical">
+        <a class="nr-img" href="blog/how-bim-cuts-construction-costs.html"><img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?w=1200&q=90" alt="" loading="lazy"></a>
+        <div class="nr-body">
+          <a class="nr-title" href="blog/how-bim-cuts-construction-costs.html"><h3>How BIM cuts construction costs: the evidence</h3></a>
+          <div class="nr-meta">Technical &#183; 7 min read</div>
+          <p>Government measured it: benefits of 1.5 to 3 percent of whole-life cost. Where the money is saved, with the studies cited.</p>
+          <a class="pill-btn" href="blog/how-bim-cuts-construction-costs.html">Read article</a>
+        </div>
+      </article>
+      <article class="news-row" data-cat="Before you buy">
+        <a class="nr-img" href="blog/feasibility-studies-before-you-buy.html"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=90" alt="" loading="lazy"></a>
+        <div class="nr-body">
+          <a class="nr-title" href="blog/feasibility-studies-before-you-buy.html"><h3>Feasibility studies: what you learn before you spend</h3></a>
+          <div class="nr-meta">Before you buy &#183; 6 min read</div>
+          <p>What can be built, will it get planning, and what will it cost. The cheapest decision on the whole project, made first.</p>
+          <a class="pill-btn" href="blog/feasibility-studies-before-you-buy.html">Read article</a>
+        </div>
+      </article>
+    </div>
+    <p class="news-empty" hidden>No articles in that category yet.</p>
   </div>
 </section>
 <div class="cta-band">

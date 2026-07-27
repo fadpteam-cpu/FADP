@@ -182,3 +182,31 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.2 });
   labels.forEach(function(l){ io.observe(l); });
 })();
+
+
+// ================================================================
+// News/blog category filter (Foster+Partners style pill bar)
+// ================================================================
+(function(){
+  var pills = document.querySelectorAll('.filter-pill');
+  var rows  = document.querySelectorAll('.news-row');
+  var count = document.getElementById('artCount');
+  var empty = document.querySelector('.news-empty');
+  if (!pills.length || !rows.length) return;
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      var f = pill.getAttribute('data-filter');
+      pills.forEach(function(p){ p.classList.remove('active'); });
+      pill.classList.add('active');
+      var shown = 0;
+      rows.forEach(function(row){
+        var match = (f === 'All') || (row.getAttribute('data-cat') === f);
+        row.hidden = !match;
+        if (match) shown++;
+      });
+      if (count) count.textContent = shown;
+      if (empty) empty.hidden = shown !== 0;
+    });
+  });
+})();
