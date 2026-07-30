@@ -42,6 +42,7 @@ def header(active, depth=0):
               <h5>Architectural Design &amp; Planning</h5>
               <a href="{p}services/planning-applications.html">Planning Permission</a>
               <a href="{p}services/feasibility-studies.html">Feasibility Studies</a>
+          <a href="{p}services/masterplanning-urban-design.html">Masterplanning &amp; Urban Design</a>
               <a href="{p}services/site-analysis.html">Site Analysis</a>
               <a href="{p}services/outbuild-design.html">Outbuild Design</a>
               <a href="{p}services/sunroom.html">Sunroom</a>
@@ -189,6 +190,7 @@ def footer(depth=0):
       <a class="f-link" href="{p}services/planning-applications.html">Planning Applications</a>
       <a class="f-link" href="{p}services/bim.html">BIM</a>
       <a class="f-link" href="{p}services/feasibility-studies.html">Feasibility Studies</a>
+      <a class="f-link" href="{p}services/masterplanning-urban-design.html">Masterplanning</a>
       <a class="f-link" href="{p}services/listed-buildings.html">Listed Buildings</a>
       <a class="f-link" href="{p}services/principal-designer.html">Principal Designer</a>
     </div>
@@ -361,8 +363,8 @@ home_body = f"""
         <img src="{IMG['team1']}" alt="Aun Naeem, Director" loading="lazy">
         <div class="d-body">
           <h3>Aun Naeem</h3>
-          <div class="d-role">Director &#183; Leads design</div>
-          <p>Your first consultation is with a director. So is your last site visit.</p>
+          <div class="d-role">Director &#183; Leads design and masterplanning</div>
+          <p>Masterplanning and urban design specialist. Your first consultation is with a director, and so is your last site visit.</p>
         </div>
       </div>
       <div class="director">
@@ -442,13 +444,14 @@ projects = head('Projects &#183; FADP Architecture',
 # ---------------------------------------------------------------- SERVICES
 SLUG = {'planning':'planning-applications','bim':'bim','site-analysis':'site-analysis',
         'feasibility':'feasibility-studies','listed':'listed-buildings',
-        'conservation':'conservation-areas','principal-designer':'principal-designer'}
+        'conservation':'conservation-areas','principal-designer':'principal-designer',
+        'masterplanning':'masterplanning-urban-design'}
 def svc(id_, kicker, title, paras, bullets, guide_href):
     ps = '\n'.join(f'      <p>{p}</p>' for p in paras)
     bs = '\n'.join(f'        <li>{b}</li>' for b in bullets)
     img = {'planning':IMG['draw'],'bim':IMG['model'],'site-analysis':IMG['site'],
            'feasibility':IMG['p7'],'listed':IMG['listed'],'conservation':IMG['p8'],
-           'principal-designer':IMG['studio']}[id_]
+           'principal-designer':IMG['studio'],'masterplanning':IMG['p8']}[id_]
     return f"""    <div class="svc-block" id="{id_}">
       <div class="svc-img"><img src="{img}" alt="{title}"></div>
       <div class="svc-copy">
@@ -507,7 +510,12 @@ services_body = f"""
    'Our applications lead with that evidence, which is why sympathetic does not have to mean timid.'],
   ['Article 4 and PD rights checks','Design in context, evidenced by precedent','Conservation area consent','Street-scene and townscape drawings'],
   'blog.html')}
-{svc('principal-designer','07 &#183; Duty holder','Principal Designer',
+{svc('masterplanning','07 &#183; Strategic scale','Masterplanning &amp; Urban Design',
+  ['The scale above a building: how a site is divided, where movement runs, what density it genuinely supports, and how the space between the buildings works. Led by Aun Naeem, whose experience spans sites of every scale and programme.',
+   'Governed by its own framework &#8212; the NPPF chapter on well-designed places, the National Design Guide and National Model Design Code, and the design-code provisions of the Levelling-up and Regeneration Act 2023. We test capacity honestly before anyone commits to a unit count.'],
+  ['Site capacity and development frameworks','Density, massing and typology testing','Movement, access and public realm strategy','Design codes and character guidance','Outline applications and phasing strategy'],
+  'blog.html')}
+{svc('principal-designer','08 &#183; Duty holder','Principal Designer',
   ['Under CDM 2015 and the Building Safety Act 2022, most projects require a Principal Designer, a legal duty-holder responsible for planning, managing and monitoring design-phase safety and, for higher-risk buildings, compliance with building regulations.',
    'We take the appointment formally, keep the records the law requires, and make sure your project never trips on a duty nobody knew they held.'],
   ['Principal Designer under CDM 2015','Principal Designer under the Building Safety Act','Design risk registers and records','Higher-risk building gateway support'],
@@ -579,7 +587,7 @@ about_body = f"""
         <img src="{IMG['team1']}" alt="Aun Naeem, Director" loading="lazy">
         <h3>Aun Naeem</h3>
         <div class="m-role">Director</div>
-        <p class="m-bio">Co-founder of the practice. Leads design and client relationships, from the first consultation through planning to completion on site.</p>
+        <p class="m-bio">Co-founder of the practice. Leads design and client relationships, from the first consultation through planning to completion on site. Specialises in masterplanning and urban design, with experience across sites of every scale and programme.</p>
       </div>
       <div class="member">
         <img src="{IMG['team2']}" alt="Fatima Shakeel, Director" loading="lazy">

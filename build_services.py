@@ -185,6 +185,31 @@ SERVICES = [
    ("Do contractors need special software?","No. Contractors receive conventional drawings and schedules; the coordination benefit is baked into what they price.")],
   guide='../blog/how-bim-cuts-construction-costs.html'),
 
+ dict(slug='masterplanning-urban-design', title='Masterplanning & Urban Design',
+  strap='Sites, streets and neighbourhoods. Capacity, density and design codes, argued through policy and taken to consent.',
+  img=IMG['p8'],
+  intro=[
+   "Masterplanning is the scale above a building: how a site is divided, where movement runs, what density it can carry, and how the public realm between the buildings actually works. It is led here by Aun Naeem, whose experience covers sites of every scale and programme, from residential-led regeneration to mixed-use frameworks.",
+   "The discipline is governed by its own policy framework. The National Planning Policy Framework devotes a chapter to achieving well-designed places, the National Design Guide and National Model Design Code set out what authorities expect, and the Levelling-up and Regeneration Act 2023 pushes design codes further into the plan-making system. We work inside that framework rather than against it."],
+  includes=[
+   "Site capacity and development framework studies",
+   "Density, massing and typology testing",
+   "Movement, access and public realm strategy",
+   "Design codes and character area guidance",
+   "Phasing and delivery strategy",
+   "Design and Access Statements for larger schemes"],
+  steps=[("Understand","Site, context, constraints and policy. Ownership, levels, access, ecology and what the local plan expects of the site."),
+         ("Test","Capacity options modelled and compared: how many units, what typologies, what density the site genuinely supports."),
+         ("Frame","The chosen option developed into a masterplan or framework, with a design code where the scheme will be delivered in phases or by others."),
+         ("Consent","Taken through pre-application and into outline or full permission, with the assessments the authority will ask for.")],
+  why=[
+   "Most masterplans fail on capacity assumed too early. A scheme costed on a unit count the site cannot actually carry, once daylight, access, drainage and policy are honestly applied, unravels at planning. We test capacity before anyone commits to a number."],
+  faqs=[
+   ("What size of site do you work on?","From single infill plots and backland sites up to multi-plot frameworks. The question is not acreage but whether the site needs decisions about layout, movement and density rather than a single building."),
+   ("What is a design code, and do I need one?","A document setting the rules a later designer must follow: heights, materials, frontage, street types. Authorities increasingly ask for them on phased or multi-developer sites, and the 2023 Act pushes them further into plan-making."),
+   ("Can you take a site through outline planning?","Yes. Outline applications with parameter plans and a design code are a common route for larger sites, with reserved matters following as phases come forward.")],
+  guide='../blog/feasibility-studies-before-you-buy.html'),
+
  dict(slug='listed-buildings', title='Listed Buildings',
   strap='Listed building consent, heritage statements and schedules of works, argued in the language conservation officers use.',
   img=IMG['listed'],
