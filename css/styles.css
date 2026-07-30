@@ -349,13 +349,7 @@ body.overlay-hero .work-grid .project:first-child .p-name{font-size:20px;}
   color:var(--muted);
   line-height:2;
 }
-.quote-panel{
-  grid-column:6 / span 7;
-  background:#FFFFFF;
-  border-radius:20px;
-  padding:clamp(28px, 3vw, 44px);
-  box-shadow:0 1px 2px rgba(20,20,20,.04), 0 12px 32px rgba(20,20,20,.06);
-}
+.quote-panel{grid-column:6 / span 7;}
 .q-progress{
   display:flex; align-items:center; gap:16px;
   margin-bottom:32px;
@@ -2346,3 +2340,76 @@ video.hero-bg{
 }
 
 /* Reduced motion: the video is paused in JS so its poster still shows */
+
+/* ================================================================
+   FEE CALCULATOR — integrated into the page, not floated on it
+   The panel was a white card on near-white paper: no definition,
+   and stretched taller than its content. It now sits in the page
+   grid with a hairline rule, aligned to the top, while the option
+   tiles keep their soft rounded treatment.
+   ================================================================ */
+.quote-wrap{
+  background:var(--bg);
+  border-top:1px solid var(--ink);
+  border-bottom:none;
+  padding:clamp(56px, 8vh, 96px) 0 clamp(64px, 9vh, 110px);
+  margin-top:clamp(88px, 13vh, 150px);
+}
+.quote-grid{align-items:start;}
+.quote-panel{
+  background:transparent;
+  border:none;
+  border-radius:0;
+  box-shadow:none;
+  padding:0;
+}
+/* the two columns share a baseline, and the wizard gets a quiet
+   left rule so it reads as a distinct zone without being a box */
+@media (min-width:901px){
+  .quote-panel{
+    padding-left:clamp(32px, 3.5vw, 56px);
+    border-left:1px solid var(--line);
+  }
+}
+/* intro column no longer stretches to match the panel */
+.quote-intro{align-self:start;}
+
+/* ================================================================
+   SPACING — more air between sections and around key elements
+   ================================================================ */
+section{padding-top:clamp(120px, 17vh, 210px);}
+
+/* Section heads sit a little further from their content */
+.sec-label{margin-bottom:clamp(40px, 5vh, 60px);}
+
+/* Project grid rows breathe more */
+.work-grid{gap:clamp(56px, 7vh, 80px) clamp(32px, 3.4vw, 48px);}
+
+/* News rows */
+.news-row{padding:clamp(40px, 5.5vh, 60px) 0;}
+.news-list-wrap{padding-top:clamp(40px, 6vh, 64px);}
+.news-filters{padding-top:36px;}
+
+/* Directors and team */
+.directors-strip{gap:clamp(40px, 4.5vw, 64px);}
+.team-grid.two{gap:clamp(40px, 5vw, 72px);}
+
+/* About narrative */
+.narrative{gap:clamp(44px, 5vw, 80px);}
+.narrative .n-copy p{margin-bottom:24px;}
+
+/* Promises block */
+.promises{gap:clamp(40px, 4.5vw, 64px); margin-bottom:52px;}
+
+/* Service panels */
+.svc-panels{gap:clamp(20px, 2.4vw, 32px);}
+
+/* Case study */
+.case{gap:clamp(36px, 4vw, 64px);}
+
+/* Footer breathing room */
+footer{margin-top:clamp(96px, 13vh, 160px);}
+
+/* Page heroes on subpages */
+.page-hero{padding-top:clamp(64px, 9vh, 110px);}
+.news-head{padding-top:clamp(64px, 9vh, 110px);}

@@ -378,17 +378,6 @@ home_body = f"""
   </div>
 </section>
 
-<section id="statement">
-  <div class="wrap">
-    <div class="img-quote">
-      <div class="iq-img"><img src="{IMG['studio']}" alt="The FADP studio" loading="lazy"></div>
-      <div class="iq-panel">
-        <blockquote>"The difference between a good project and a painful one is rarely the design. It is certainty, about fees, about planning, about who is responsible for what."</blockquote>
-        <cite>FADP Architecture</cite>
-      </div>
-    </div>
-  </div>
-</section>
 
 """
 
