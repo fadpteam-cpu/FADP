@@ -2413,3 +2413,112 @@ footer{margin-top:clamp(96px, 13vh, 160px);}
 /* Page heroes on subpages */
 .page-hero{padding-top:clamp(64px, 9vh, 110px);}
 .news-head{padding-top:clamp(64px, 9vh, 110px);}
+
+/* ================================================================
+   SERVICE PAGES — cross-linking, slimmer sidebar, upsell band
+   ================================================================ */
+
+/* Sidebar: promise stated once, compactly, then real cross-links */
+.aside-card .aside-promise{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--ink);
+  margin-bottom:20px;
+}
+.aside-card .btn{width:100%; text-align:center;}
+.aside-alt{
+  display:block;
+  margin-top:12px;
+  font-size:14px;
+  color:var(--muted);
+  text-align:center;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  transition:color .2s;
+}
+.aside-alt:hover{color:var(--brand);}
+
+.aside-links{
+  margin-top:28px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.aside-links h4{
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--brand);
+  margin-bottom:14px;
+}
+.aside-links ul{list-style:none; margin:0; padding:0;}
+.aside-links li{margin-bottom:2px;}
+.aside-links a{
+  display:block;
+  font-size:15px;
+  color:var(--muted);
+  padding:7px 0;
+  transition:color .18s, transform .18s;
+}
+.aside-links a:hover{color:var(--brand); transform:translateX(3px);}
+
+.aside-contact{
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+.aside-contact a{
+  display:block;
+  font-size:14px;
+  color:var(--muted);
+  padding:4px 0;
+}
+.aside-contact a:hover{color:var(--brand);}
+
+/* "Works often needed together" upsell band */
+.related-wrap{
+  background:var(--bg-2);
+  margin-top:clamp(88px, 12vh, 150px);
+  padding:clamp(64px, 9vh, 104px) 0 clamp(72px, 10vh, 120px);
+}
+.rel-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+.rel-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:32px;
+  min-height:150px;
+  padding:24px;
+  background:var(--bg);
+  border-radius:14px;
+  border:1.5px solid transparent;
+  transition:border-color .2s, transform .2s, background .2s;
+}
+.rel-card:hover{
+  border-color:var(--brand);
+  transform:translateY(-3px);
+}
+.rel-name{
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+  line-height:1.25;
+}
+.rel-go{
+  font-size:13px;
+  font-weight:500;
+  color:var(--brand);
+  letter-spacing:.01em;
+}
+
+@media (max-width:900px){
+  .rel-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:520px){
+  .rel-grid{grid-template-columns:1fr;}
+}

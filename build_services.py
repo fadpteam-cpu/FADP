@@ -3,6 +3,66 @@ import os, sys
 sys.path.insert(0, '.')
 exec(open('build_pages.py').read().split("# ---------------------------------------------------------------- write")[0])
 
+try:
+    import servicemap as _smap
+except Exception:
+    _smap = None
+
+def _related_band(slug):
+    """A 'works often needed together' band: real cross-links to adjacent services."""
+    if not _smap or slug not in _smap.RELATED:
+        return ''
+    cards = []
+    for r in _smap.RELATED[slug]:
+        rt = _smap.TITLES.get(r, r)
+        cards.append(
+            f'''      <a class="rel-card" href="{r}.html">
+        <span class="rel-name">{rt}</span>
+        <span class="rel-go">View service &#8594;</span>
+      </a>''')
+    return f'''
+<section class="related-wrap">
+  <div class="wrap">
+    <div class="sec-label"><span>Works often needed together</span><em class="sec-sub">Most projects touch more than one of these. We coordinate them as one appointment.</em></div>
+    <div class="rel-grid">
+{chr(10).join(cards)}
+    </div>
+  </div>
+</section>'''
+
+def _crumbs(slug, title):
+    """Home / Services / Category / Title, with the category linking to the parent hub."""
+    if _smap and slug in _smap.CATEGORY:
+        cat = _smap.CATEGORY[slug]
+        parent = _smap.PARENT.get(slug)
+        cat_link = f'<a href="{parent}.html">{cat}</a>' if parent else cat
+        return (f'<a href="../index.html">Home</a> &#183; '
+                f'<a href="../services.html">Services</a> &#183; '
+                f'{cat_link} &#183; {title}')
+    return (f'<a href="../index.html">Home</a> &#183; '
+            f'<a href="../services.html">Services</a> &#183; {title}')
+
+def _aside_links(slug):
+    """Sidebar cross-links: the parent hub + top related services."""
+    if not _smap or slug not in _smap.CATEGORY:
+        return ''
+    items = []
+    parent = _smap.PARENT.get(slug)
+    if parent:
+        items.append(f'<a href="{parent}.html">{_smap.TITLES.get(parent, parent)}</a>')
+    for r in _smap.RELATED.get(slug, [])[:3]:
+        items.append(f'<a href="{r}.html">{_smap.TITLES.get(r, r)}</a>')
+    if not items:
+        return ''
+    links = '\n'.join(f'            <li>{i}</li>' for i in items)
+    return f'''
+        <div class="aside-links">
+          <h4>Related services</h4>
+          <ul>
+{links}
+          </ul>
+        </div>'''
+
 def service_page(slug, title, strap, img, intro, includes, steps, why, faqs, guide):
     inc = '\n'.join(f'        <li>{i}</li>' for i in includes)
     stp = '\n'.join(
@@ -22,7 +82,7 @@ def service_page(slug, title, strap, img, intro, includes, steps, why, faqs, gui
     body = f'''
 <div class="page-hero">
   <div class="wrap">
-    <div class="crumbs"><a href="../index.html">Home</a> &#183; <a href="../services.html">Services</a> &#183; {title}</div>
+    <div class="crumbs">{_crumbs(slug, title)}</div>
     <h1>{title}</h1>
     <p class="lede">{strap}</p>
   </div>
@@ -49,16 +109,11 @@ def service_page(slug, title, strap, img, intro, includes, steps, why, faqs, gui
       </div>
       <aside class="svc-aside">
         <div class="aside-card">
-          <h3>Fixed fee, in writing</h3>
-          <p>Every stage is quoted before it begins. No hourly surprises, no scope creep.</p>
-          <ul>
-            <li>Written quote within one working day</li>
-            <li>Free initial consultation</li>
-            <li>Directors lead every project</li>
-          </ul>
+          <p class="aside-promise">Fixed fees, agreed in writing before each stage. The first consultation is free.</p>
           <a class="btn" href="../index.html#quote">Get a fixed-fee quote</a>
+          <a class="aside-alt" href="{guide}">Read the guide first</a>
+{_aside_links(slug)}
           <div class="aside-contact">
-            <a href="tel:+442080000000">020 8000 0000</a>
             <a href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
           </div>
         </div>
@@ -84,6 +139,7 @@ def service_page(slug, title, strap, img, intro, includes, steps, why, faqs, gui
     </div>
   </div>
 </section>
+{_related_band(slug)}
 '''
     return (head(f'{title} &#183; FADP Architecture, London', strap, depth=1)
             + header('services', depth=1) + body + cta_band(depth=1) + '\n' + footer(depth=1))
