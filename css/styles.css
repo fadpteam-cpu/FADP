@@ -2688,3 +2688,163 @@ footer{margin-top:clamp(96px, 13vh, 160px);}
   }
   .svc-includes{grid-template-columns:1fr;}
 }
+
+/* ================================================================
+   PROJECT JOURNEY TOOL — explorable, stage-by-stage
+   ================================================================ */
+.journey-hero .lede{max-width:56ch;}
+
+.journey-tool{padding-top:clamp(48px, 7vh, 90px); position:relative;}
+
+/* The stage stepper */
+.jn-tabs{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:0;
+  position:relative;
+  border-top:2px solid var(--line);
+}
+.jn-progress-line{display:none;}
+.jn-tab{
+  position:relative;
+  background:none; border:none; cursor:pointer;
+  text-align:left;
+  padding:22px 20px 24px 0;
+  display:flex; flex-direction:column; gap:6px;
+  font:inherit;
+  transition:opacity .2s;
+}
+/* the active/hover top rule */
+.jn-tab::before{
+  content:"";
+  position:absolute; top:-2px; left:0; right:0;
+  height:2px; background:var(--brand);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.jn-tab.active::before,
+.jn-tab:hover::before{transform:scaleX(1);}
+.jn-num{
+  font-size:13px; font-weight:600; letter-spacing:.08em;
+  color:var(--muted); transition:color .2s;
+}
+.jn-tab.active .jn-num{color:var(--brand);}
+.jn-label{
+  font-size:16px; font-weight:500; letter-spacing:-0.01em;
+  color:var(--ink); line-height:1.2;
+}
+.jn-dur{font-size:12.5px; color:var(--muted);}
+.jn-tab.active .jn-label{color:var(--brand);}
+
+/* Panels */
+.jn-panels{padding-top:clamp(40px, 6vh, 72px);}
+.jn-panel{animation:jnfade .4s ease;}
+.jn-panel[hidden]{display:none;}
+@keyframes jnfade{from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;}}
+@media (prefers-reduced-motion: reduce){.jn-panel{animation:none;}}
+
+.jn-panel-head{max-width:60ch; margin-bottom:clamp(36px, 5vh, 56px);}
+.jn-panel-meta{
+  display:flex; align-items:baseline; gap:16px; margin-bottom:16px;
+}
+.jn-panel-num{
+  font-size:clamp(40px, 6vw, 72px); font-weight:200;
+  letter-spacing:-0.04em; line-height:.8; color:var(--brand);
+}
+.jn-panel-dur{
+  font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+  font-weight:600; color:var(--muted);
+}
+.jn-panel-head h2{
+  font-size:clamp(28px, 3.4vw, 44px); font-weight:300;
+  letter-spacing:-0.03em; line-height:1.1; margin:0 0 18px;
+}
+.jn-summary{
+  font-size:clamp(18px, 1.7vw, 21px); font-weight:300;
+  line-height:1.55; color:var(--ink); letter-spacing:-0.01em;
+}
+
+.jn-cols{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:clamp(40px, 6vw, 88px);
+  margin-bottom:clamp(40px, 6vh, 64px);
+}
+.jn-col h3{
+  font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  font-weight:600; color:var(--brand);
+  padding-bottom:16px; margin-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+.jn-do{list-style:none; margin:0; padding:0;}
+.jn-do li{
+  position:relative;
+  padding:14px 0 14px 30px;
+  border-bottom:1px solid var(--line);
+  font-size:16px; line-height:1.5; color:var(--ink);
+}
+.jn-do li::before{
+  content:"";
+  position:absolute; left:0; top:20px;
+  width:13px; height:7px;
+  border-left:2px solid var(--brand);
+  border-bottom:2px solid var(--brand);
+  transform:rotate(-45deg);
+}
+.jn-do.you li::before{
+  border:none; border-radius:50%;
+  width:7px; height:7px; top:20px; left:3px;
+  background:var(--ink); transform:none;
+}
+
+/* The "can you stop here" reassurance box — the client-first value made visible */
+.jn-stop{
+  display:flex; gap:18px; align-items:flex-start;
+  background:var(--bg-2);
+  border-radius:14px;
+  padding:24px 28px;
+  max-width:80ch;
+}
+.jn-stop-icon{
+  flex-shrink:0;
+  width:32px; height:32px; border-radius:50%;
+  background:var(--brand); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px;
+}
+.jn-stop div{font-size:15.5px; line-height:1.6; color:var(--ink);}
+.jn-stop strong{color:var(--brand);}
+
+/* Closing CTA */
+.journey-cta{padding-top:clamp(80px, 12vh, 150px);}
+.jc-inner{
+  background:var(--brand); color:#fff;
+  border-radius:16px;
+  padding:clamp(40px, 6vw, 72px);
+  text-align:center;
+}
+.jc-inner h2{
+  font-size:clamp(26px, 3vw, 40px); font-weight:300;
+  letter-spacing:-0.025em; color:#fff; margin:0 0 16px;
+}
+.jc-inner p{
+  font-size:17px; line-height:1.6; color:rgba(255,255,255,.85);
+  max-width:52ch; margin:0 auto 32px;
+}
+.jc-inner .btn{
+  background:#fff; color:var(--brand); border-color:#fff;
+  border-radius:100px; padding:15px 32px;
+}
+.jc-inner .btn:hover{opacity:.9;}
+
+/* Responsive */
+@media (max-width:820px){
+  .jn-tabs{grid-template-columns:1fr; border-top:none;}
+  .jn-tab{
+    border-top:2px solid var(--line);
+    padding:18px 16px;
+    flex-direction:row; align-items:baseline; gap:14px;
+  }
+  .jn-tab::before{top:-2px;}
+  .jn-label{flex:1;}
+  .jn-cols{grid-template-columns:1fr; gap:32px;}
+}

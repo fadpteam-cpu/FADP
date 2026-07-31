@@ -34,6 +34,7 @@ def header(active, depth=0):
     <nav class="site-nav">
       {a('index.html','Home','home')}
       {a('projects.html','Projects','projects')}
+      {a('journey.html','Your project','journey')}
       <div class="has-mega">
         <button type="button" class="mega-btn{' current' if active=='services' else ''}" aria-haspopup="true">Services</button>
         <div class="mega" aria-label="Services menu">
@@ -118,6 +119,7 @@ def header(active, depth=0):
     <nav class="mn-primary">
       <a href="{p}index.html">Home</a>
       <a href="{p}projects.html">Projects</a>
+      <a href="{p}journey.html">Your project</a>
       <a href="{p}about.html">About</a>
       <a href="{p}blog.html">Blog</a>
     </nav>

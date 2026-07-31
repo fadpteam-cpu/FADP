@@ -283,3 +283,44 @@ if (enquiryForm) enquiryForm.addEventListener('submit', function(e){
     attempt.catch(function(){ /* poster remains visible */ });
   }
 })();
+
+
+// ================================================================
+// Project-journey tool: accessible tabbed stage explorer
+// ================================================================
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.jn-tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.jn-panel'));
+  if (!tabs.length) return;
+
+  function select(tab){
+    var key = tab.getAttribute('data-stage');
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    panels.forEach(function(p){
+      var on = p.id === 'panel-' + key;
+      p.classList.toggle('active', on);
+      p.hidden = !on;
+    });
+  }
+
+  tabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){ select(tab); });
+    tab.addEventListener('keydown', function(e){
+      var idx = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') idx = (i + 1) % tabs.length;
+      if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   idx = (i - 1 + tabs.length) % tabs.length;
+      if (e.key === 'Home') idx = 0;
+      if (e.key === 'End')  idx = tabs.length - 1;
+      if (idx !== null){
+        e.preventDefault();
+        tabs[idx].focus();
+        select(tabs[idx]);
+      }
+    });
+  });
+})();
