@@ -1325,10 +1325,12 @@ header{overflow:visible;}
 /* ================================================================
    SERVICE DETAIL PAGES
    ================================================================ */
+.svc-lead{margin:0; display:block; border-radius:4px; overflow:hidden;}
 .svc-lead img{
   width:100%;
-  aspect-ratio:21/9;
+  aspect-ratio:16/7;
   object-fit:cover;
+  display:block;
 }
 .svc-layout{
   display:grid;
@@ -1635,7 +1637,6 @@ html{scroll-behavior:smooth;}
    We already have positioned parents on most image containers. */
 
 .project,
-.svc-lead,
 .a-lead,
 
 .project::after,
@@ -1673,14 +1674,7 @@ html{scroll-behavior:smooth;}
 .a-lead{overflow:hidden;}
 
 /* Sub-service and service hub lead images */
-.svc-lead::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(5,48,140,0.06);
-  pointer-events:none;
-  z-index:1;
-}
+/* svc-lead tint removed — was causing a blue bar below the image */
 
 
 /* ================================================================
@@ -2561,3 +2555,136 @@ footer{margin-top:clamp(96px, 13vh, 160px);}
 
 @media (max-width:1000px){.promises{grid-template-columns:1fr 1fr;}}
 @media (max-width:560px){.promises{grid-template-columns:1fr;}}
+
+/* ================================================================
+   SERVICE DETAIL PAGES — rebuilt for clarity and breathing room
+   Each block is a labelled zone with generous whitespace, structured
+   so a first-time client can follow it top to bottom without effort.
+   ================================================================ */
+
+.svc-hero-img{padding-top:clamp(32px, 4vh, 48px);}
+
+/* Shared two-column "label | content" pattern used by intro, why */
+.svc-intro, .svc-why{padding-top:clamp(72px, 10vh, 130px);}
+.svc-intro-grid, .svc-why-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 3fr) minmax(0, 8fr);
+  gap:clamp(28px, 5vw, 88px);
+  align-items:start;
+}
+.svc-intro-label, .svc-why-label{
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--brand);
+  padding-top:8px;
+}
+.svc-intro-copy p, .svc-why-copy p{
+  font-size:clamp(18px, 1.7vw, 22px);
+  line-height:1.6;
+  color:var(--ink);
+  margin-bottom:22px;
+  max-width:56ch;
+  font-weight:300;
+  letter-spacing:-0.01em;
+}
+.svc-why-copy p{font-size:clamp(17px, 1.5vw, 20px); font-weight:400; color:var(--muted);}
+.svc-why-cta{
+  margin-top:36px;
+  display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+}
+.svc-why-alt{
+  font-size:15px; color:var(--muted);
+  text-decoration:underline; text-underline-offset:3px;
+  transition:color .2s;
+}
+.svc-why-alt:hover{color:var(--brand);}
+
+/* "What you receive" — a clean two-column checklist */
+.svc-receive{padding-top:clamp(72px, 10vh, 130px);}
+.svc-receive-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 3fr) minmax(0, 8fr);
+  gap:clamp(28px, 5vw, 88px);
+  align-items:start;
+}
+.svc-receive-head h2{
+  font-size:clamp(24px, 2.6vw, 34px);
+  font-weight:400; letter-spacing:-0.02em; line-height:1.15;
+  margin:0 0 14px;
+}
+.svc-receive-head p{
+  font-size:15px; line-height:1.6; color:var(--muted); max-width:34ch;
+}
+.svc-includes{
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:0 clamp(24px, 3vw, 48px);
+  border-top:1px solid var(--ink);
+}
+.svc-includes li{
+  padding:18px 0 18px 30px;
+  border-bottom:1px solid var(--line);
+  font-size:16px; line-height:1.5; color:var(--ink);
+  position:relative;
+}
+.svc-includes li::before{
+  content:"";
+  position:absolute; left:0; top:24px;
+  width:14px; height:8px;
+  border-left:2px solid var(--brand);
+  border-bottom:2px solid var(--brand);
+  transform:rotate(-45deg);
+}
+
+/* "How it works" — numbered explanatory steps */
+.svc-process{padding-top:clamp(72px, 10vh, 130px);}
+.svc-process-head, .svc-faq-head{margin-bottom:clamp(40px, 5vh, 64px);}
+.svc-process-head h2, .svc-faq-head h2{
+  font-size:clamp(24px, 2.8vw, 38px);
+  font-weight:400; letter-spacing:-0.025em; line-height:1.1;
+  margin:0 0 14px;
+}
+.svc-process-head p{
+  font-size:17px; line-height:1.6; color:var(--muted); max-width:52ch;
+}
+.process-steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:clamp(24px, 3vw, 48px);
+}
+.process-steps .step{
+  padding-top:28px;
+  border-top:2px solid var(--brand);
+}
+.process-steps .step-num{
+  font-size:14px; font-weight:600; letter-spacing:.1em;
+  color:var(--brand); margin-bottom:18px;
+}
+.process-steps .step h3{
+  font-size:19px; font-weight:500; letter-spacing:-0.01em;
+  margin:0 0 12px;
+}
+.process-steps .step p{
+  font-size:15.5px; line-height:1.6; color:var(--muted); margin:0;
+}
+
+/* FAQ block */
+.svc-faq{padding-top:clamp(72px, 10vh, 130px);}
+.svc-faq-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 3fr) minmax(0, 8fr);
+  gap:clamp(28px, 5vw, 88px);
+  align-items:start;
+}
+.svc-faq-head{display:flex; flex-direction:column; gap:14px; margin-bottom:0;}
+.svc-faq-head .link{font-size:14px;}
+
+/* Responsive collapse of all label|content grids */
+@media (max-width:820px){
+  .svc-intro-grid, .svc-why-grid, .svc-receive-grid, .svc-faq-grid{
+    grid-template-columns:1fr; gap:20px;
+  }
+  .svc-includes{grid-template-columns:1fr;}
+}

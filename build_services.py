@@ -79,6 +79,7 @@ def service_page(slug, title, strap, img, intro, includes, steps, why, faqs, gui
     ip = '\n'.join(f'        <p>{p}</p>' for p in intro)
     wp = '\n'.join(f'        <p>{p}</p>' for p in why)
 
+    # Split includes into a two-column checklist for scannability
     body = f'''
 <div class="page-hero">
   <div class="wrap">
@@ -88,54 +89,74 @@ def service_page(slug, title, strap, img, intro, includes, steps, why, faqs, gui
   </div>
 </div>
 
-<section style="padding-top:48px;">
+<section class="svc-hero-img">
   <div class="wrap">
     <figure class="svc-lead"><img src="{img}" alt="{title}" loading="lazy"></figure>
   </div>
 </section>
 
-<section style="padding-top:72px;">
+<section class="svc-intro">
   <div class="wrap">
-    <div class="svc-layout">
-      <div class="svc-main">
-        <h2>What this covers</h2>
+    <div class="svc-intro-grid">
+      <div class="svc-intro-label">What this is</div>
+      <div class="svc-intro-copy">
 {ip}
-        <h2>What you receive</h2>
-        <ul class="svc-includes">
-{inc}
-        </ul>
-        <h2>Why it matters</h2>
-{wp}
       </div>
-      <aside class="svc-aside">
-        <div class="aside-card">
-          <p class="aside-promise">Fixed fees, agreed in writing before each stage. The first consultation is free.</p>
-          <a class="btn" href="../index.html#quote">Get a fixed-fee quote</a>
-          <a class="aside-alt" href="{guide}">Read the guide first</a>
-{_aside_links(slug)}
-          <div class="aside-contact">
-            <a href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
-          </div>
-        </div>
-      </aside>
     </div>
   </div>
 </section>
 
-<section>
+<section class="svc-receive">
   <div class="wrap">
-    <div class="sec-label"><span>How it works</span></div>
-    <div class="process-list">
+    <div class="svc-receive-grid">
+      <div class="svc-receive-head">
+        <h2>What you receive</h2>
+        <p>Every one of these is included in the fixed fee we agree before we start.</p>
+      </div>
+      <ul class="svc-includes">
+{inc}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="svc-process">
+  <div class="wrap">
+    <div class="svc-process-head">
+      <h2>How it works</h2>
+      <p>A clear, staged path. You know what happens at each step, and you can stop at the end of any stage.</p>
+    </div>
+    <div class="process-steps">
 {stp}
     </div>
   </div>
 </section>
 
-<section>
+<section class="svc-why">
   <div class="wrap">
-    <div class="sec-label"><span>Common questions</span><a class="link" href="{guide}">Read the full guide</a></div>
-    <div class="faq">
+    <div class="svc-why-grid">
+      <div class="svc-why-label">Why it matters</div>
+      <div class="svc-why-copy">
+{wp}
+        <div class="svc-why-cta">
+          <a class="btn" href="../index.html#quote">Get a fixed-fee quote</a>
+          <a class="svc-why-alt" href="{guide}">Read the full guide first</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-faq">
+  <div class="wrap">
+    <div class="svc-faq-grid">
+      <div class="svc-faq-head">
+        <h2>Common questions</h2>
+        <a class="link" href="{guide}">Read the full guide</a>
+      </div>
+      <div class="faq">
 {fq}
+      </div>
     </div>
   </div>
 </section>
