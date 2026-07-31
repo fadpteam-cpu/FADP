@@ -1867,8 +1867,8 @@ header nav a{
 /* "What working with us looks like" — three promises replacing fake reviews */
 .promises{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:48px;
+  grid-template-columns:repeat(4, 1fr);
+  gap:40px;
   margin-bottom:40px;
 }
 .promise h4{
@@ -1926,7 +1926,7 @@ footer a[href^="tel:"]{
 }
 
 @media (max-width:800px){
-  .promises{grid-template-columns:1fr; gap:32px;}
+  .promises{grid-template-columns:1fr;}
   .header-tel{display:none;}
 }
 
@@ -2522,3 +2522,42 @@ footer{margin-top:clamp(96px, 13vh, 160px);}
 @media (max-width:520px){
   .rel-grid{grid-template-columns:1fr;}
 }
+
+/* ================================================================
+   APPROACH — the quiet philosophy statement after the hero.
+   Deliberate restraint: a lot of space, few words, one idea.
+   This is where "simplicity without compromising quality" is felt.
+   ================================================================ */
+#approach{
+  padding-top:clamp(96px, 15vh, 200px);
+  padding-bottom:clamp(40px, 6vh, 80px);
+}
+#approach .wrap{
+  display:grid;
+  grid-template-columns:minmax(0, 5fr) minmax(0, 7fr);
+  gap:clamp(32px, 5vw, 80px);
+  align-items:start;
+}
+.approach-lead{
+  font-size:clamp(28px, 3.4vw, 46px);
+  font-weight:300;
+  letter-spacing:-0.03em;
+  line-height:1.12;
+  color:var(--ink);
+  max-width:16ch;
+}
+.approach-body{
+  font-size:clamp(17px, 1.5vw, 20px);
+  font-weight:400;
+  line-height:1.7;
+  color:var(--muted);
+  max-width:46ch;
+  align-self:center;
+}
+@media (max-width:760px){
+  #approach .wrap{grid-template-columns:1fr; gap:24px;}
+  .approach-body{align-self:start;}
+}
+
+@media (max-width:1000px){.promises{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.promises{grid-template-columns:1fr;}}

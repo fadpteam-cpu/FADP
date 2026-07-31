@@ -290,6 +290,13 @@ home_body = f"""
   </div>
 </div>
 
+<section id="approach">
+  <div class="wrap">
+    <p class="approach-lead">We believe good architecture is quiet.</p>
+    <p class="approach-body">Considered, not decorated. Precise, not complicated. We take a small number of projects at a time, lead every one ourselves, and give each the attention it deserves &#8212; from the first sketch to the last detail on site. Simplicity, without ever compromising on quality.</p>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
     <div class="sec-label"><span>Recent work</span><em class="sec-sub">The kind of projects we are built to deliver, start to finish.</em><a class="link" href="projects.html">All projects</a></div>
@@ -299,6 +306,31 @@ home_body = f"""
 {project(IMG['p5'],'Extension','Chelsea &#183; 2023')}
 {project(IMG['p3'],'Commercial','Shoreditch &#183; 2024')}
     </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-label"><span>What working with us looks like</span><em class="sec-sub">The promises most practices will not put in writing.</em></div>
+    <div class="promises">
+      <div class="promise">
+        <h4>You deal with a director</h4>
+        <p>From the first consultation to the last site visit, the person you meet is the person doing the work. Nothing is handed down a chain.</p>
+      </div>
+      <div class="promise">
+        <h4>Fees are fixed, in writing</h4>
+        <p>Every stage is quoted and agreed before it begins. No hourly billing, no scope creep, no invoice you did not see coming.</p>
+      </div>
+      <div class="promise">
+        <h4>You can stop at any stage</h4>
+        <p>Work is staged so you can review, decide, and leave at the end of any stage without penalty. The commitment is earned, not locked in.</p>
+      </div>
+      <div class="promise">
+        <h4>You always know where things stand</h4>
+        <p>A clear update at every stage, in plain language, so you are never left wondering what is happening or what comes next. No jargon, no silence.</p>
+      </div>
+    </div>
+    <p class="reviews-note">As a new practice we are building our public review record. Early clients receive our fullest attention &#8212; and our request for an honest review at the end.</p>
   </div>
 </section>
 
@@ -331,27 +363,6 @@ home_body = f"""
         <div class="panel-body"><h3>Planning only</h3><span class="panel-cta">How we handle planning</span></div>
       </a>
     </div>
-  </div>
-</section>
-
-<section id="reviews">
-  <div class="wrap">
-    <div class="sec-label"><span>What working with us looks like</span><em class="sec-sub">The promises most practices will not put in writing.</em></div>
-    <div class="promises">
-      <div class="promise">
-        <h4>You deal with a director</h4>
-        <p>From the first consultation to the last site visit, the person you meet is the person doing the work. Nothing is handed down a chain.</p>
-      </div>
-      <div class="promise">
-        <h4>Fees are fixed, in writing</h4>
-        <p>Every stage is quoted and agreed before it begins. No hourly billing, no scope creep, no invoice you did not see coming.</p>
-      </div>
-      <div class="promise">
-        <h4>You can stop at any stage</h4>
-        <p>Work is staged so you can review, decide, and leave at the end of any stage without penalty. The commitment is earned, not locked in.</p>
-      </div>
-    </div>
-    <p class="reviews-note">As a new practice we are building our public review record. Early clients receive our fullest attention &#8212; and our request for an honest review at the end.</p>
   </div>
 </section>
 
