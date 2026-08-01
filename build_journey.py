@@ -150,102 +150,64 @@ def stage_panels():
 
 
 def timeline():
-    """A proportional visual timeline: how long each stage takes, at a glance."""
-    total = sum(s['weeks'] for s in STAGES if s['weeks'])
-    segs, labels = [], []
-    x = 0.0
-    W = 1000.0
+    """Proportional timeline built in HTML so nothing distorts."""
+    total = sum(s['weeks'] for s in STAGES if s['weeks']) + 4
+    cells = []
     for s in STAGES:
-        w = s['weeks'] if s['weeks'] else 4      # 'to completion' shown as an open tail
-        frac = (w / (total + 4)) * W
-        mid = x + frac / 2
-        segs.append(
-            f'<rect class="tl-seg" data-stage="{s["key"]}" x="{x:.1f}" y="26" width="{max(frac-4,10):.1f}" height="16" rx="8"/>')
-        segs.append(f'<circle class="tl-dot" data-stage="{s["key"]}" cx="{x+6:.1f}" cy="34" r="4"/>')
-        labels.append(
-            f'<text class="tl-num" x="{x:.1f}" y="16">{s["n"]}</text>')
-        labels.append(
-            f'<text class="tl-wk" x="{x:.1f}" y="62">{s["dur"]}</text>')
-        x += frac
-    return f'''
+        w = s['weeks'] if s['weeks'] else 4
+        pct = (w / total) * 100
+        cells.append(
+            f'''      <div class="tl-cell" style="flex:{pct:.2f} 1 0">
+        <span class="tl-num">{s['n']}</span>
+        <span class="tl-bar"><i></i></span>
+        <span class="tl-wk">{s['dur']}</span>
+      </div>''')
+    return '''
     <figure class="jn-timeline">
       <figcaption>The whole journey at a glance. Each bar is roughly how long that stage takes.</figcaption>
-      <svg viewBox="0 0 1000 72" preserveAspectRatio="none" role="img" aria-label="Visual timeline of the five project stages, from a one week consultation through to completion on site.">
-        {''.join(segs)}
-        {''.join(labels)}
-      </svg>
+      <div class="tl-track">
+''' + '\n'.join(cells) + '''
+      </div>
       <p class="jn-timeline-note">Typical householder project: about six to nine months from first call to starting on site. Bigger schemes take longer &#8212; we tell you which yours is at the first meeting.</p>
     </figure>
 '''
 
 
 
+
 def explainers():
-    """Illustrated explanations of the things clients find most confusing."""
+    """The confusing bits, explained with a photo and plain English."""
+    items = [
+        (bp.IMG['p5'], "A rear extension under construction",
+         "How far can I go out?",
+         "Without planning permission, a single-storey rear extension can usually project <strong>3 metres</strong> from the original back wall on an attached house, or <strong>4 metres</strong> on a detached one. Go further and you need permission &#8212; which is often still achievable."),
+        (bp.IMG['p8'], "Terraced houses sharing party walls",
+         "What is a party wall?",
+         "The wall or boundary you share with a neighbour. If you build on it, cut into it, or excavate deep foundations near it, the law says you must <strong>notify them in writing first</strong> &#8212; usually two months ahead. We handle the notices for you."),
+        (bp.IMG['draw'], "Drawings prepared for a planning application",
+         "What actually happens at the council?",
+         "We submit, the council checks it is complete, then neighbours and consultees get their say for 21 days. An officer visits, writes a report, and a decision follows &#8212; <strong>usually within eight weeks</strong> for a house. We chase it throughout."),
+    ]
+    cards = []
+    for img, alt, h, p in items:
+        cards.append(f'''      <figure class="ex-card">
+        <img src="{img}" alt="{alt}" loading="lazy">
+        <figcaption>
+          <h3>{h}</h3>
+          <p>{p}</p>
+        </figcaption>
+      </figure>''')
     return '''
 <section class="jn-explain">
   <div class="wrap">
     <div class="sec-label"><span>The bits everyone finds confusing</span><em class="sec-sub">Three things clients ask us about most, explained simply.</em></div>
     <div class="ex-grid">
-
-      <figure class="ex-card">
-        <svg viewBox="0 0 260 150" role="img" aria-label="Diagram of a house with a rear extension, showing the three metre permitted development depth for an attached house and four metres for a detached house.">
-          <rect class="ex-fill" x="20" y="52" width="90" height="72"/>
-          <path class="ex-line" d="M20 52 L65 26 L110 52"/>
-          <rect class="ex-ext" x="110" y="82" width="62" height="42"/>
-          <line class="ex-dim" x1="110" y1="136" x2="172" y2="136"/>
-          <path class="ex-dim" d="M110 132 v8 M172 132 v8"/>
-          <text class="ex-t" x="141" y="149" text-anchor="middle">3m / 4m</text>
-          <text class="ex-lbl" x="65" y="94">Existing</text>
-          <text class="ex-lbl ex-lbl-b" x="141" y="106" text-anchor="middle">New</text>
-          <line class="ex-ground" x1="8" y1="124" x2="252" y2="124"/>
-        </svg>
-        <figcaption>
-          <h3>How far can I go out?</h3>
-          <p>Without planning permission, a single-storey rear extension can usually project <strong>3 metres</strong> from the original back wall on an attached house, or <strong>4 metres</strong> on a detached one. Go further and you need permission &#8212; which is often still achievable.</p>
-        </figcaption>
-      </figure>
-
-      <figure class="ex-card">
-        <svg viewBox="0 0 260 150" role="img" aria-label="Diagram of two neighbouring houses sharing a party wall on the boundary line, with a three metre notice zone either side.">
-          <rect class="ex-fill" x="18" y="56" width="102" height="68"/>
-          <rect class="ex-fill" x="140" y="56" width="102" height="68"/>
-          <line class="ex-boundary" x1="130" y1="34" x2="130" y2="132"/>
-          <rect class="ex-zone" x="100" y="56" width="60" height="68"/>
-          <text class="ex-lbl" x="69" y="96" text-anchor="middle">You</text>
-          <text class="ex-lbl" x="191" y="96" text-anchor="middle">Neighbour</text>
-          <text class="ex-t" x="130" y="26" text-anchor="middle">Party wall</text>
-          <line class="ex-ground" x1="8" y1="124" x2="252" y2="124"/>
-        </svg>
-        <figcaption>
-          <h3>What is a party wall?</h3>
-          <p>The wall or boundary you share with a neighbour. If you build on it, cut into it, or excavate deep foundations near it, the law says you must <strong>notify them in writing first</strong> &#8212; usually two months ahead. We handle the notices for you.</p>
-        </figcaption>
-      </figure>
-
-      <figure class="ex-card">
-        <svg viewBox="0 0 260 150" role="img" aria-label="Flow diagram showing a planning application moving from submission to validation, then a consultation period, then a decision.">
-          <rect class="ex-node" x="8" y="52" width="58" height="36" rx="6"/>
-          <text class="ex-nt" x="37" y="74" text-anchor="middle">Submit</text>
-          <path class="ex-arrow" d="M70 70 h20"/>
-          <rect class="ex-node" x="94" y="52" width="66" height="36" rx="6"/>
-          <text class="ex-nt" x="127" y="74" text-anchor="middle">Consult</text>
-          <path class="ex-arrow" d="M164 70 h20"/>
-          <rect class="ex-node ex-node-b" x="188" y="52" width="64" height="36" rx="6"/>
-          <text class="ex-nt ex-nt-w" x="220" y="74" text-anchor="middle">Decision</text>
-          <text class="ex-t" x="127" y="112" text-anchor="middle">usually about 8 weeks</text>
-          <path class="ex-dim" d="M12 100 H248 M12 96 v8 M248 96 v8"/>
-        </svg>
-        <figcaption>
-          <h3>What actually happens at the council?</h3>
-          <p>We submit, the council checks it is complete, then neighbours and consultees get their say for 21 days. An officer visits, writes a report, and a decision follows &#8212; <strong>usually within eight weeks</strong> for a house. We chase it throughout.</p>
-        </figcaption>
-      </figure>
-
+''' + '\n'.join(cards) + '''
     </div>
   </div>
 </section>
 '''
+
 
 
 body = f'''
