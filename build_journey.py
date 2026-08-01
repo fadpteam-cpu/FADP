@@ -11,7 +11,8 @@ spec.loader.exec_module(bp)
 STAGES = [
     dict(
         key="consult", n="01", label="Free consultation",
-        dur="Week 1", cost="No charge",
+        dur="Week 1", cost="No charge", weeks=1,
+        icon='<circle cx="24" cy="16" r="7"/><path d="M10 40 Q10 28 24 28 Q38 28 38 40"/>',
         summary="A conversation about your project, your property and your budget. No cost, no obligation.",
         we=[
             "Meet you at the studio, on site, or by video call",
@@ -28,7 +29,8 @@ STAGES = [
     ),
     dict(
         key="feasibility", n="02", label="Feasibility & design",
-        dur="Weeks 2–6", cost="Fixed fee, agreed first",
+        dur="Weeks 2–6", cost="Fixed fee, agreed first", weeks=5,
+        icon='<path d="M12 38 V14 L24 8 L36 14 V38"/><path d="M12 22 H36"/><path d="M24 22 V38"/>',
         summary="We test what can actually be built, then design two or three options to your brief. You choose the direction before anything goes further.",
         we=[
             "Measure and survey the existing building or site",
@@ -45,7 +47,8 @@ STAGES = [
     ),
     dict(
         key="planning", n="03", label="Planning & approvals",
-        dur="Weeks 6–16", cost="Fixed fee, agreed first",
+        dur="Weeks 6–16", cost="Fixed fee, agreed first", weeks=10,
+        icon='<rect x="12" y="8" width="24" height="32" rx="1"/><path d="M18 18 H30 M18 24 H30 M18 30 H26"/>',
         summary="We prepare and submit the application, handle the council, and manage every question through to a decision.",
         we=[
             "Prepare the full application and any supporting statements",
@@ -62,7 +65,8 @@ STAGES = [
     ),
     dict(
         key="technical", n="04", label="Technical design",
-        dur="After approval", cost="Fixed fee, agreed first",
+        dur="After approval", cost="Fixed fee, agreed first", weeks=6,
+        icon='<circle cx="24" cy="24" r="6"/><path d="M24 6 V12 M24 36 V42 M6 24 H12 M36 24 H42 M11 11 L15 15 M33 33 L37 37 M37 11 L33 15 M15 33 L11 37"/>',
         summary="The drawings that turn a planning permission into something a builder can actually price and build — structure, regulations, details.",
         we=[
             "Produce building regulations drawings and specifications",
@@ -78,7 +82,8 @@ STAGES = [
     ),
     dict(
         key="build", n="05", label="On site to completion",
-        dur="To completion", cost="Fixed fee, agreed first",
+        dur="To completion", cost="Fixed fee, agreed first", weeks=None,
+        icon='<path d="M8 40 H40 M12 40 V22 L24 14 L36 22 V40"/><rect x="20" y="28" width="8" height="12"/>',
         summary="The build itself, with a director inspecting on site, through to the certificates you keep for resale.",
         we=[
             "Help you tender and appoint the right builder",
@@ -100,6 +105,7 @@ def stage_nav():
     for i, s in enumerate(STAGES):
         out.append(
             f'''      <button class="jn-tab{' active' if i==0 else ''}" data-stage="{s['key']}" role="tab" aria-selected="{'true' if i==0 else 'false'}" aria-controls="panel-{s['key']}" id="tab-{s['key']}">
+        <span class="jn-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{s['icon']}</svg></span>
         <span class="jn-num">{s['n']}</span>
         <span class="jn-label">{s['label']}</span>
         <span class="jn-dur">{s['dur']}</span>
@@ -142,6 +148,106 @@ def stage_panels():
     return '\n'.join(out)
 
 
+
+def timeline():
+    """A proportional visual timeline: how long each stage takes, at a glance."""
+    total = sum(s['weeks'] for s in STAGES if s['weeks'])
+    segs, labels = [], []
+    x = 0.0
+    W = 1000.0
+    for s in STAGES:
+        w = s['weeks'] if s['weeks'] else 4      # 'to completion' shown as an open tail
+        frac = (w / (total + 4)) * W
+        mid = x + frac / 2
+        segs.append(
+            f'<rect class="tl-seg" data-stage="{s["key"]}" x="{x:.1f}" y="26" width="{max(frac-4,10):.1f}" height="16" rx="8"/>')
+        segs.append(f'<circle class="tl-dot" data-stage="{s["key"]}" cx="{x+6:.1f}" cy="34" r="4"/>')
+        labels.append(
+            f'<text class="tl-num" x="{x:.1f}" y="16">{s["n"]}</text>')
+        labels.append(
+            f'<text class="tl-wk" x="{x:.1f}" y="62">{s["dur"]}</text>')
+        x += frac
+    return f'''
+    <figure class="jn-timeline">
+      <figcaption>The whole journey at a glance. Each bar is roughly how long that stage takes.</figcaption>
+      <svg viewBox="0 0 1000 72" preserveAspectRatio="none" role="img" aria-label="Visual timeline of the five project stages, from a one week consultation through to completion on site.">
+        {''.join(segs)}
+        {''.join(labels)}
+      </svg>
+      <p class="jn-timeline-note">Typical householder project: about six to nine months from first call to starting on site. Bigger schemes take longer &#8212; we tell you which yours is at the first meeting.</p>
+    </figure>
+'''
+
+
+
+def explainers():
+    """Illustrated explanations of the things clients find most confusing."""
+    return '''
+<section class="jn-explain">
+  <div class="wrap">
+    <div class="sec-label"><span>The bits everyone finds confusing</span><em class="sec-sub">Three things clients ask us about most, explained simply.</em></div>
+    <div class="ex-grid">
+
+      <figure class="ex-card">
+        <svg viewBox="0 0 260 150" role="img" aria-label="Diagram of a house with a rear extension, showing the three metre permitted development depth for an attached house and four metres for a detached house.">
+          <rect class="ex-fill" x="20" y="52" width="90" height="72"/>
+          <path class="ex-line" d="M20 52 L65 26 L110 52"/>
+          <rect class="ex-ext" x="110" y="82" width="62" height="42"/>
+          <line class="ex-dim" x1="110" y1="136" x2="172" y2="136"/>
+          <path class="ex-dim" d="M110 132 v8 M172 132 v8"/>
+          <text class="ex-t" x="141" y="149" text-anchor="middle">3m / 4m</text>
+          <text class="ex-lbl" x="65" y="94">Existing</text>
+          <text class="ex-lbl ex-lbl-b" x="141" y="106" text-anchor="middle">New</text>
+          <line class="ex-ground" x1="8" y1="124" x2="252" y2="124"/>
+        </svg>
+        <figcaption>
+          <h3>How far can I go out?</h3>
+          <p>Without planning permission, a single-storey rear extension can usually project <strong>3 metres</strong> from the original back wall on an attached house, or <strong>4 metres</strong> on a detached one. Go further and you need permission &#8212; which is often still achievable.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="ex-card">
+        <svg viewBox="0 0 260 150" role="img" aria-label="Diagram of two neighbouring houses sharing a party wall on the boundary line, with a three metre notice zone either side.">
+          <rect class="ex-fill" x="18" y="56" width="102" height="68"/>
+          <rect class="ex-fill" x="140" y="56" width="102" height="68"/>
+          <line class="ex-boundary" x1="130" y1="34" x2="130" y2="132"/>
+          <rect class="ex-zone" x="100" y="56" width="60" height="68"/>
+          <text class="ex-lbl" x="69" y="96" text-anchor="middle">You</text>
+          <text class="ex-lbl" x="191" y="96" text-anchor="middle">Neighbour</text>
+          <text class="ex-t" x="130" y="26" text-anchor="middle">Party wall</text>
+          <line class="ex-ground" x1="8" y1="124" x2="252" y2="124"/>
+        </svg>
+        <figcaption>
+          <h3>What is a party wall?</h3>
+          <p>The wall or boundary you share with a neighbour. If you build on it, cut into it, or excavate deep foundations near it, the law says you must <strong>notify them in writing first</strong> &#8212; usually two months ahead. We handle the notices for you.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="ex-card">
+        <svg viewBox="0 0 260 150" role="img" aria-label="Flow diagram showing a planning application moving from submission to validation, then a consultation period, then a decision.">
+          <rect class="ex-node" x="8" y="52" width="58" height="36" rx="6"/>
+          <text class="ex-nt" x="37" y="74" text-anchor="middle">Submit</text>
+          <path class="ex-arrow" d="M70 70 h20"/>
+          <rect class="ex-node" x="94" y="52" width="66" height="36" rx="6"/>
+          <text class="ex-nt" x="127" y="74" text-anchor="middle">Consult</text>
+          <path class="ex-arrow" d="M164 70 h20"/>
+          <rect class="ex-node ex-node-b" x="188" y="52" width="64" height="36" rx="6"/>
+          <text class="ex-nt ex-nt-w" x="220" y="74" text-anchor="middle">Decision</text>
+          <text class="ex-t" x="127" y="112" text-anchor="middle">usually about 8 weeks</text>
+          <path class="ex-dim" d="M12 100 H248 M12 96 v8 M248 96 v8"/>
+        </svg>
+        <figcaption>
+          <h3>What actually happens at the council?</h3>
+          <p>We submit, the council checks it is complete, then neighbours and consultees get their say for 21 days. An officer visits, writes a report, and a decision follows &#8212; <strong>usually within eight weeks</strong> for a house. We chase it throughout.</p>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+'''
+
+
 body = f'''
 <div class="page-hero journey-hero">
   <div class="wrap">
@@ -153,7 +259,7 @@ body = f'''
 
 <section class="journey-tool">
   <div class="wrap">
-    <div class="jn-progress-line" aria-hidden="true"></div>
+{timeline()}
     <div class="jn-tabs" role="tablist" aria-label="Project stages">
 {stage_nav()}
     </div>
@@ -162,6 +268,8 @@ body = f'''
     </div>
   </div>
 </section>
+
+{explainers()}
 
 <section class="journey-cta">
   <div class="wrap">

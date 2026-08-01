@@ -2848,3 +2848,93 @@ footer{margin-top:clamp(96px, 13vh, 160px);}
   .jn-label{flex:1;}
   .jn-cols{grid-template-columns:1fr; gap:32px;}
 }
+
+/* ================================================================
+   JOURNEY VISUALS — timeline, stage icons, illustrated explainers
+   ================================================================ */
+
+/* --- Visual timeline --- */
+.jn-timeline{margin:0 0 clamp(40px, 6vh, 64px);}
+.jn-timeline figcaption{
+  font-size:14px; color:var(--muted); margin-bottom:18px;
+}
+.jn-timeline svg{width:100%; height:82px; overflow:visible;}
+.tl-seg{fill:var(--bg-2); transition:fill .25s;}
+.tl-seg:nth-of-type(1){fill:rgba(5,48,140,.85);}
+.jn-timeline svg .tl-seg{fill:rgba(5,48,140,.18);}
+.jn-timeline svg .tl-seg[data-stage="consult"]{fill:rgba(5,48,140,.9);}
+.tl-dot{fill:var(--brand);}
+.tl-num{
+  font-family:'Manrope',sans-serif; font-size:12px; font-weight:600;
+  fill:var(--brand); letter-spacing:.06em;
+}
+.tl-wk{
+  font-family:'Manrope',sans-serif; font-size:11.5px;
+  fill:var(--muted);
+}
+.jn-timeline-note{
+  font-size:14.5px; line-height:1.6; color:var(--muted);
+  max-width:64ch; margin-top:18px;
+}
+
+/* --- Stage icons in the tabs --- */
+.jn-icon{
+  display:block; width:34px; height:34px;
+  color:var(--muted); margin-bottom:10px;
+  transition:color .2s, transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.jn-icon svg{width:100%; height:100%;}
+.jn-tab.active .jn-icon{color:var(--brand); transform:translateY(-2px);}
+.jn-tab:hover .jn-icon{color:var(--brand);}
+
+/* --- Illustrated explainers --- */
+.jn-explain{padding-top:clamp(80px, 12vh, 150px);}
+.ex-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr);
+  gap:clamp(24px, 3vw, 44px);
+}
+.ex-card{
+  margin:0; background:var(--bg-2);
+  border-radius:16px; padding:24px 24px 28px;
+  display:flex; flex-direction:column; gap:20px;
+}
+.ex-card svg{
+  width:100%; height:auto; display:block;
+  background:var(--bg); border-radius:10px; padding:12px 8px;
+}
+.ex-card h3{
+  font-size:19px; font-weight:500; letter-spacing:-0.015em;
+  margin:0 0 10px; color:var(--ink);
+}
+.ex-card p{
+  font-size:15px; line-height:1.65; color:var(--muted); margin:0;
+}
+.ex-card p strong{color:var(--brand); font-weight:600;}
+
+/* diagram primitives */
+.ex-fill{fill:#E8E8E3; stroke:var(--muted); stroke-width:1.5;}
+.ex-line{fill:none; stroke:var(--muted); stroke-width:1.5;}
+.ex-ext{fill:rgba(5,48,140,.16); stroke:var(--brand); stroke-width:1.5;}
+.ex-dim{stroke:var(--brand); stroke-width:1.2; fill:none;}
+.ex-ground{stroke:var(--ink); stroke-width:1.5;}
+.ex-boundary{stroke:var(--brand); stroke-width:2; stroke-dasharray:5 4;}
+.ex-zone{fill:rgba(5,48,140,.10);}
+.ex-node{fill:var(--bg); stroke:var(--muted); stroke-width:1.5;}
+.ex-node-b{fill:var(--brand); stroke:var(--brand);}
+.ex-arrow{stroke:var(--brand); stroke-width:1.5; marker-end:none;}
+.ex-t{font-family:'Manrope',sans-serif; font-size:10px; fill:var(--brand); font-weight:600;}
+.ex-lbl{font-family:'Manrope',sans-serif; font-size:11px; fill:var(--muted);}
+.ex-lbl-b{fill:var(--brand); font-weight:600;}
+.ex-nt{font-family:'Manrope',sans-serif; font-size:11px; fill:var(--ink); font-weight:500;}
+.ex-nt-w{fill:#fff;}
+
+@media (max-width:900px){
+  .ex-grid{grid-template-columns:1fr;}
+  .ex-card{flex-direction:row; align-items:center; gap:24px;}
+  .ex-card svg{max-width:220px;}
+}
+@media (max-width:600px){
+  .ex-card{flex-direction:column;}
+  .ex-card svg{max-width:100%;}
+  .jn-timeline svg{height:96px;}
+}
