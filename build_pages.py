@@ -262,7 +262,7 @@ IMG = {
     'listed':  U+'photo-1509732499382-20be2145852e?w=1200&q=90',  # Kensington heritage doorway (Bruno Martins)
 
     # -------- Team headshots (neutral professional) --------
-    'team1':   U+'photo-1560250097-0b93528c311a?w=800&q=85',
+    'team1':   'assets/img/aun-naeem.jpg',
     'team2':   U+'photo-1573496359142-b8d87734a5a2?w=800&q=85',
     'team3':   U+'photo-1519085360753-af0119f7cbe7?w=800&q=85',
     'team4':   U+'photo-1580489944761-15a19d654956?w=800&q=85',
