@@ -263,7 +263,7 @@ IMG = {
 
     # -------- Team headshots (neutral professional) --------
     'team1':   'assets/img/aun-naeem.jpg',
-    'team2':   U+'photo-1573496359142-b8d87734a5a2?w=800&q=85',
+    'team2':   'assets/img/fatima-shakeel.jpg',
     'team3':   U+'photo-1519085360753-af0119f7cbe7?w=800&q=85',
     'team4':   U+'photo-1580489944761-15a19d654956?w=800&q=85',
 }
