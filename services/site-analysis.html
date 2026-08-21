@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Analysis &#183; FADP Architecture</title>
+<meta name="description" content="Site analysis by FADP Architecture. Constraints, opportunities, orientation, access and context — the groundwork every design decision depends on.">
+<link rel="canonical" href="https://fadpteam-cpu.github.io/FADP/services/site-analysis.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FADP Architecture">
+<meta property="og:title" content="Site Analysis &#183; FADP Architecture">
+<meta property="og:description" content="Site analysis by FADP Architecture. Constraints, opportunities, orientation, access and context — the groundwork every design decision depends on.">
+<meta property="og:image" content="https://fadpteam-cpu.github.io/FADP/assets/img/hero-poster.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Site Analysis &#183; FADP Architecture">
+<meta name="twitter:description" content="Site analysis by FADP Architecture. Constraints, opportunities, orientation, access and context — the groundwork every design decision depends on.">
+<meta name="twitter:image" content="https://fadpteam-cpu.github.io/FADP/assets/img/hero-poster.jpg">
+
+<meta name="theme-color" content="#0C00FF">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; frame-src https://www.openstreetmap.org; connect-src 'self'; base-uri 'self'; form-action 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+<link rel="preload" href="../assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/manrope-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/styles.css">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"FADP Architecture","legalName":"Fa Design Partners Limited","url":"https://fadpteam-cpu.github.io/FADP/","image":"https://fadpteam-cpu.github.io/FADP/assets/img/apple-touch-icon.png","email":"design@fadp.co.uk","description":"Architecture practice offering planning applications, feasibility studies, BIM, masterplanning, listed building consent and principal designer appointments across the United Kingdom.","foundingDate":"2026-07-10","address":{"@type":"PostalAddress","streetAddress":"66 Paul Street","addressLocality":"London","postalCode":"EC2A 4NA","addressCountry":"GB"},"geo":{"@type":"GeoCoordinates","latitude":51.5240,"longitude":-0.0842},"founder":[{"@type":"Person","name":"Aun Naeem","jobTitle":"Director","alumniOf":[{"@type":"CollegeOrUniversity","name":"Birmingham School of Architecture"},{"@type":"CollegeOrUniversity","name":"University of Sheffield"}]},{"@type":"Person","name":"Fatima Shakeel","jobTitle":"Director","alumniOf":[{"@type":"CollegeOrUniversity","name":"Birmingham School of Architecture"}]}],"areaServed":{"@type":"Country","name":"United Kingdom"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Architectural services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Planning applications"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Feasibility studies"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Site analysis"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Building Information Modelling"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Masterplanning and urban design"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Listed building consent"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Conservation area applications"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Principal Designer"}}]},"knowsAbout":["Architectural design","Planning applications","Feasibility studies","Masterplanning","Listed buildings","Conservation areas","BIM","CDM 2015","Building Safety Act 2022"]}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Site Analysis",
+  "name": "Site Analysis — FADP Architecture",
+  "description": "Site analysis by FADP Architecture. Constraints, opportunities, orientation, access and context — the groundwork every design decision depends on.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "FADP Architecture",
+    "legalName": "Fa Design Partners Limited",
+    "url": "https://fadpteam-cpu.github.io/FADP/",
+    "email": "design@fadp.co.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "66 Paul Street",
+      "addressLocality": "London",
+      "postalCode": "EC2A 4NA",
+      "addressCountry": "GB"
+    }
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
+  "url": "https://fadpteam-cpu.github.io/FADP/services/site-analysis.html"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it the same as a site survey?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A survey measures the site; site analysis interprets what those measurements mean for design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need it if you&rsquo;re doing my feasibility study?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — it&rsquo;s included as the first stage of every feasibility study. Only worth commissioning separately when needed independently of design work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Residential-scale: two to three weeks. Larger or complex sites: four to six."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you analyse a site before I&rsquo;ve bought it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it&rsquo;s often the most valuable time. Desktop research and design-parameter conclusions don&rsquo;t need physical access."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if it identifies a serious problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You&rsquo;ve found it in the cheapest possible way. Common examples: unregistered rights of way, undisclosed TPOs, ground contamination indicators. Better to know before you commit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover commercial and industrial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Same framework, different emphasis &mdash; servicing, contamination and industrial constraint typically carry more weight than residential amenity."
+      }
+    }
+  ]
+}</script>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="../index.html">FADP Architecture</a>
+    <nav class="site-nav">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../journey.html">Your project</a>
+      <div class="has-mega">
+        <button type="button" class="mega-btn current" aria-haspopup="true">Services</button>
+        <div class="mega" aria-label="Services menu">
+          <div class="mega-inner">
+            <div class="mega-col">
+              <h5>Architectural Design &amp; Planning</h5>
+              <a href="../services/planning-applications.html">Planning Permission</a>
+              <a href="../services/feasibility-studies.html">Feasibility Studies</a>
+          <a href="../services/masterplanning-urban-design.html">Masterplanning &amp; Urban Design</a>
+              <a href="../services/site-analysis.html">Site Analysis</a>
+              <a href="../services/outbuild-design.html">Outbuild Design</a>
+              <a href="../services/sunroom.html">Sunroom</a>
+              <a href="../services/dropped-kerb.html">Dropped Kerb</a>
+            </div>
+            <div class="mega-col">
+              <h5>Renovation &amp; Remodelling</h5>
+              <a href="../services/kitchen-renovation.html">Kitchen Renovation</a>
+              <a href="../services/bathroom-renovation.html">Bathroom Renovation</a>
+              <a href="../services/bedroom-renovation.html">Bedroom Renovation</a>
+              <a href="../services/chimney-removal.html">Chimney Removal</a>
+            </div>
+            <div class="mega-col">
+              <h5>Home Extension</h5>
+              <a href="../services/side-extension.html">Side Extension</a>
+              <a href="../services/rear-extension.html">Rear Extension</a>
+              <a href="../services/wrap-around-extension.html">Wrap-around Extension</a>
+              <h5 class="stacked">Structural Engineering</h5>
+              <a href="../services/wall-removal.html">Wall Removal</a>
+              <a href="../services/structural-calculations.html">Structural Calculations</a>
+            </div>
+            <div class="mega-col">
+              <h5>Survey &amp; Inspection</h5>
+              <a href="../services/crack-inspection.html">Crack Inspection</a>
+              <a href="../services/structural-inspection.html">Structural Inspection</a>
+              <a href="../services/snagging-survey.html">Snagging Survey</a>
+              <a href="../services/property-condition-survey.html">Property Condition Survey</a>
+              <a href="../services/structural-report.html">Structural Report</a>
+            </div>
+            <div class="mega-col">
+              <h5>Home Conversion</h5>
+              <a href="../services/loft-conversion.html">Loft Conversion</a>
+              <a href="../services/basement-conversion.html">Basement Conversion</a>
+              <a href="../services/garage-conversion.html">Garage Conversion</a>
+              <a href="../services/hmo-conversion.html">HMO Conversion</a>
+              <a href="../services/barn-conversion.html">Barn Conversion</a>
+              <a href="../services/smart-flat-conversion.html">Smart Flat Conversion</a>
+            </div>
+            <div class="mega-col">
+              <h5>Heritage &amp; Compliance</h5>
+              <a href="../services/listed-buildings.html">Listed Buildings</a>
+              <a href="../services/conservation-areas.html">Conservation Areas</a>
+              <a href="../services/principal-designer.html">Principal Designer</a>
+              <a href="../services/party-wall-award.html">Party Wall Award</a>
+              <a href="../services/boundary-dispute-solutions.html">Boundary Dispute Solutions</a>
+              <a href="../services/build-over-agreements.html">Build Over Agreements</a>
+              <h5 class="stacked">New Build Design</h5>
+              <a href="../services/new-homes.html">New Homes</a>
+              <a href="../services/conservatory.html">Conservatory</a>
+            </div>
+            <div class="mega-foot">
+              <span>Not sure where to start?</span>
+              <a href="../index.html#quote">Get in touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="../about.html">About</a>
+      <a href="../blog.html">Blog</a>
+    </nav>
+    <div class="header-right">
+      <a class="btn header-btn" href="../index.html#quote">Get a quote</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span class="mb-bars"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav" hidden>
+  <div class="mn-inner">
+    <nav class="mn-primary">
+      <a href="../index.html">Home</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../journey.html">Your project</a>
+      <a href="../about.html">About</a>
+      <a href="../careers.html">Careers</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../blog.html">Blog</a>
+    </nav>
+    <div class="mn-services">
+      <h5>Services</h5>
+      <a href="../services/planning-applications.html">Planning Permission</a>
+      <a href="../services/feasibility-studies.html">Feasibility Studies</a>
+      <a href="../services/rear-extension.html">Extensions</a>
+      <a href="../services/loft-conversion.html">Loft Conversions</a>
+      <a href="../services/basement-conversion.html">Basement Conversions</a>
+      <a href="../services/listed-buildings.html">Listed Buildings</a>
+      <a href="../services/principal-designer.html">Principal Designer</a>
+      <a class="mn-all" href="../services.html">All services</a>
+    </div>
+    <div class="mn-foot">
+      <a class="btn" href="../index.html#quote">Get in touch</a>
+      <a class="mn-contact" href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
+    </div>
+  </div>
+</div>
+
+<div class="page-hero svc-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../index.html">Home</a> &#183; <a href="../services.html">Services</a> &#183; Site Analysis</div>
+    <h1>Site Analysis</h1>
+    <p class="lede">Constraints, opportunities, orientation, access and context. The groundwork every design decision depends on.</p>
+  </div>
+</div>
+
+<section class="svc-body">
+  <div class="wrap">
+    <div class="svc-deep-layout">
+
+      <article class="svc-deep-main">
+
+        <div class="svc-lead">
+          <p>Site analysis reads the site properly before anything is designed on it. It maps what is already there &mdash; the constraints, opportunities, neighbours, light, ground, drainage, trees, access, acoustic and visual context &mdash; and translates them into design parameters a scheme has to work within. It is not a survey (which measures) or a feasibility study (which tests options); it sits between the two.</p>
+        </div>
+
+      <section class="svc-section">
+        <h2>When to commission it separately</h2>
+        <p><strong>Before buying land</strong> that has not been built on, or has been built on badly.</p>
+        <p><strong>When issuing a brief</strong> to multiple designers &mdash; a shared analysis stops each entrant duplicating the discovery work.</p>
+        <p><strong>When a scheme has failed at planning</strong> and you need to know why. Refusal reasons often point back to a condition missed at the start.</p>
+        <p><strong>When multiple owners are involved</strong>, or a phased development is planned. The analysis becomes the shared reference document.</p>
+      </section>
+      <section class="svc-section">
+        <h2>What we examine</h2>
+        <p><strong>Physical.</strong> Topography, levels, ground conditions, orientation, sun path, prevailing wind, drainage, services.</p>
+        <p><strong>Legal.</strong> Boundaries, easements, covenants, rights of way, planning designations, listed status, TPOs, Article 4 directions, planning history.</p>
+        <p><strong>Movement.</strong> Vehicular, pedestrian, cycle and servicing routes. Highway constraints.</p>
+        <p><strong>Environmental.</strong> Ecology, protected species, trees, flood zone, drainage, air quality, noise.</p>
+        <p><strong>Visual.</strong> Views in and out, sightlines, adjacent heights, character, materials palette.</p>
+        <p><strong>Social.</strong> Neighbours, existing patterns of use, likely stakeholder reactions.</p>
+      </section>
+      <section class="svc-section">
+        <h2>What we deliver</h2>
+        <p>A written report by theme (drawing conclusions, not just listing observations), analysis diagrams over an OS or site plan base, a consolidated constraints-and-opportunities plan, and a short set of design parameters for the next stage.</p>
+      </section>
+
+        <section class="svc-section">
+          <h2>What we deliver</h2>
+          <ul class="svc-deliverables">
+          <li>Written report with findings and design implications</li>
+          <li>Sun path and aspect analysis diagrams</li>
+          <li>Constraints and opportunities plan</li>
+          <li>Movement, access and servicing analysis</li>
+          <li>Views and townscape context diagrams</li>
+          <li>Trees, ecology and protected features plan</li>
+          <li>Boundary, easements and covenants summary</li>
+          <li>Design parameters brief for the next stage</li>
+          </ul>
+        </section>
+
+        <section class="svc-section">
+          <h2>How the process runs</h2>
+          <div class="svc-process">
+        <div class="svc-step">
+          <div class="svc-step-num">01</div>
+          <div class="svc-step-body">
+            <h3>Instruction</h3>
+            <p>Confirm the scope and purpose. Fixed fee agreed before starting.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">02</div>
+          <div class="svc-step-body">
+            <h3>Site visit</h3>
+            <p>Structured visit at the right time for the aspect being analysed.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">03</div>
+          <div class="svc-step-body">
+            <h3>Desktop research</h3>
+            <p>Planning, ecology, Land Registry, TPOs. All checked against current sources.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">04</div>
+          <div class="svc-step-body">
+            <h3>Analysis & drawings</h3>
+            <p>Findings mapped as diagrams, reduced to a short design brief.</p>
+          </div>
+        </div>
+        <div class="svc-step">
+          <div class="svc-step-num">05</div>
+          <div class="svc-step-body">
+            <h3>Handover</h3>
+            <p>Report issued and walked through in a meeting.</p>
+          </div>
+        </div>
+          </div>
+        </section>
+
+        <section class="svc-section">
+          <h2>Standards and regulations that apply</h2>
+          <p class="svc-std-intro">The sources we work from as standard.</p>
+          <div class="svc-standards">
+          <div class="std-item">
+            <div class="std-label">Ordnance Survey MasterMap</div>
+            <p>Base topographic data. Always confirmed against a site visit.</p>
+          </div>
+          <div class="std-item">
+            <div class="std-label">Land Registry Title Register</div>
+            <p>Boundaries, easements, covenants, rights of way.</p>
+          </div>
+          <div class="std-item">
+            <div class="std-label">LPA policy maps</div>
+            <p>Conservation areas, Article 4 directions, listed buildings, TPOs.</p>
+          </div>
+          <div class="std-item">
+            <div class="std-label">MAGIC and NBN Atlas</div>
+            <p>Ecology, protected species, flood zones, designated sites.</p>
+          </div>
+          <div class="std-item">
+            <div class="std-label">BS 5837:2012</div>
+            <p>The British Standard for trees in relation to design and construction.</p>
+          </div>
+          <div class="std-item">
+            <div class="std-label">Historic Environment Record</div>
+            <p>The local authority-held record of heritage and archaeology.</p>
+          </div>
+          </div>
+        </section>
+
+        <section class="svc-section svc-faqs" id="faqs">
+          <h2>Common questions</h2>
+          <div class="faq svc-faq-deep">
+        <details open>
+          <summary>Is it the same as a site survey? <span class="m">+</span></summary>
+          <div class="a"><p>No. A survey measures the site; site analysis interprets what those measurements mean for design.</p></div>
+        </details>
+        <details>
+          <summary>Do I need it if you&rsquo;re doing my feasibility study? <span class="m">+</span></summary>
+          <div class="a"><p>No — it&rsquo;s included as the first stage of every feasibility study. Only worth commissioning separately when needed independently of design work.</p></div>
+        </details>
+        <details>
+          <summary>How long does it take? <span class="m">+</span></summary>
+          <div class="a"><p>Residential-scale: two to three weeks. Larger or complex sites: four to six.</p></div>
+        </details>
+        <details>
+          <summary>Can you analyse a site before I&rsquo;ve bought it? <span class="m">+</span></summary>
+          <div class="a"><p>Yes, and it&rsquo;s often the most valuable time. Desktop research and design-parameter conclusions don&rsquo;t need physical access.</p></div>
+        </details>
+        <details>
+          <summary>What if it identifies a serious problem? <span class="m">+</span></summary>
+          <div class="a"><p>You&rsquo;ve found it in the cheapest possible way. Common examples: unregistered rights of way, undisclosed TPOs, ground contamination indicators. Better to know before you commit.</p></div>
+        </details>
+        <details>
+          <summary>Do you cover commercial and industrial? <span class="m">+</span></summary>
+          <div class="a"><p>Yes. Same framework, different emphasis &mdash; servicing, contamination and industrial constraint typically carry more weight than residential amenity.</p></div>
+        </details>
+          </div>
+        </section>
+
+        <section class="svc-closing">
+          <p>Get in touch and we&rsquo;ll confirm what would be involved for your site.</p>
+          <div class="svc-closing-actions">
+            <a class="btn" href="../index.html#quote">Get in touch</a>
+            <a class="link" href="../projects.html">See our projects</a>
+          </div>
+        </section>
+
+      </article>
+
+      <aside class="svc-deep-aside">
+        <div class="aside-card sticky">
+          <div class="aside-kicker">Enquiries</div>
+          <p class="aside-lead">First consultation is free. A director takes every enquiry.</p>
+          <a class="btn full" href="../index.html#quote">Get in touch</a>
+          <div class="aside-sep"></div>
+          <div class="aside-contact-block">
+            <div class="aside-cb-label">Direct to the studio</div>
+            <a class="aside-email" href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
+          </div>
+          <div class="aside-sep"></div>
+          <div class="aside-cb-label">Related pages</div>
+          <ul class="aside-links-list">
+            <li><a href="../journey.html">Your project, stage by stage</a></li>
+            <li><a href="../about.html">About the practice</a></li>
+            <li><a href="../projects.html">Selected projects</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<section class="sub-services-section">
+  <div class="wrap">
+    <div class="sec-label"><span>Related services</span></div>
+    <p class="sub-services-lede">Every project below is offered as a fixed-fee appointment, staged, with a director leading the work.</p>
+    <div class="sub-svc-grid">
+      <a class="sub-svc-card" href="crack-inspection.html">
+        <h4>Crack Inspection</h4>
+        <span class="sub-svc-go">View service &#8594;</span>
+      </a>
+      <a class="sub-svc-card" href="structural-inspection.html">
+        <h4>Structural Inspection</h4>
+        <span class="sub-svc-go">View service &#8594;</span>
+      </a>
+      <a class="sub-svc-card" href="property-condition-survey.html">
+        <h4>Property Condition Survey</h4>
+        <span class="sub-svc-go">View service &#8594;</span>
+      </a>
+      <a class="sub-svc-card" href="structural-report.html">
+        <h4>Structural Report</h4>
+        <span class="sub-svc-go">View service &#8594;</span>
+      </a>
+      <a class="sub-svc-card" href="boundary-dispute-solutions.html">
+        <h4>Boundary Disputes</h4>
+        <span class="sub-svc-go">View service &#8594;</span>
+      </a>
+      <a class="sub-svc-card" href="build-over-agreements.html">
+        <h4>Build Over Agreements</h4>
+        <span class="sub-svc-go">View service &#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="related-hubs">
+  <div class="wrap">
+    <div class="sec-label"><span>Other services</span></div>
+    <div class="hub-grid">
+      <a class="hub-card" href="planning-applications.html"><span>Planning applications</span><span class="hub-go">&#8594;</span></a>
+      <a class="hub-card" href="feasibility-studies.html"><span>Feasibility studies</span><span class="hub-go">&#8594;</span></a>
+      <a class="hub-card" href="bim.html"><span>Building Information Modelling</span><span class="hub-go">&#8594;</span></a>
+      <a class="hub-card" href="masterplanning-urban-design.html"><span>Masterplanning &amp; urban design</span><span class="hub-go">&#8594;</span></a>
+      <a class="hub-card" href="listed-buildings.html"><span>Listed buildings</span><span class="hub-go">&#8594;</span></a>
+      <a class="hub-card" href="conservation-areas.html"><span>Conservation areas</span><span class="hub-go">&#8594;</span></a>
+      <a class="hub-card" href="principal-designer.html"><span>Principal Designer</span><span class="hub-go">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+<div class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Start your project</h2>
+      <p>A written, fixed-fee quote. No obligation.</p>
+    </div>
+    <a class="btn" href="../index.html#quote">Get in touch</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo">
+      <div class="f-mark">FADP</div>
+      <div class="f-sub">Architecture</div>
+    </div>
+    <div class="footer-col">
+      <h5>Studio</h5>
+      <address>
+        66 Paul Street<br>
+        London EC2A 4NA
+      </address>
+      <a class="f-tel" href="mailto:design@fadp.co.uk">design@fadp.co.uk</a>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a class="f-link" href="../services/planning-applications.html">Planning Applications</a>
+      <a class="f-link" href="../services/bim.html">BIM</a>
+      <a class="f-link" href="../services/feasibility-studies.html">Feasibility Studies</a>
+      <a class="f-link" href="../services/masterplanning-urban-design.html">Masterplanning</a>
+      <a class="f-link" href="../services/listed-buildings.html">Listed Buildings</a>
+      <a class="f-link" href="../services/principal-designer.html">Principal Designer</a>
+    </div>
+    <div class="footer-col">
+      <h5>Information</h5>
+      <a class="f-link" href="../projects.html">Projects</a>
+      <a class="f-link" href="../about.html">About</a>
+      <a class="f-link" href="../faqs.html">FAQs</a>
+      <a class="f-link" href="../careers.html">Careers</a>
+      <a class="f-link" href="../contact.html">Contact</a>
+      <a class="f-link" href="../blog.html">Blog</a>
+      <a class="f-link" href="../index.html#quote">Get a quote</a>
+      <a class="f-link" href="../terms.html">Terms</a>
+      <a class="f-link" href="../privacy.html">Privacy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&#169; 2026 FADP Architecture</span>
+    <div class="socials">
+      <a href="https://www.instagram.com/fadpworks/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.5" fill="#FFFFFF"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M6.5 10v10 M6.5 5.8v.01 M11.5 20V13.8c0-1.9 1.4-3.3 3.2-3.3s3.3 1.4 3.3 3.3V20 M11.5 10v10"/></svg></a>
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15.5 4.5h-2.2c-2 0-3.3 1.3-3.3 3.4v2.3H7.5v3.1H10v7.2h3.2v-7.2h2.6l.5-3.1h-3.1V8.3c0-.6.3-.9 1-.9h2.3z"/></svg></a>
+      <a href="#" aria-label="Houzz"><svg viewBox="0 0 24 24"><path d="M5 21V10.5L12 6l7 4.5V21h-5v-6h-4v6z"/></svg></a>
+    </div>
+  </div>
+</footer>
+<div class="mobile-bar">
+  <a href="mailto:design@fadp.co.uk">Email the studio</a>
+  <a class="mb-primary" href="../index.html#quote">Get in touch</a>
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "FADP Architecture",
+  "short_name": "FADP",
+  "description": "London architecture practice led by Aun Naeem and Fatima Shakeel. Director-led, fixed fees, direct access.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0C00FF",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/favicon-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any maskable"
+    }
+  ]
+}
