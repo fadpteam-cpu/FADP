@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /assets/img/
+Disallow: /README.md
+Disallow: /affiliates/brochure/
+
+Sitemap: https://fadp.co.uk/sitemap.xml
