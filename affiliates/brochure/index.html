@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FADP Introducer Programme — brochure</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0C00FF">
+<style>
+@font-face{
+  font-family:'Manrope'; font-style:normal; font-weight:400;
+  font-display:swap;
+  src:url('../../assets/fonts/manrope-400.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Manrope'; font-style:normal; font-weight:500;
+  font-display:swap;
+  src:url('../../assets/fonts/manrope-500.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Manrope'; font-style:normal; font-weight:600;
+  font-display:swap;
+  src:url('../../assets/fonts/manrope-600.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Manrope'; font-style:normal; font-weight:700;
+  font-display:swap;
+  src:url('../../assets/fonts/manrope-700.woff2') format('woff2');
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:#E8E8EC;color:#141414;font-family:'Manrope',sans-serif;}
+.screen-bar{
+  max-width:210mm;
+  margin:16px auto 12px;
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  font-size:13px;
+  padding:0 8px;
+}
+.screen-bar a{
+  color:#0C00FF;font-weight:500;text-decoration:none;
+  border:1px solid #0C00FF;padding:8px 14px;
+}
+.screen-bar a.ghost{border-color:transparent;text-decoration:underline;}
+.sheet{
+  width:210mm;
+  height:297mm;
+  margin:0 auto 32px;
+  background:#fff;
+  box-shadow:0 12px 40px rgba(0,0,0,.12);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.hero{
+  background:#0C00FF;
+  color:#fff;
+  padding:11mm 16mm 10mm;
+}
+.hero-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+}
+.mark{
+  font-size:28px;font-weight:700;letter-spacing:.06em;line-height:1;
+}
+.kicker{
+  font-size:11px;letter-spacing:.18em;font-weight:500;opacity:.85;
+  text-align:right;
+}
+.hero h1{
+  margin-top:7mm;
+  font-size:32px;
+  font-weight:500;
+  letter-spacing:-.03em;
+  line-height:1.12;
+  max-width:16ch;
+}
+.hero p{
+  margin-top:5mm;
+  font-size:14px;
+  line-height:1.45;
+  max-width:52ch;
+  opacity:.95;
+}
+.body{
+  flex:1;
+  padding:8mm 16mm 6mm;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  gap:5.5mm;
+}
+.body > *{flex:0 0 auto;}
+.rules{margin-top:auto;}
+.split{
+  display:grid;
+  grid-template-columns:1.35fr .9fr;
+  gap:10mm;
+  align-items:stretch;
+}
+h2{
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#0C00FF;
+  margin-bottom:3mm;
+}
+.body p{font-size:13.5px;line-height:1.5;}
+.rate{
+  background:#0C00FF;
+  color:#fff;
+  padding:8mm 8mm 7mm;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.rate .num{
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:-.03em;
+  line-height:1.05;
+}
+.rate .of{
+  margin-top:3mm;
+  font-size:13px;
+  font-weight:500;
+  line-height:1.35;
+}
+.rate .note{
+  margin-top:4mm;
+  font-size:11px;
+  opacity:.85;
+  line-height:1.4;
+}
+.steps{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4mm 8mm;
+  border-top:1px solid #E4E6EA;
+  padding-top:7mm;
+}
+.step{display:grid;grid-template-columns:22px 1fr;gap:8px;}
+.step b{color:#0C00FF;font-size:12px;font-weight:600;}
+.step p{font-size:12.5px;line-height:1.4;}
+.rules{
+  border-top:1px solid #E4E6EA;
+  padding-top:7mm;
+}
+.rules ul{
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2.5mm 8mm;
+}
+.rules li{
+  font-size:12px;
+  line-height:1.4;
+  padding-left:12px;
+  position:relative;
+}
+.rules li::before{
+  content:"";
+  position:absolute;left:0;top:.45em;
+  width:6px;height:6px;background:#0C00FF;
+}
+.foot{
+  background:#0C00FF;
+  color:#fff;
+  padding:7mm 16mm;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:8mm;
+  font-size:11.5px;
+  line-height:1.45;
+}
+.foot strong{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:2mm;font-weight:500;}
+.foot a{color:#fff;text-decoration:none;}
+@media print{
+  *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  html,body{background:#fff;margin:0;padding:0;width:210mm;height:297mm;overflow:hidden;}
+  .screen-bar{display:none !important;}
+  .sheet{
+    margin:0 !important;
+    box-shadow:none;
+    width:210mm;
+    height:297mm;
+    overflow:hidden;
+    page-break-after:avoid;
+    page-break-inside:avoid;
+    break-inside:avoid;
+  }
+  @page{size:A4 portrait;margin:0;}
+}
+@media screen and (max-width:900px){
+  .sheet{width:100%;height:auto;min-height:100vh;margin:0;}
+  .hero h1{font-size:28px;}
+  .split,.steps,.rules ul,.foot{grid-template-columns:1fr;}
+  .rate .num{font-size:52px;}
+}
+</style>
+</head>
+<body>
+<div class="screen-bar">
+  <a href="../">Back to Introducers</a>
+  <a class="ghost" href="../FADP-introducer-brochure.pdf" download="FADP-introducer-brochure.pdf">Download PDF</a>
+  <a class="ghost" href="#" onclick="window.print();return false;">Print</a>
+</div>
+<article class="sheet">
+  <header class="hero">
+    <div class="hero-top">
+      <div class="mark">FADP</div>
+      <div class="kicker">INTRODUCER PROGRAMME</div>
+    </div>
+    <h1>Introduce a client. Earn a commission.</h1>
+    <p>Surveyors, contractors, trades and anyone in the industry. Send a homeowner who appoints FADP, and we pay you a written commission on our professional fee for that job.</p>
+  </header>
+  <div class="body">
+    <div class="split">
+      <div>
+        <h2>Who it is for</h2>
+        <p>Surveyors, contractors, builders, trades, estate agents — anyone who sits next to a homeowner who needs drawings or a planning pack. London first. Manchester and Birmingham the same way.</p>
+        <h2 style="margin-top:6mm">The rate, plainly</h2>
+        <p>The rate is a commission on FADP’s professional fee — the number in our appointment letter, not a percentage of build cost. It is written in a one-page introducer letter before we take the meeting. Paid when the client pays us for that stage.</p>
+      </div>
+      <aside class="rate">
+        <div class="num">In writing</div>
+        <div class="of">a commission on our professional fee</div>
+        <div class="note">Not a percentage of build cost. The figure is in the letter before the first meeting.</div>
+      </aside>
+    </div>
+    <div>
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step"><b>01</b><p>Email the name, the address, and that you are introducing them.</p></div>
+        <div class="step"><b>02</b><p>We send the introducer letter. You sign it. Then we take the meeting.</p></div>
+        <div class="step"><b>03</b><p>If they appoint us, you earn the commission written in the letter.</p></div>
+        <div class="step"><b>04</b><p>We pay you when the client pays us for that stage.</p></div>
+      </div>
+    </div>
+    <div class="rules">
+      <h2>The rules</h2>
+      <ul>
+        <li>The client can know. We will say an introducer is involved.</li>
+        <li>First signed letter wins if two people send the same lead.</li>
+        <li>No appointment, no commission.</li>
+        <li>No commission on work they already had with us.</li>
+        <li>You cannot introduce your own job and collect the fee.</li>
+        <li>No signed letter before the meeting means the lead is not counted.</li>
+      </ul>
+    </div>
+  </div>
+  <footer class="foot">
+    <div>
+      <strong>Email the introduction</strong>
+      <a href="mailto:design@fadp.co.uk?subject=Introducer%20%E2%80%94%20new%20lead">design@fadp.co.uk</a>
+    </div>
+    <div>
+      <strong>Studio</strong>
+      66 Paul Street<br>London EC2A 4NA
+    </div>
+    <div>
+      <strong>Practice</strong>
+      Fa Design Partners Limited<br>
+      fadp.co.uk/affiliates
+    </div>
+  </footer>
+</article>
+</body>
+</html>
